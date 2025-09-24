@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useRef, useState } from "react";
+
 import Layout from '../components/Layout';
 import WaveDivider from '../components/WaveDivider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+
+
 import { 
   BookOpen, 
   Users, 
@@ -22,10 +25,28 @@ import heroClassroom from '@/assets/hero-classroom.jpg';
 import playground from '@/assets/playground.jpg';
 import teacherReading from '@/assets/teacher-reading.jpg';
 import library from '@/assets/library.jpg';
+import students from '@/assets/students.jpg';
 import artClass from '@/assets/art-class.jpg';
 import principal from '@/assets/principal.jpg';
+import girlchild from '@/assets/girlchild.jpg';
+import main from '@/assets/main.mp4';
+import logo from '@/assets/logo.jpg';
+import independence from '@/assets/independence.jpg';
+import activity from '@/assets/activity.jpg';
+import skating from '@/assets/skating.jpg';
+import independence2 from '@/assets/independence2.jpg';
+import medical from '@/assets/medical.jpg';
+import dance from '@/assets/dance.jpg';
+import dandia from '@/assets/dandia.jpg';
+import celeberate from '@/assets/celeberate.jpg';
+import school from '@/assets/school.jpg';
+
+
 
 const Home = () => {
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+const [isPlaying, setIsPlaying] = useState(false);
   const features = [
     {
       icon: BookOpen,
@@ -232,9 +253,9 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src={library} 
+                src={girlchild} 
                 alt="School library" 
-                className="w-full h-96 object-cover rounded-3xl shadow-medium"
+                className="w-full h-96 object-cover rounded-3xl shadow-medium "
               />
               <div className="absolute -top-4 -right-4 bg-secondary p-4 rounded-2xl shadow-strong">
                 <div className="text-center">
@@ -354,20 +375,31 @@ const Home = () => {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            <img 
-              src={principal} 
-              alt="School tour" 
-              className="w-full h-96 object-cover rounded-3xl shadow-strong"
-            />
-            <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
-              <Button 
-                size="lg" 
-                className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
-              >
-                <Play size={32} />
-              </Button>
-            </div>
-          </div>
+<video
+  ref={videoRef}
+  src="/videos/main.mp4"
+  poster={logo}
+  className="w-full h-96 object-cover rounded-3xl shadow-strong"
+  controls={isPlaying}
+/>
+
+
+      {/* Overlay Play Button */}
+      {!isPlaying && (
+        <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
+          <Button
+            size="lg"
+            className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
+            onClick={() => {
+              videoRef.current?.play();
+              setIsPlaying(true);
+            }}
+          >
+            <Play size={32} />
+          </Button>
+        </div>
+      )}
+    </div>
         </div>
       </section>
 
@@ -436,14 +468,14 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <img src={heroClassroom} alt="Gallery 1" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={playground} alt="Gallery 2" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={teacherReading} alt="Gallery 3" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={library} alt="Gallery 4" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={artClass} alt="Gallery 5" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={principal} alt="Gallery 6" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={heroClassroom} alt="Gallery 7" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={playground} alt="Gallery 8" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={independence} alt="Gallery 1" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={activity} alt="Gallery 2" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={skating} alt="Gallery 3" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={celeberate} alt="Gallery 4" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover " />
+            <img src={medical} alt="Gallery 5" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={school} alt="Gallery 6" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={independence2} alt="Gallery 7" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src={dandia} alt="Gallery 8" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
           </div>
 
           <div className="text-center mt-8">
