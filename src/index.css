@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Blueberry Fields School Design System - Exact match to reference design */
+
+
+@layer base {
+  :root {
+    /* Primary Colors - Teal Theme */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* School Brand Colors */
+    --primary: 174 100% 29%; /* Teal from design */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 174 100% 45%;
+    --primary-dark: 174 100% 20%;
+
+    --secondary: 45 100% 51%; /* Yellow from design */
+    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary-light: 45 100% 65%;
+
+    --accent: 174 44% 91%; /* Light teal */
+    --accent-foreground: 174 100% 20%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 100% 29%;
+
+    /* Design System Additions */
+    --success: 145 63% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 33 100% 60%;
+    --warning-foreground: 222.2 84% 4.9%;
+
+    /* Gradient Definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+
+    /* Shadow System */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 8px 30px -4px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 16px 40px -8px hsl(var(--primary) / 0.2);
+
+    /* Animation & Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Typography Scale */
+    --font-family-primary: 'Inter', sans-serif;
+    --font-family-heading: 'Fredoka', cursive;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 174 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 174 100% 50%;
+    --primary-dark: 174 100% 25%;
+
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary-light: 45 100% 70%;
+
+    --accent: 174 30% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 174 100% 35%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 174 100% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 174 100% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Wavy Section Dividers - Key Design Element */
+  .wave-top {
+    position: relative;
+  }
+  
+  .wave-top::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    background-size: cover;
+  }
+
+  .wave-bottom {
+    position: relative;
+  }
+  
+  .wave-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    background-size: cover;
+    transform: rotate(180deg);
+  }
+
+  /* Organic Shapes for Images */
+  .organic-shape {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+
+  .organic-shape-2 {
+    border-radius: 48% 52% 54% 46% / 63% 37% 45% 55%;
+  }
+
+  .organic-shape-3 {
+    border-radius: 54% 46% 48% 52% / 37% 63% 55% 45%;
+  }
+
+  /* Floating Animation for Stars */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Button Hover Effects */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-medium hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-medium hover:scale-105;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-medium hover:scale-105;
+  }
+
+  /* Section Backgrounds */
+  .bg-primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .bg-secondary-gradient {
+    background: var(--gradient-secondary);
+  }
+
+  /* Text Styles */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

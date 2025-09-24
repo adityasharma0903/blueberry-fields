@@ -1,0 +1,250 @@
+import React from 'react';
+import Layout from '../components/Layout';
+import WaveDivider from '../components/WaveDivider';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Star, Users, Award, Heart, BookOpen, Target, Eye } from 'lucide-react';
+import principal from '@/assets/principal.jpg';
+import heroClassroom from '@/assets/hero-classroom.jpg';
+import playground from '@/assets/playground.jpg';
+
+const About = () => {
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="bg-primary relative overflow-hidden py-20">
+        <div className="absolute top-20 left-20 text-secondary animate-float opacity-60">
+          <Star size={32} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-20 right-32 text-secondary animate-float opacity-40" style={{ animationDelay: '2s' }}>
+          <Star size={28} fill="currentColor" />
+        </div>
+
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-foreground mb-6">
+              About <span className="text-secondary">Blueberry Fields</span>
+            </h1>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+              Nurturing young minds since 2009 with love, care, and quality education in Derabassi
+            </p>
+          </div>
+        </div>
+        <WaveDivider position="bottom" />
+      </section>
+
+      {/* Our Story */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="bg-primary text-primary-foreground mb-4">Our History</Badge>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Our Story</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Blueberry Fields School was founded in 2009 with a vision to provide quality early childhood 
+                  education in Derabassi. Starting with just 25 students, we have grown into one of the most 
+                  trusted educational institutions in the region.
+                </p>
+                <p>
+                  Our journey began when a group of passionate educators came together with a shared belief that 
+                  every child deserves the best start in their educational journey. We established our school 
+                  on the principles of holistic development, individual attention, and creating a safe, 
+                  nurturing environment.
+                </p>
+                <p>
+                  Over the years, we have continuously evolved our teaching methodologies, upgraded our 
+                  infrastructure, and expanded our programs to serve children from Nursery to Class V. 
+                  Today, we are proud to have impacted over 1,500 young lives and continue to be a 
+                  beacon of excellence in early childhood education.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src={heroClassroom} 
+                alt="School history" 
+                className="w-full h-48 object-cover organic-shape shadow-medium"
+              />
+              <img 
+                src={playground} 
+                alt="School development" 
+                className="w-full h-48 object-cover organic-shape-2 shadow-medium mt-8"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Principal's Desk */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img 
+                src={principal} 
+                alt="Principal" 
+                className="w-full h-96 object-cover rounded-3xl shadow-strong"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-secondary p-6 rounded-2xl shadow-strong">
+                <div className="text-center">
+                  <div className="text-2xl font-heading font-bold text-secondary-foreground">15+</div>
+                  <div className="text-sm text-secondary-foreground">Years Leading</div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <Badge className="bg-primary text-primary-foreground mb-4">Leadership</Badge>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Principal's Desk</h2>
+              <div className="space-y-4">
+                <div className="bg-primary/5 p-6 rounded-xl border-l-4 border-primary">
+                  <p className="text-muted-foreground italic leading-relaxed">
+                    "Welcome to Blueberry Fields School, where every child is valued, nurtured, and empowered 
+                    to reach their full potential. Our commitment to excellence in education goes beyond 
+                    academics – we focus on developing confident, compassionate, and capable individuals."
+                  </p>
+                </div>
+                <p className="text-muted-foreground">
+                  As the Principal of Blueberry Fields School, I am honored to lead a team of dedicated 
+                  educators who share our vision of providing transformational learning experiences. 
+                  We believe that education should be joyful, meaningful, and tailored to each child's 
+                  unique needs and interests.
+                </p>
+                <div className="bg-secondary/10 p-4 rounded-lg">
+                  <h4 className="font-heading font-bold text-lg mb-2">Mrs. Sunita Sharma</h4>
+                  <p className="text-sm text-muted-foreground">
+                    M.Ed, B.Ed | Principal<br/>
+                    15+ Years in Educational Leadership
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-primary relative overflow-hidden">
+        <div className="absolute top-16 left-16 text-secondary animate-float opacity-40">
+          <Star size={28} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-16 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
+          <Star size={24} fill="currentColor" />
+        </div>
+
+        {/* <WaveDivider position="top" /> */}
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="bg-secondary text-secondary-foreground mb-4">Our Purpose</Badge>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
+              Mission & Vision
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Card className="bg-background border-0 shadow-strong">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Target size={32} className="text-primary-foreground" />
+                </div>
+                <h3 className="text-2xl font-heading font-bold mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To provide a nurturing, safe, and stimulating environment where children can develop 
+                  their full potential through innovative teaching methods, individual attention, and 
+                  holistic development programs that prepare them for lifelong success.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-background border-0 shadow-strong">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Eye size={32} className="text-secondary-foreground" />
+                </div>
+                <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To be the leading educational institution in the region, recognized for academic excellence, 
+                  character development, and innovative teaching practices that inspire students to become 
+                  confident, creative, and compassionate global citizens.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Core Values */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-background border-0 shadow-medium text-center">
+              <CardContent className="p-6">
+                <Heart size={32} className="text-primary mx-auto mb-4" />
+                <h4 className="font-heading font-bold text-lg mb-2">Care</h4>
+                <p className="text-sm text-muted-foreground">Nurturing every child with love and attention</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-background border-0 shadow-medium text-center">
+              <CardContent className="p-6">
+                <BookOpen size={32} className="text-primary mx-auto mb-4" />
+                <h4 className="font-heading font-bold text-lg mb-2">Excellence</h4>
+                <p className="text-sm text-muted-foreground">Striving for the highest standards in education</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-background border-0 shadow-medium text-center">
+              <CardContent className="p-6">
+                <Users size={32} className="text-primary mx-auto mb-4" />
+                <h4 className="font-heading font-bold text-lg mb-2">Community</h4>
+                <p className="text-sm text-muted-foreground">Building strong partnerships with families</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-background border-0 shadow-medium text-center">
+              <CardContent className="p-6">
+                <Award size={32} className="text-primary mx-auto mb-4" />
+                <h4 className="font-heading font-bold text-lg mb-2">Innovation</h4>
+                <p className="text-sm text-muted-foreground">Embracing modern teaching methodologies</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <WaveDivider position="bottom" />
+      </section>
+
+      {/* Achievements */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="bg-primary text-primary-foreground mb-4">Our Achievements</Badge>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Awards & Recognition
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-heading font-bold text-primary mb-2">1500+</div>
+              <p className="text-muted-foreground">Happy Students</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-heading font-bold text-primary mb-2">25+</div>
+              <p className="text-muted-foreground">Expert Teachers</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-heading font-bold text-primary mb-2">15+</div>
+              <p className="text-muted-foreground">Years Experience</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-heading font-bold text-primary mb-2">5</div>
+              <p className="text-muted-foreground">Award Winning</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default About;
