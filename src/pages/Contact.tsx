@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import WaveDivider from '../components/WaveDivider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -23,10 +23,38 @@ import {
   Route,
   Smartphone
 } from 'lucide-react';
-import heroClassroom from '@/assets/hero-classroom.jpg';
+
+// Paste your Google Apps Script Web App URL here
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec';
+
+// Self-contained Layout component
+// const Layout = ({ children }) => {
+//   return (
+//     <div className="bg-background font-sans text-foreground">
+//       <main>{children}</main>
+//     </div>
+//   );
+// };
+
+// Self-contained WaveDivider component
+// const WaveDivider = ({ position }) => {
+//   return (
+//     <div className={`w-full ${position === 'bottom' ? 'relative' : ''}`}>
+//       <svg
+//         className={`w-full h-auto text-background fill-current ${position === 'bottom' ? 'block' : 'hidden'}`}
+//         viewBox="0 0 1440 100"
+//         xmlns="http://www.w3.org/2000/svg"
+//         preserveAspectRatio="none"
+//       >
+//         <path d="M0,0C0,0,240,100,720,100S1440,0,1440,0V-0L0,0Z"></path>
+//       </svg>
+//     </div>
+//   );
+// };
 
 const Contact = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [feedbackForm, setFeedbackForm] = useState({
     name: '',
     email: '',
@@ -36,49 +64,57 @@ const Contact = () => {
     type: 'feedback'
   });
 
-  const [visitForm, setVisitForm] = useState({
-    parentName: '',
-    email: '',
-    phone: '',
-    childAge: '',
-    preferredDate: '',
-    preferredTime: '',
-    message: ''
-  });
-
-  const handleFeedbackSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Feedback submitted:', feedbackForm);
-    toast({
-      title: "Feedback Submitted!",
-      description: "Thank you for your valuable feedback. We'll review it carefully.",
-    });
-    setFeedbackForm({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      type: 'feedback'
-    });
-  };
 
-  const handleVisitSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Campus visit scheduled:', visitForm);
-    toast({
-      title: "Visit Scheduled!",
-      description: "We'll confirm your campus visit appointment within 24 hours.",
-    });
-    setVisitForm({
-      parentName: '',
-      email: '',
-      phone: '',
-      childAge: '',
-      preferredDate: '',
-      preferredTime: '',
-      message: ''
-    });
+    // if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec') {
+    //   console.error('Please update SCRIPT_URL with your Google Apps Script URL.');
+    //   toast({
+    //     title: "Error",
+    //     description: "Please configure your Google Apps Script URL.",
+    //     variant: "destructive"
+    //   });
+    //   return;
+    // }
+
+    setLoading(true);
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(feedbackForm),
+      });
+
+      console.log('Feedback submitted to Google Apps Script. Status:', response.status);
+
+      toast({
+        title: "Feedback Submitted!",
+        description: "Thank you for your valuable feedback. We'll review it carefully.",
+      });
+
+      setFeedbackForm({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        type: 'feedback'
+      });
+
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your feedback. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -125,33 +161,6 @@ const Contact = () => {
         "Sunday: Closed"
       ],
       color: "bg-secondary"
-    }
-  ];
-
-  const quickActions = [
-    {
-      icon: CalendarDays,
-      title: "Schedule a Visit",
-      description: "Book a personalized campus tour",
-      action: "Book Now"
-    },
-    {
-      icon: MessageCircle,
-      title: "Admission Inquiry",
-      description: "Get information about admissions",
-      action: "Inquire Now"
-    },
-    {
-      icon: Users,
-      title: "Parent Meeting",
-      description: "Meet with our educational team", 
-      action: "Schedule"
-    },
-    {
-      icon: Phone,
-      title: "Emergency Contact",
-      description: "24/7 support for urgent matters",
-      action: "Call Now"
     }
   ];
 
@@ -208,22 +217,6 @@ const Contact = () => {
               </Card>
             ))}
           </div>
-
-          {/* Quick Actions */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {quickActions.map((action, index) => (
-              <Card key={index} className="border-0 shadow-soft card-hover">
-                <CardContent className="p-4 lg:p-6 text-center">
-                  <action.icon size={32} className="text-primary mx-auto mb-3 lg:mb-4" />
-                  <h4 className="font-heading font-bold text-sm lg:text-base mb-2">{action.title}</h4>
-                  <p className="text-xs lg:text-sm text-muted-foreground mb-3 lg:mb-4">{action.description}</p>
-                  <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full w-full">
-                    {action.action}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -237,9 +230,9 @@ const Contact = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="flex justify-center">
             {/* Feedback Form */}
-            <Card className="border-0 shadow-soft">
+            <Card className="border-0 shadow-soft w-full lg:w-2/3">
               <CardContent className="p-6 lg:p-8">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -248,7 +241,7 @@ const Contact = () => {
                   <h3 className="text-xl lg:text-2xl font-heading font-bold">Feedback Form</h3>
                 </div>
 
-                <form onSubmit={handleFeedbackSubmit} className="space-y-4 lg:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                   <div>
                     <Label htmlFor="feedbackName">Your Name *</Label>
                     <Input
@@ -325,115 +318,10 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
+                    disabled={loading}
                   >
                     <Send size={20} className="mr-2" />
-                    Send Feedback
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Campus Visit Form */}
-            <Card className="border-0 shadow-soft">
-              <CardContent className="p-6 lg:p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                    <Building size={24} className="text-secondary-foreground" />
-                  </div>
-                  <h3 className="text-xl lg:text-2xl font-heading font-bold">Schedule Campus Visit</h3>
-                </div>
-
-                <form onSubmit={handleVisitSubmit} className="space-y-4 lg:space-y-6">
-                  <div>
-                    <Label htmlFor="visitParentName">Parent/Guardian Name *</Label>
-                    <Input
-                      id="visitParentName"
-                      value={visitForm.parentName}
-                      onChange={(e) => setVisitForm(prev => ({ ...prev, parentName: e.target.value }))}
-                      required
-                      className="mt-2"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="visitEmail">Email *</Label>
-                      <Input
-                        id="visitEmail"
-                        type="email"
-                        value={visitForm.email}
-                        onChange={(e) => setVisitForm(prev => ({ ...prev, email: e.target.value }))}
-                        required
-                        className="mt-2"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="visitPhone">Phone *</Label>
-                      <Input
-                        id="visitPhone"
-                        value={visitForm.phone}
-                        onChange={(e) => setVisitForm(prev => ({ ...prev, phone: e.target.value }))}
-                        required
-                        className="mt-2"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="childAge">Child's Age</Label>
-                    <Input
-                      id="childAge"
-                      value={visitForm.childAge}
-                      onChange={(e) => setVisitForm(prev => ({ ...prev, childAge: e.target.value }))}
-                      className="mt-2"
-                      placeholder="e.g., 4 years"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="preferredDate">Preferred Date</Label>
-                      <Input
-                        id="preferredDate"
-                        type="date"
-                        value={visitForm.preferredDate}
-                        onChange={(e) => setVisitForm(prev => ({ ...prev, preferredDate: e.target.value }))}
-                        className="mt-2"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="preferredTime">Preferred Time</Label>
-                      <Select value={visitForm.preferredTime} onValueChange={(value) => setVisitForm(prev => ({ ...prev, preferredTime: value }))}>
-                        <SelectTrigger className="mt-2">
-                          <SelectValue placeholder="Select time" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="9am-11am">9:00 AM - 11:00 AM</SelectItem>
-                          <SelectItem value="11am-1pm">11:00 AM - 1:00 PM</SelectItem>
-                          <SelectItem value="2pm-4pm">2:00 PM - 4:00 PM</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="visitMessage">Additional Message</Label>
-                    <Textarea
-                      id="visitMessage"
-                      value={visitForm.message}
-                      onChange={(e) => setVisitForm(prev => ({ ...prev, message: e.target.value }))}
-                      className="mt-2"
-                      rows={4}
-                      placeholder="Any specific areas you'd like to see or questions you have..."
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-secondary text-secondary-foreground hover:bg-secondary-light rounded-full"
-                  >
-                    <CalendarDays size={20} className="mr-2" />
-                    Schedule Visit
+                    {loading ? 'Submitting...' : 'Send Feedback'}
                   </Button>
                 </form>
               </CardContent>
@@ -450,8 +338,6 @@ const Contact = () => {
         <div className="absolute bottom-8 lg:bottom-16 right-12 lg:right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={18} className="lg:w-6 lg:h-6" fill="currentColor" />
         </div>
-
-        {/* <WaveDivider position="top" /> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 lg:mb-16">
@@ -466,7 +352,7 @@ const Contact = () => {
               <Card className="bg-background border-0 shadow-strong">
                 <CardContent className="p-6 lg:p-8">
                   <div className="flex items-center space-x-3 mb-4">
-                    <Route size={24} className="text-primary" />
+                    <MapPin size={24} className="text-primary" />
                     <h3 className="text-xl font-heading font-bold">How to Reach</h3>
                   </div>
                   <div className="space-y-4">
@@ -497,7 +383,7 @@ const Contact = () => {
                   size="lg" 
                   className="bg-secondary text-secondary-foreground hover:bg-secondary-light rounded-full"
                 >
-                  <Smartphone size={20} className="mr-2" />
+                  <MapPin size={20} className="mr-2" />
                   Get Directions
                 </Button>
                 <Button 

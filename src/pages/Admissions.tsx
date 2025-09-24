@@ -30,49 +30,58 @@ const Admissions = () => {
     parentName: '',
     email: '',
     phone: '',
-    address: '',
-    childAge: '',
     preferredGrade: '',
-    previousSchool: '',
-    interests: '',
-    medicalInfo: '',
-    inquiryType: 'admission',
     message: ''
   });
 
-  const handleInputChange = (field: string, value: string) => {
+  // IMPORTANT: Paste your Google Apps Script Web App URL here
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4LpwpOLjXU95CoTn-jhkQ7r0LmlgM2bUMilRG_zFjCYcQquK-bcyVtHq7uakhc7Gq/exec'; 
+
+  const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Here you would typically send the data to your backend
-    console.log('Admission inquiry submitted:', formData);
-    
-    toast({
-      title: "Inquiry Submitted Successfully!",
-      description: "We'll contact you within 24 hours to schedule a visit.",
-    });
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Apps Script requires no-cors mode
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({
-      childName: '',
-      parentName: '',
-      email: '',
-      phone: '',
-      address: '',
-      childAge: '',
-      preferredGrade: '',
-      previousSchool: '',
-      interests: '',
-      medicalInfo: '',
-      inquiryType: 'admission',
-      message: ''
-    });
+      console.log('Submission response:', response);
+
+      toast({
+        title: "Inquiry Submitted Successfully!",
+        description: "We'll contact you within 24 hours.",
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        childName: '',
+        parentName: '',
+        email: '',
+        phone: '',
+        preferredGrade: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   const admissionSteps = [
@@ -219,8 +228,6 @@ const Admissions = () => {
         <div className="absolute bottom-16 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={24} fill="currentColor" />
         </div>
-
-        {/* <WaveDivider position="top" /> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
@@ -283,97 +290,28 @@ const Admissions = () => {
                       />
                     </div>
                   </div>
-
+                  
                   <div>
-                    <Label htmlFor="address">Address</Label>
-                    <Textarea
-                      id="address"
-                      value={formData.address}
-                      onChange={(e) => handleInputChange('address', e.target.value)}
-                      className="mt-2"
-                      rows={3}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="childAge">Child's Age</Label>
-                      <Input
-                        id="childAge"
-                        value={formData.childAge}
-                        onChange={(e) => handleInputChange('childAge', e.target.value)}
-                        className="mt-2"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="preferredGrade">Preferred Grade</Label>
-                      <Select value={formData.preferredGrade} onValueChange={(value) => handleInputChange('preferredGrade', value)}>
-                        <SelectTrigger className="mt-2">
-                          <SelectValue placeholder="Select grade" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="nursery">Nursery</SelectItem>
-                          <SelectItem value="kg1">KG-I</SelectItem>
-                          <SelectItem value="kg2">KG-II</SelectItem>
-                          <SelectItem value="class1">Class I</SelectItem>
-                          <SelectItem value="class2">Class II</SelectItem>
-                          <SelectItem value="class3">Class III</SelectItem>
-                          <SelectItem value="class4">Class IV</SelectItem>
-                          <SelectItem value="class5">Class V</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="previousSchool">Previous School (if any)</Label>
-                    <Input
-                      id="previousSchool"
-                      value={formData.previousSchool}
-                      onChange={(e) => handleInputChange('previousSchool', e.target.value)}
-                      className="mt-2"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="interests">Child's Interests & Hobbies</Label>
-                    <Textarea
-                      id="interests"
-                      value={formData.interests}
-                      onChange={(e) => handleInputChange('interests', e.target.value)}
-                      className="mt-2"
-                      rows={3}
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="medicalInfo">Medical Information (Allergies, Special Needs, etc.)</Label>
-                    <Textarea
-                      id="medicalInfo"
-                      value={formData.medicalInfo}
-                      onChange={(e) => handleInputChange('medicalInfo', e.target.value)}
-                      className="mt-2"
-                      rows={3}
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="inquiryType">Type of Inquiry</Label>
-                    <Select value={formData.inquiryType} onValueChange={(value) => handleInputChange('inquiryType', value)}>
+                    <Label htmlFor="preferredGrade">Preferred Grade</Label>
+                    <Select value={formData.preferredGrade} onValueChange={(value) => handleInputChange('preferredGrade', value)}>
                       <SelectTrigger className="mt-2">
-                        <SelectValue />
+                        <SelectValue placeholder="Select grade" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="admission">Admission Inquiry</SelectItem>
-                        <SelectItem value="visit">School Visit</SelectItem>
-                        <SelectItem value="information">General Information</SelectItem>
-                        <SelectItem value="transfer">Transfer Student</SelectItem>
+                        <SelectItem value="nursery">Nursery</SelectItem>
+                        <SelectItem value="kg1">KG-I</SelectItem>
+                        <SelectItem value="kg2">KG-II</SelectItem>
+                        <SelectItem value="class1">Class I</SelectItem>
+                        <SelectItem value="class2">Class II</SelectItem>
+                        <SelectItem value="class3">Class III</SelectItem>
+                        <SelectItem value="class4">Class IV</SelectItem>
+                        <SelectItem value="class5">Class V</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
-                    <Label htmlFor="message">Additional Message</Label>
+                    <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
                       value={formData.message}

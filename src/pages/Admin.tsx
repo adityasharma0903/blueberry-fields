@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import WaveDivider from '../components/WaveDivider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -17,7 +17,7 @@ import {
   Calendar, 
   Star,
   Camera,
-  Image as ImageIcon,
+  ImageIcon,
   Trash2,
   Edit,
   Eye,
@@ -27,11 +27,39 @@ import {
   Settings,
   BarChart3,
   FileText,
-  CheckCircle,
-  XCircle,
   Clock,
   Filter
 } from 'lucide-react';
+
+// Paste your Google Apps Script Web App URL here. This is the same URL used for form submission.
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec';
+
+const SCRIPT_URL_INQUIRIES = 'https://script.google.com/macros/s/AKfycbzA0DqrOCZPfyjyYw_mwMEW2XkVDb8tPorwnXJAHXPHjQ7zevwkAZypydBPey6qixfK/exec';
+
+// Self-contained Layout component
+// const Layout = ({ children }) => {
+//   return (
+//     <div className="bg-background font-sans text-foreground">
+//       <main>{children}</main>
+//     </div>
+//   );
+// };
+
+// // Self-contained WaveDivider component
+// const WaveDivider = ({ position }) => {
+//   return (
+//     <div className={`w-full ${position === 'bottom' ? 'relative' : ''}`}>
+//       <svg
+//         className={`w-full h-auto text-background fill-current ${position === 'bottom' ? 'block' : 'hidden'}`}
+//         viewBox="0 0 1440 100"
+//         xmlns="http://www.w3.org/2000/svg"
+//         preserveAspectRatio="none"
+//       >
+//         <path d="M0,0C0,0,240,100,720,100S1440,0,1440,0V-0L0,0Z"></path>
+//       </svg>
+//     </div>
+//   );
+// };
 
 const Admin = () => {
   const { toast } = useToast();
@@ -39,77 +67,104 @@ const Admin = () => {
     category: '',
     title: '',
     description: '',
-    file: null as File | null
+    file: null
   });
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [inquiries, setInquiries] = useState([]);
+  const [loadingFeedbacks, setLoadingFeedbacks] = useState(true);
+  const [loadingInquiries, setLoadingInquiries] = useState(true);
+  const [filterType, setFilterType] = useState('all');
 
-  // Mock data for admin dashboard
-  const inquiries = [
-    {
-      id: 1,
-      type: 'admission',
-      name: 'Priya Sharma',
-      email: 'priya.sharma@email.com',
-      phone: '+91 98765 43210',
-      subject: 'Admission for KG-I',
-      message: 'I would like to know about the admission process for my 4-year-old daughter.',
-      date: '2024-03-20',
-      status: 'pending',
-      priority: 'high'
-    },
-    {
-      id: 2,
-      type: 'feedback',
-      name: 'Rajesh Kumar',
-      email: 'rajesh.k@email.com',
-      phone: '+91 98765 43211',
-      subject: 'Great teaching quality',
-      message: 'I am very impressed with the quality of education my son is receiving.',
-      date: '2024-03-19',
-      status: 'responded',
-      priority: 'low'
-    },
-    {
-      id: 3,
-      type: 'visit',
-      name: 'Anjali Singh',
-      email: 'anjali.singh@email.com',
-      phone: '+91 98765 43212',
-      subject: 'Campus visit request',
-      message: 'We would like to schedule a campus tour for next week.',
-      date: '2024-03-18',
-      status: 'scheduled',
-      priority: 'medium'
+  // New state for admission inquiry filter
+  const [inquiryFilter, setInquiryFilter] = useState('all');
+
+  // Fetch feedbacks and inquiries on component mount
+  useEffect(() => {
+    const fetchFeedbacks = async () => {
+      try {
+        const response = await fetch(SCRIPT_URL + '?action=getFeedbacks', {
+          method: 'GET',
+          mode: 'cors',
+        });
+        const data = await response.json();
+        setFeedbacks(data);
+      } catch (error) {
+        console.error('Error fetching feedbacks:', error);
+        toast({
+          title: "Failed to load feedbacks",
+          description: "There was an error retrieving data from the server.",
+          variant: "destructive"
+        });
+      } finally {
+        setLoadingFeedbacks(false);
+      }
+    };
+
+    const fetchInquiries = async () => {
+      try {
+        const response = await fetch(SCRIPT_URL_INQUIRIES + '?action=getInquiries', {
+          method: 'GET',
+          mode: 'cors',
+        });
+        const data = await response.json();
+        setInquiries(data);
+      } catch (error) {
+        console.error('Error fetching inquiries:', error);
+        toast({
+          title: "Failed to load inquiries",
+          description: "There was an error retrieving data from the server.",
+          variant: "destructive"
+        });
+      } finally {
+        setLoadingInquiries(false);
+      }
+    };
+
+    fetchFeedbacks();
+    fetchInquiries();
+  }, [toast]);
+
+  // Handle status change
+  const handleStatusChange = async (uniqueId, newStatus) => {
+    const confirmed = window.confirm(`Are you sure you want to change the status to ${newStatus}?`);
+    if (!confirmed) return;
+
+    try {
+      const response = await fetch(SCRIPT_URL_INQUIRIES, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          action: 'updateStatus', // Correctly added the action parameter
+          uniqueId, 
+          newStatus 
+        }),
+      });
+
+      console.log('Status update response:', response);
+      toast({
+        title: "Status Updated",
+        description: `Inquiry status for ID ${uniqueId} changed to ${newStatus}.`,
+      });
+
+      // Update the local state to reflect the change immediately
+      setInquiries(prev => prev.map(inquiry => 
+        inquiry["Unique ID"] === uniqueId ? { ...inquiry, "Status": newStatus } : inquiry
+      ));
+
+    } catch (error) {
+      console.error('Error updating status:', error);
+      toast({
+        title: "Status Update Failed",
+        description: "There was an error updating the status on the server.",
+        variant: "destructive",
+      });
     }
-  ];
+  };
 
-  const galleryImages = [
-    {
-      id: 1,
-      title: 'Annual Day Performance',
-      category: 'events',
-      uploadDate: '2024-03-15',
-      views: 156,
-      status: 'published'
-    },
-    {
-      id: 2,
-      title: 'Science Lab Activity',
-      category: 'classroom',
-      uploadDate: '2024-03-14',
-      views: 89,
-      status: 'published'
-    },
-    {
-      id: 3,
-      title: 'Playground Fun',
-      category: 'sports',
-      uploadDate: '2024-03-13',
-      views: 234,
-      status: 'draft'
-    }
-  ];
-
-  const handlePhotoUpload = (e: React.FormEvent) => {
+  const handlePhotoUpload = (e) => {
     e.preventDefault();
     if (!photoUpload.file || !photoUpload.category) {
       toast({
@@ -134,26 +189,26 @@ const Admin = () => {
     });
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
-      setPhotoUpload(prev => ({ ...prev, file: e.target.files![0] }));
+      setPhotoUpload(prev => ({ ...prev, file: e.target.files[0] }));
     }
-  };
-
-  const handleInquiryStatusUpdate = (id: number, status: string) => {
-    console.log(`Updating inquiry ${id} status to ${status}`);
-    toast({
-      title: "Status Updated",
-      description: `Inquiry status changed to ${status}.`
-    });
   };
 
   const stats = [
     { title: 'Total Students', value: '245', icon: Users, color: 'bg-primary' },
-    { title: 'Pending Inquiries', value: '8', icon: MessageCircle, color: 'bg-secondary' },
+    { title: 'Total Feedbacks', value: feedbacks.length, icon: MessageCircle, color: 'bg-secondary' },
     { title: 'Campus Visits', value: '12', icon: Calendar, color: 'bg-primary' },
     { title: 'Gallery Photos', value: '156', icon: Camera, color: 'bg-secondary' }
   ];
+
+  const filteredFeedbacks = feedbacks.filter(feedback => 
+    filterType === 'all' || feedback.type === filterType
+  );
+
+  const filteredInquiries = inquiries.filter(inquiry =>
+    inquiryFilter === 'all' || (inquiry.Status || '').toLowerCase() === inquiryFilter
+  );
 
   return (
     <Layout>
@@ -208,10 +263,11 @@ const Admin = () => {
       {/* Admin Tabs */}
       <section className="py-16 lg:py-20 bg-accent/30">
         <div className="container mx-auto px-4">
-          <Tabs defaultValue="photo-upload" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-8 lg:mb-12">
+          <Tabs defaultValue="admission-inquiries" className="w-full">
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-4 mb-8 lg:mb-12">
               <TabsTrigger value="photo-upload">Photo Upload</TabsTrigger>
-              <TabsTrigger value="inquiries">Manage Inquiries</TabsTrigger>
+              <TabsTrigger value="feedbacks">Feedbacks</TabsTrigger>
+              <TabsTrigger value="admission-inquiries">Admission Inquiries</TabsTrigger>
               <TabsTrigger value="gallery">Gallery Manager</TabsTrigger>
             </TabsList>
 
@@ -307,132 +363,174 @@ const Admin = () => {
               </Card>
             </TabsContent>
 
-            {/* Inquiries Management Tab */}
-            <TabsContent value="inquiries" className="space-y-6 lg:space-y-8">
+            {/* Feedbacks Tab */}
+            <TabsContent value="feedbacks" className="space-y-6 lg:space-y-8">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                <h3 className="text-xl lg:text-2xl font-heading font-bold">Manage Inquiries & Feedback</h3>
+                <h3 className="text-xl lg:text-2xl font-heading font-bold">Feedbacks</h3>
                 <div className="flex items-center space-x-2">
                   <Filter size={16} />
-                  <Select defaultValue="all">
+                  <Select value={filterType} onValueChange={setFilterType}>
                     <SelectTrigger className="w-40">
-                      <SelectValue />
+                      <SelectValue placeholder="Filter by type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Inquiries</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
-                      <SelectItem value="responded">Responded</SelectItem>
-                      <SelectItem value="scheduled">Scheduled</SelectItem>
+                      <SelectItem value="all">All Feedbacks</SelectItem>
+                      <SelectItem value="feedback">General Feedback</SelectItem>
+                      <SelectItem value="complaint">Complaint</SelectItem>
+                      <SelectItem value="suggestion">Suggestion</SelectItem>
+                      <SelectItem value="compliment">Compliment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
 
               <div className="space-y-4 lg:space-y-6">
-                {inquiries.map((inquiry) => (
-                  <Card key={inquiry.id} className="border-0 shadow-soft">
-                    <CardContent className="p-4 lg:p-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                        <div className="lg:col-span-3 space-y-3">
+                {loadingFeedbacks ? (
+                  <div className="text-center text-muted-foreground">Loading feedbacks...</div>
+                ) : feedbacks.length > 0 ? (
+                  filteredFeedbacks.map((feedback, index) => (
+                    <Card key={index} className="border-0 shadow-soft">
+                      <CardContent className="p-4 lg:p-6">
+                        <div className="space-y-3">
                           <div className="flex flex-wrap items-center gap-2">
-                            <Badge 
-                              className={`text-xs ${
-                                inquiry.type === 'admission' ? 'bg-primary text-primary-foreground' :
-                                inquiry.type === 'feedback' ? 'bg-secondary text-secondary-foreground' :
-                                'bg-muted text-muted-foreground'
-                              }`}
-                            >
-                              {inquiry.type.toUpperCase()}
+                            <Badge className="text-xs bg-secondary text-secondary-foreground">
+                              {feedback.type ? feedback.type.toUpperCase() : 'FEEDBACK'}
                             </Badge>
-                            <Badge 
-                              variant={
-                                inquiry.priority === 'high' ? 'destructive' :
-                                inquiry.priority === 'medium' ? 'default' : 'secondary'
-                              }
-                              className="text-xs"
-                            >
-                              {inquiry.priority.toUpperCase()}
-                            </Badge>
-                            <Badge 
-                              variant="outline" 
-                              className={`text-xs ${
-                                inquiry.status === 'pending' ? 'border-yellow-500 text-yellow-700' :
-                                inquiry.status === 'responded' ? 'border-green-500 text-green-700' :
-                                'border-blue-500 text-blue-700'
-                              }`}
-                            >
-                              <Clock size={12} className="mr-1" />
-                              {inquiry.status.toUpperCase()}
-                            </Badge>
+                            {/* Priority badge logic can be added here if you collect it */}
                           </div>
 
                           <div>
-                            <h4 className="font-heading font-bold text-base lg:text-lg">{inquiry.subject}</h4>
-                            <p className="text-sm text-muted-foreground mt-1">From: {inquiry.name}</p>
+                            <h4 className="font-heading font-bold text-base lg:text-lg">{feedback.subject || 'No Subject'}</h4>
+                            <p className="text-sm text-muted-foreground mt-1">From: {feedback.name}</p>
                           </div>
 
-                          <p className="text-sm lg:text-base text-muted-foreground">{inquiry.message}</p>
+                          <p className="text-sm lg:text-base text-muted-foreground">{feedback.message}</p>
 
                           <div className="flex flex-wrap items-center gap-4 text-xs lg:text-sm text-muted-foreground">
                             <div className="flex items-center space-x-1">
                               <Mail size={14} />
-                              <span>{inquiry.email}</span>
+                              <span>{feedback.email}</span>
                             </div>
                             <div className="flex items-center space-x-1">
                               <Phone size={14} />
-                              <span>{inquiry.phone}</span>
+                              <span>{feedback.phone}</span>
                             </div>
                             <div className="flex items-center space-x-1">
-                              <Calendar size={14} />
-                              <span>{inquiry.date}</span>
+                              <Clock size={14} />
+                              <span>{new Date(feedback.Timestamp).toLocaleString()}</span>
                             </div>
                           </div>
                         </div>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <div className="text-center text-muted-foreground">No feedbacks found.</div>
+                )}
+              </div>
+            </TabsContent>
 
-                        <div className="flex flex-col gap-2">
-                          <Button size="sm" variant="outline">
-                            <Eye size={16} className="mr-2" />
-                            View Details
-                          </Button>
-                          <Select onValueChange={(value) => handleInquiryStatusUpdate(inquiry.id, value)}>
-                          <SelectTrigger className="text-sm">
-                            <SelectValue placeholder="Change Status" />
-                          </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="pending">
-                                <div className="flex items-center">
-                                  <Clock size={14} className="mr-2" />
-                                  Pending
-                                </div>
-                              </SelectItem>
-                              <SelectItem value="responded">
-                                <div className="flex items-center">
-                                  <CheckCircle size={14} className="mr-2" />
-                                  Responded
-                                </div>
-                              </SelectItem>
-                              <SelectItem value="scheduled">
-                                <div className="flex items-center">
-                                  <Calendar size={14} className="mr-2" />
-                                  Scheduled
-                                </div>
-                              </SelectItem>
-                              <SelectItem value="closed">
-                                <div className="flex items-center">
-                                  <XCircle size={14} className="mr-2" />
-                                  Closed
-                                </div>
-                              </SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <Button size="sm" className="bg-primary text-primary-foreground">
-                            <Mail size={16} className="mr-2" />
-                            Reply
-                          </Button>
+            {/* Admission Inquiries Tab */}
+            <TabsContent value="admission-inquiries" className="space-y-6 lg:space-y-8">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <h3 className="text-xl lg:text-2xl font-heading font-bold">Admission Inquiries</h3>
+                <div className="flex items-center space-x-2">
+                  <Filter size={16} />
+                  <Select value={inquiryFilter} onValueChange={setInquiryFilter}>
+                    <SelectTrigger className="w-40">
+                      <SelectValue placeholder="Filter by status" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Inquiries</SelectItem>
+                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="contacted">Contacted</SelectItem>
+                      <SelectItem value="resolved">Resolved</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="space-y-4 lg:space-y-6">
+                {loadingInquiries ? (
+                  <div className="text-center text-muted-foreground">Loading inquiries...</div>
+                ) : filteredInquiries.length > 0 ? (
+                  filteredInquiries.map((inquiry, index) => (
+                    <Card key={index} className="border-0 shadow-soft">
+                      <CardContent className="p-4 lg:p-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                          <div className="lg:col-span-3 space-y-3">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <Badge className="text-xs bg-primary text-primary-foreground">
+                                {inquiry.Status ? inquiry.Status.toUpperCase() : 'PENDING'}
+                              </Badge>
+                              <span className="text-xs text-muted-foreground font-semibold">
+                                ID: {inquiry["Unique ID"]}
+                              </span>
+                            </div>
+
+                            <div>
+                              <h4 className="font-heading font-bold text-base lg:text-lg">Inquiry for {inquiry["Child's Full Name"]}</h4>
+                              <p className="text-sm text-muted-foreground mt-1">From: {inquiry["Parent/Guardian Name"]}</p>
+                            </div>
+
+                            <p className="text-sm lg:text-base text-muted-foreground">{inquiry.Message}</p>
+
+                            <div className="flex flex-wrap items-center gap-4 text-xs lg:text-sm text-muted-foreground">
+                              <div className="flex items-center space-x-1">
+                                <Mail size={14} />
+                                <a href={`mailto:${inquiry["Email Address"]}`} className="text-blue-500 hover:underline">
+                                  {inquiry["Email Address"]}
+                                </a>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <Phone size={14} />
+                                <a href={`tel:${inquiry["Phone Number"]}`} className="text-blue-500 hover:underline">
+                                  {inquiry["Phone Number"]}
+                                </a>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <Calendar size={14} />
+                                <span>
+                                  {inquiry.Timestamp
+                                    ? (() => {
+                                        const d = new Date(inquiry.Timestamp);
+                                        const day = String(d.getDate()).padStart(2, '0');
+                                        const month = String(d.getMonth() + 1).padStart(2, '0');
+                                        const year = d.getFullYear();
+                                        return `${day}/${month}/${year}`;
+                                      })()
+                                    : ''}
+                                </span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <Users size={14} />
+                                <span>Preferred Grade: {inquiry["Preferred Grade"] || 'N/A'}</span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div className="lg:col-span-1 flex flex-col items-start lg:items-end justify-between">
+                            <Select 
+                              value={inquiry.Status.toLowerCase()} 
+                              onValueChange={(value) => handleStatusChange(inquiry["Unique ID"], value)}
+                            >
+                              <SelectTrigger className="w-[180px]">
+                                <SelectValue placeholder="Change Status" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="pending">Pending</SelectItem>
+                                <SelectItem value="contacted">Contacted</SelectItem>
+                                <SelectItem value="resolved">Resolved</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  <div className="text-center text-muted-foreground">No admission inquiries found.</div>
+                )}
               </div>
             </TabsContent>
 
@@ -447,44 +545,7 @@ const Admin = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                {galleryImages.map((image) => (
-                  <Card key={image.id} className="border-0 shadow-soft overflow-hidden">
-                    <div className="bg-gray-200 h-48 flex items-center justify-center">
-                      <ImageIcon size={48} className="text-gray-400" />
-                    </div>
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge 
-                          variant={image.status === 'published' ? 'default' : 'secondary'}
-                          className="text-xs"
-                        >
-                          {image.status.toUpperCase()}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">{image.views} views</span>
-                      </div>
-                      <h4 className="font-semibold text-sm mb-1">{image.title}</h4>
-                      <p className="text-xs text-muted-foreground mb-3">Category: {image.category}</p>
-                      <p className="text-xs text-muted-foreground mb-4">Uploaded: {image.uploadDate}</p>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex space-x-1">
-                          <Button size="sm" variant="outline" className="p-1 h-8 w-8">
-                            <Eye size={14} />
-                          </Button>
-                          <Button size="sm" variant="outline" className="p-1 h-8 w-8">
-                            <Edit size={14} />
-                          </Button>
-                          <Button size="sm" variant="outline" className="p-1 h-8 w-8 text-red-500 hover:text-red-700">
-                            <Trash2 size={14} />
-                          </Button>
-                        </div>
-                        <Button size="sm" variant="ghost" className="p-1 h-8 w-8">
-                          <Download size={14} />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                {/* Mock data for gallery */}
               </div>
             </TabsContent>
           </Tabs>
@@ -499,8 +560,6 @@ const Admin = () => {
         <div className="absolute bottom-8 lg:bottom-16 right-12 lg:right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={18} className="lg:w-6 lg:h-6" fill="currentColor" />
         </div>
-
-        {/* <WaveDivider position="top" /> */}
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 lg:mb-16">
@@ -537,7 +596,6 @@ const Admin = () => {
           </div>
         </div>
 
-        {/* <WaveDivider position="bottom" /> */}
       </section>
     </Layout>
   );
