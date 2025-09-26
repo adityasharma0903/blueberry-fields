@@ -37,7 +37,7 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq
 const SCRIPT_URL_INQUIRIES = 'https://script.google.com/macros/s/AKfycbzA0DqrOCZPfyjyYw_mwMEW2XkVDb8tPorwnXJAHXPHjQ7zevwkAZypydBPey6qixfK/exec';
 
 // ... other SCRIPT_URL constants
-const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyQcbD4XrTOcgDpZ2M04wX4psSl8viavrsjMReZix4Ma05TzisjFTUoaVbk1XCGzQU5/exec';
+const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyId-jJeZryjL4YD0PNmCDHUtTscBCgL-M-_p7odbt5oCIWHYsWa9i5k44Xm-69uhK08A/exec';
 
 // put these at top of Admin.tsx (outside component)
 const CLOUD_NAME = "dtbelwhff";   // e.g. blueberryfields

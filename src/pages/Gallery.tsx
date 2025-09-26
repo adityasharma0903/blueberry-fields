@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ZoomIn, Camera, Calendar } from 'lucide-react';
 
-const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbysW7YnRhTc1TwyQmDxdXMlBisZc23nZeR_1yjrogBqGRJmDTtaQ72fknT7mxQ-xzES/exec';
+const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyId-jJeZryjL4YD0PNmCDHUtTscBCgL-M-_p7odbt5oCIWHYsWa9i5k44Xm-69uhK08A/exec';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -23,30 +23,54 @@ const Gallery = () => {
   ];
 
 useEffect(() => {
-  const fetchPhotos = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch(`${SCRIPT_URL_GALLERY}?action=getPhotos`);
-      const data = await res.json();
+  const fetchPhotos = () => {
+    setLoading(true);
+    
+    // JSONP request ke liye random callback function name
+    const callbackName = 'jsonpCallback_' + Date.now(); 
 
-      if (Array.isArray(data)) {
-        const clean = data.map(item => ({
-          ...item,
-          imageUrl: item["ImageUrl"] || item["ImageUrl "] || "",
-          category: item["Category"] || item["Category "] || "",
-          description: item["Description"] || item["Description "] || "",
-          title: item["Title"] || "",
-          Timestamp: item["Timestamp"]
-        }));
-        setPhotos(clean.reverse());
-      } else {
-        setPhotos([]);
+    // 1. Script element create karein
+    const script = document.createElement('script');
+    
+    // 2. URL mein 'callback' parameter add karein
+    script.src = `${SCRIPT_URL_GALLERY}?action=getPhotos&callback=${callbackName}`;
+    
+    // 3. Global window object par callback function define karein
+    window[callbackName] = (data) => {
+      try {
+        if (Array.isArray(data)) {
+          const clean = data.map(item => ({
+            imageUrl: item["ImageUrl"] || "",
+            category: item["Category"] || "",
+            description: item["Description"] || "",
+            title: item["Title"] || "",
+            Timestamp: item["Timestamp"]
+          }));
+          setPhotos(clean.reverse());
+        } else {
+          setPhotos([]);
+        }
+      } catch (err) {
+        console.error("JSONP Data Process Error:", err);
+      } finally {
+        // Cleaning up
+        delete window[callbackName];
+        script.remove();
+        setLoading(false);
       }
-    } catch (err) {
-      console.error("Fetch Gallery Error:", err);
-    } finally {
-      setLoading(false);
-    }
+    };
+    
+    // 4. Script ko document body mein append karein (request shuru)
+    document.body.appendChild(script);
+
+    // Error/Timeout handling (Optional but recommended)
+    script.onerror = () => {
+        console.error("Fetch Gallery Error: JSONP Script Load Failed");
+        delete window[callbackName];
+        script.remove();
+        setLoading(false);
+    };
+    
   };
   fetchPhotos();
 }, []);
