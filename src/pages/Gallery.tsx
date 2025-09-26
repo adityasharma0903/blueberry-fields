@@ -22,22 +22,35 @@ const Gallery = () => {
     { id: 'celebrations', name: 'Celebrations' },
   ];
 
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch(`${SCRIPT_URL_GALLERY}?action=getPhotos`);
-        const data = await res.json();
-        if (Array.isArray(data)) setPhotos(data.reverse());
-        else setPhotos([]);
-      } catch (err) {
-        console.error("Fetch Gallery Error:", err);
-      } finally {
-        setLoading(false);
+useEffect(() => {
+  const fetchPhotos = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch(`${SCRIPT_URL_GALLERY}?action=getPhotos`);
+      const data = await res.json();
+
+      if (Array.isArray(data)) {
+        const clean = data.map(item => ({
+          ...item,
+          imageUrl: item["ImageUrl"] || item["ImageUrl "] || "",
+          category: item["Category"] || item["Category "] || "",
+          description: item["Description"] || item["Description "] || "",
+          title: item["Title"] || "",
+          Timestamp: item["Timestamp"]
+        }));
+        setPhotos(clean.reverse());
+      } else {
+        setPhotos([]);
       }
-    };
-    fetchPhotos();
-  }, []);
+    } catch (err) {
+      console.error("Fetch Gallery Error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchPhotos();
+}, []);
+
 
   const filteredImages = selectedCategory === 'all'
     ? photos

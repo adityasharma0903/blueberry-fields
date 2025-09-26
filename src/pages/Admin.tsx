@@ -215,14 +215,12 @@ const handlePhotoUpload = async (e: React.FormEvent) => {
       description: photoUpload.description || "",
     };
 
-    await fetch(SCRIPT_URL_GALLERY, {
-      method: "POST",
-      mode: "no-cors", // <-- IMPORTANT
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(photoData),
-    });
+await fetch(SCRIPT_URL_GALLERY, {
+  method: "POST",
+  mode: "no-cors",
+  body: JSON.stringify(photoData),  // sirf body bhejna
+});
+
 
     // yahan JSON parse nahi hoga, direct success assume karna padega
     toast({
