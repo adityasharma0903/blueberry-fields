@@ -36,6 +36,13 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq
 
 const SCRIPT_URL_INQUIRIES = 'https://script.google.com/macros/s/AKfycbzA0DqrOCZPfyjyYw_mwMEW2XkVDb8tPorwnXJAHXPHjQ7zevwkAZypydBPey6qixfK/exec';
 
+// ... other SCRIPT_URL constants
+const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyQcbD4XrTOcgDpZ2M04wX4psSl8viavrsjMReZix4Ma05TzisjFTUoaVbk1XCGzQU5/exec';
+
+// put these at top of Admin.tsx (outside component)
+const CLOUD_NAME = "dtbelwhff";   // e.g. blueberryfields
+const UPLOAD_PRESET = "blueberry_unsigned"; // the unsigned preset you created
+
 // Self-contained Layout component
 // const Layout = ({ children }) => {
 //   return (
@@ -164,30 +171,77 @@ const Admin = () => {
     }
   };
 
-  const handlePhotoUpload = (e) => {
-    e.preventDefault();
-    if (!photoUpload.file || !photoUpload.category) {
-      toast({
-        title: "Missing Information",
-        description: "Please select a file and category before uploading.",
-        variant: "destructive"
-      });
-      return;
-    }
+// In Admin.tsx
 
-    console.log('Photo upload:', photoUpload);
+const handlePhotoUpload = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!photoUpload.file || !photoUpload.category) {
     toast({
-      title: "Photo Uploaded Successfully!",
-      description: `Image added to ${photoUpload.category} gallery.`
+      title: "Missing Information",
+      description: "Please select a file and category before uploading.",
+      variant: "destructive",
+    });
+    return;
+  }
+
+  try {
+    // 1. Upload to Cloudinary
+    const formData = new FormData();
+    formData.append("file", photoUpload.file);
+    formData.append("upload_preset", UPLOAD_PRESET);
+    formData.append("folder", "blueberry_gallery");
+
+    const cloudinaryRes = await fetch(
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+    const cloudinaryData = await cloudinaryRes.json();
+    const imageUrl = cloudinaryData.secure_url;
+
+    toast({
+      title: "Cloudinary Success!",
+      description: "Saving data to gallery...",
     });
 
-    setPhotoUpload({
-      category: '',
-      title: '',
-      description: '',
-      file: null
+    // 2. Send data to Google Apps Script (no-cors)
+    const photoData = {
+      imageUrl: imageUrl,
+      category: photoUpload.category,
+      title: photoUpload.title || "",
+      description: photoUpload.description || "",
+    };
+
+    await fetch(SCRIPT_URL_GALLERY, {
+      method: "POST",
+      mode: "no-cors", // <-- IMPORTANT
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(photoData),
     });
-  };
+
+    // yahan JSON parse nahi hoga, direct success assume karna padega
+    toast({
+      title: "Success!",
+      description: "Photo has been added to the gallery.",
+    });
+    setPhotoUpload({ category: "", title: "", description: "", file: null });
+
+  } catch (err: any) {
+    console.error("Upload Error:", err);
+    toast({
+      title: "Upload Failed",
+      description: `An error occurred: ${err.message}`,
+      variant: "destructive",
+    });
+  }
+};
+
+
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
