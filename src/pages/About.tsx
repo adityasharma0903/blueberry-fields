@@ -111,7 +111,7 @@ const About = () => {
                   unique needs and interests.
                 </p>
                 <div className="bg-secondary/10 p-4 rounded-lg">
-                  <h4 className="font-heading font-bold text-lg mb-2">Mrs. Sunita Sharma</h4>
+                  <h4 className="font-heading font-bold text-lg mb-2">Mrs. Malvika Bansal</h4>
                   <p className="text-sm text-muted-foreground">
                     M.Ed, B.Ed | Principal<br/>
                     15+ Years in Educational Leadership
