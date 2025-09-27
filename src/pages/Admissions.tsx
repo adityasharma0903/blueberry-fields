@@ -354,25 +354,25 @@ const Admissions = () => {
             <Card className="border-0 shadow-soft text-center p-6">
               <Phone size={32} className="text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold mb-2">Phone</h3>
-              <p className="text-muted-foreground">+91 98765 43210</p>
+              <p className="text-muted-foreground">+91 9646781248 <br></br> +91 9041041248</p>
             </Card>
 
             <Card className="border-0 shadow-soft text-center p-6">
               <Mail size={32} className="text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold mb-2">Email</h3>
-              <p className="text-muted-foreground">admissions@blueberryfields.edu.in</p>
+              <p className="text-muted-foreground">blueberryfieldsschool@gmail.com</p>
             </Card>
 
             <Card className="border-0 shadow-soft text-center p-6">
               <MapPin size={32} className="text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold mb-2">Visit Us</h3>
-              <p className="text-muted-foreground">Main Road, Derabassi, Punjab</p>
+              <p className="text-muted-foreground">#885, Blueberry Fields School, Sec-16, Adjacent Sukhmani Engineering College, Sarswati vihar, Dera Bassi</p>
             </Card>
 
             <Card className="border-0 shadow-soft text-center p-6">
               <Clock size={32} className="text-primary mx-auto mb-4" />
               <h3 className="font-heading font-bold mb-2">Office Hours</h3>
-              <p className="text-muted-foreground">Mon-Fri: 9 AM - 4 PM</p>
+              <p className="text-muted-foreground">Mon-Fri: 8 AM - 2 PM</p>
             </Card>
           </div>
         </div>

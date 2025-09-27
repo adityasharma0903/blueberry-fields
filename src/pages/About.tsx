@@ -27,7 +27,7 @@ const About = () => {
               About <span className="text-secondary">Blueberry Fields</span>
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              Nurturing young minds since 2009 with love, care, and quality education in Derabassi
+              Nurturing young minds since 2023 with love, care, and quality education
             </p>
           </div>
         </div>
@@ -101,9 +101,7 @@ const About = () => {
               <div className="space-y-4">
                 <div className="bg-primary/5 p-6 rounded-xl border-l-4 border-primary">
                   <p className="text-muted-foreground italic leading-relaxed">
-                    "Welcome to Blueberry Fields School, where every child is valued, nurtured, and empowered 
-                    to reach their full potential. Our commitment to excellence in education goes beyond 
-                    academics – we focus on developing confident, compassionate, and capable individuals."
+                    "At Blueberry Fields School, our aim is to develop honesty, discipline, respect and moral values in child at early stage of life in parallel with on going advanced and smart teaching skills."
                   </p>
                 </div>
                 <p className="text-muted-foreground">
@@ -152,9 +150,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide a nurturing, safe, and stimulating environment where children can develop 
-                  their full potential through innovative teaching methods, individual attention, and 
-                  holistic development programs that prepare them for lifelong success.
+                  Building a learning environment that value diversity, promotes critical thinking and inspires students to reach their full potential.
                 </p>
               </CardContent>
             </Card>
@@ -166,9 +162,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the leading educational institution in the region, recognized for academic excellence, 
-                  character development, and innovative teaching practices that inspire students to become 
-                  confident, creative, and compassionate global citizens.
+                  We emphasize student growth, well-being, and success, while also promoting high academic standards and achievements. At the same time, we are committed to nurturing well-rounded individuals who excel academically, socially, and emotionally in a dynamic learning environment.
                 </p>
               </CardContent>
             </Card>

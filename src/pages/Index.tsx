@@ -259,7 +259,7 @@ const [isPlaying, setIsPlaying] = useState(false);
               />
               <div className="absolute -top-4 -right-4 bg-secondary p-4 rounded-2xl shadow-strong">
                 <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-secondary-foreground">15+</div>
+                  <div className="text-2xl font-heading font-bold text-secondary-foreground">2+</div>
                   <div className="text-sm text-secondary-foreground">Years Experience</div>
                 </div>
               </div>
@@ -426,7 +426,7 @@ const [isPlaying, setIsPlaying] = useState(false);
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-white/10 rounded-xl">
-                  <div className="text-2xl font-heading font-bold text-secondary-foreground">25+</div>
+                  <div className="text-2xl font-heading font-bold text-secondary-foreground">10+</div>
                   <div className="text-sm text-secondary-foreground/80">Expert Teachers</div>
                 </div>
                 <div className="text-center p-4 bg-white/10 rounded-xl">

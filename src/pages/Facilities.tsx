@@ -4,19 +4,20 @@ import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  BookOpen, 
-  Monitor, 
-  FlaskConical, 
-  Music, 
-  UtensilsCrossed, 
-  Users, 
+import {
+  BookOpen,
+  Monitor,
+  FlaskConical,
+  Music,
+  UtensilsCrossed,
+  Users,
   Star,
   CheckCircle,
   PlayCircle,
   Gamepad2,
   Palette,
-  Shield
+  Shield,
+  HelpCircle
 } from 'lucide-react';
 import library from '@/assets/library.jpg';
 import scienceLab from '@/assets/science-lab.jpg';
@@ -38,28 +39,28 @@ const Facilities = () => {
       highlight: "Interactive Learning Zone"
     },
     {
-      name: "Science Laboratory", 
-      description: "Well-equipped science lab with safe, hands-on experiments designed for young scientists to explore and discover.",
-      image: scienceLab,
-      icon: FlaskConical,
-      features: ["Safe Equipment for Kids", "Hands-on Experiments", "Microscopes & Models", "Safety Protocol"],
-      highlight: "Young Scientists Program"
+      name: "Transport",
+      description: "Safe and reliable school transport service ensuring comfortable travel for students across the city.",
+      image: library,
+      icon: BookOpen,
+      features: ["GPS-Enabled Buses", "Trained Drivers & Attendants", "Safe Pick-up & Drop-off", "Comfortable Seating"],
+      highlight: "Secure Student Travel"
     },
     {
-      name: "Computer Lab",
-      description: "Modern computer facility with latest educational software to introduce children to digital literacy and coding basics.",
+      name: "Dance Academy",
+      description: "A vibrant space where students explore classical and modern dance forms, building confidence, rhythm, and creativity.",
       image: computerLab,
       icon: Monitor,
-      features: ["25 Latest Computers", "Educational Software", "Internet Access", "Digital Literacy Programs"],
-      highlight: "Coding for Kids"
+      features: ["Trained Instructors", "Classical & Modern Dance", "Annual Performances", "Confidence & Teamwork"],
+      highlight: "Express Through Dance"
     },
     {
-      name: "Music & Dance Room",
-      description: "Spacious room with musical instruments and sound system for developing artistic talents and creative expression.",
+      name: "Music & Singing",
+      description: "A creative hub where students learn vocal and instrumental music, fostering talent, expression, and passion for the arts.",
       image: musicRoom,
       icon: Music,
-      features: ["Piano & Keyboard", "Traditional Instruments", "Sound System", "Performance Space"],
-      highlight: "Cultural Programs"
+      features: ["Vocal & Instrumental Training", "Individual & Group Sessions", "Stage Performances", "Creativity & Expression"],
+      highlight: "Melody in Learning"
     },
     {
       name: "Art & Craft Studio",
@@ -70,7 +71,7 @@ const Facilities = () => {
       highlight: "Art Exhibitions"
     },
     {
-      name: "Playground & Sports",
+      name: "Playground & Sports Room",
       description: "Large outdoor play area with age-appropriate equipment and sports facilities for physical development and recreation.",
       image: playground,
       icon: Gamepad2,
@@ -78,12 +79,12 @@ const Facilities = () => {
       highlight: "Daily Outdoor Play"
     },
     {
-      name: "Cafeteria",
-      description: "Hygienic food preparation area serving nutritious, freshly prepared meals with focus on healthy eating habits.",
-      image: cafeteria,
-      icon: UtensilsCrossed,
-      features: ["Nutritious Meals", "Hygienic Kitchen", "Healthy Snacks", "Special Diet Options"],
-      highlight: "Fresh Daily Meals"
+      name: "Taekwondo",
+      description: "A dedicated martial arts program that teaches self-discipline, focus, and physical fitness through Taekwondo training.",
+      image: playground,
+      icon: Gamepad2,
+      features: ["Self-Defense Techniques", "Discipline & Focus", "Physical Fitness", "Trained Instructors"],
+      highlight: "Strength & Confidence"
     },
     {
       name: "Smart Classrooms",
@@ -92,6 +93,22 @@ const Facilities = () => {
       icon: Users,
       features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Aids", "Climate Control"],
       highlight: "Interactive Learning"
+    },
+    {
+      name: "Skating Classes",
+      description: "Fun and safe skating sessions designed to improve balance, coordination, and confidence in young learners.",
+      image: heroClassroom,
+      icon: Users,
+      features: ["Safe Skating Gear", "Beginner to Advanced Levels", "Balance & Coordination Training", "Experienced Coaches"],
+      highlight: "Glide with Confidence"
+    },
+    {
+      name: "Tabla & Harmonium",
+      description: "Specialized music classes focusing on Tabla and Harmonium, helping students develop rhythm, melody, and musical expression.",
+      image: heroClassroom,
+      icon: Music,
+      features: ["Vocal & Instrumental Training", "Rhythm & Melody Skills", "Individual & Group Lessons", "Experienced Instructors"],
+      highlight: "Master the Beat & Tune"
     }
   ];
 
@@ -161,7 +178,7 @@ const Facilities = () => {
               Comprehensive Learning Facilities
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Every facility is designed with safety, learning, and fun in mind to provide the best 
+              Every facility is designed with safety, learning, and fun in mind to provide the best
               educational environment for children aged 3-11 years.
             </p>
           </div>
@@ -171,8 +188,8 @@ const Facilities = () => {
               <Card key={index} className="border-0 shadow-soft card-hover overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-5 h-full">
                   <div className="md:col-span-2 relative">
-                    <img 
-                      src={facility.image} 
+                    <img
+                      src={facility.image}
                       alt={facility.name}
                       className="w-full h-48 md:h-full object-cover"
                     />
@@ -223,7 +240,7 @@ const Facilities = () => {
         </div>
 
         {/* <WaveDivider position="top" /> */}
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 lg:mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Safety First</Badge>
@@ -283,8 +300,8 @@ const Facilities = () => {
           </div>
 
           <div className="text-center mt-12 lg:mt-16">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-6 lg:px-8"
             >
               <PlayCircle size={20} className="mr-2" />

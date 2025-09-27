@@ -9,11 +9,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
   Star,
   Send,
   MessageCircle,
@@ -122,10 +122,9 @@ const Contact = () => {
       icon: MapPin,
       title: "Visit Our Campus",
       details: [
-        "Blueberry Fields School",
-        "Near Main Market, GT Road",
+        "#885, Blueberry Fields School,",
+        "Adjacent Sukhmani Engineering College, Sarswati vihar,",
         "Derabassi, Punjab - 140507",
-        "India"
       ],
       color: "bg-primary"
     },
@@ -133,10 +132,8 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       details: [
-        "Main Office: +91 98765 43210",
-        "Admissions: +91 98765 43211", 
-        "Principal: +91 98765 43212",
-        "Emergency: +91 98765 43213"
+        "+91 9646781248",
+        "+91 9041041248",
       ],
       color: "bg-secondary"
     },
@@ -144,10 +141,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email Us",
       details: [
-        "info@blueberryfields.edu.in",
-        "admissions@blueberryfields.edu.in",
-        "principal@blueberryfields.edu.in",
-        "feedback@blueberryfields.edu.in"
+        "blueberryfieldsschool@gmail.com"
       ],
       color: "bg-primary"
     },
@@ -155,10 +149,8 @@ const Contact = () => {
       icon: Clock,
       title: "Office Hours",
       details: [
-        "School: 8:00 AM - 3:00 PM",
-        "Office: 9:00 AM - 4:00 PM", 
-        "Saturday: 9:00 AM - 1:00 PM",
-        "Sunday: Closed"
+        "School: 8:00 AM - 2:00 PM",
+        "Office: 8:00 AM - 2:00 PM",
       ],
       color: "bg-secondary"
     }
@@ -252,7 +244,7 @@ const Contact = () => {
                       className="mt-2"
                     />
                   </div>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="feedbackEmail">Email *</Label>
@@ -315,8 +307,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
                     disabled={loading}
                   >
@@ -338,7 +330,7 @@ const Contact = () => {
         <div className="absolute bottom-8 lg:bottom-16 right-12 lg:right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={18} className="lg:w-6 lg:h-6" fill="currentColor" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 lg:mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Find Us</Badge>
@@ -359,7 +351,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-2">By Car:</h4>
                       <p className="text-sm text-muted-foreground">
-                        Located on GT Road, near Main Market Derabassi. Ample parking available on campus.
+                        Located at #885, Blueberry Fields School, Sec-16, Sarswati vihar, Dera Bassi
                       </p>
                     </div>
                     <div>
@@ -371,7 +363,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-2">Landmarks:</h4>
                       <p className="text-sm text-muted-foreground">
-                        Near SBI Bank, opposite City Hospital, 2 km from Railway Station.
+                        Adjacent to Sukhmani Engineering College, Derabassi
                       </p>
                     </div>
                   </div>
@@ -379,32 +371,38 @@ const Contact = () => {
               </Card>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-secondary text-secondary-foreground hover:bg-secondary-light rounded-full"
+                  asChild
                 >
-                  <MapPin size={20} className="mr-2" />
-                  Get Directions
+                  <a
+                    href="https://maps.app.goo.gl/XeyBAZGJXFBgo9CJ7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MapPin size={20} className="mr-2" />
+                    Get Directions
+                  </a>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full"
+                  onClick={() => window.location.href = "tel:9646781248"}
                 >
                   <Phone size={20} className="mr-2" />
                   Call for Help
                 </Button>
+
+
               </div>
             </div>
 
             <div className="relative">
               <Card className="border-0 shadow-strong overflow-hidden">
                 <div className="bg-gray-200 h-64 lg:h-80 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin size={48} className="text-gray-500 mx-auto mb-4" />
-                    <p className="text-gray-600">Interactive Map</p>
-                    <p className="text-sm text-gray-500">Blueberry Fields School, Derabassi</p>
-                  </div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d773.4939305734298!2d76.83967878544932!3d30.58063289131161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDM0JzUwLjkiTiA3NsKwNTAnMjIuNyJF!5e0!3m2!1sen!2sin!4v1758972614420!5m2!1sen!2sin" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </Card>
             </div>

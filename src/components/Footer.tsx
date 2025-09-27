@@ -79,18 +79,19 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-secondary mt-1 flex-shrink-0" />
                 <div className="text-sm opacity-90">
-                  <p>Blueberry Fields School</p>
-                  <p>Main Road, Derabassi</p>
-                  <p>Punjab, India - 140507</p>
+                  <p>#885, Blueberry Fields School, Sec-16,</p>
+                  <p>Adjacent Sukhmani Engineering College</p>
+                  <p>Sarswati Vihar, Dera Bassi,</p>
+                  <p>District-S.A.S Nagar, Punjab 140507</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-secondary flex-shrink-0" />
-                <span className="text-sm opacity-90">+91 98765 43210</span>
+                <span className="text-sm opacity-90">+91 9646781248, +91 9041041248</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-secondary flex-shrink-0" />
-                <span className="text-sm opacity-90">info@blueberryfields.edu.in</span>
+                <span className="text-sm opacity-90">blueberryfieldsschool@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock size={18} className="text-secondary mt-1 flex-shrink-0" />
@@ -107,7 +108,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm opacity-90">
-              © 2024 Blueberry Fields School. All rights reserved.
+              © 2025 Blueberry Fields School. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Privacy Policy</Link>

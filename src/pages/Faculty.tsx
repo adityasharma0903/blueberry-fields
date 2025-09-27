@@ -22,8 +22,8 @@ import library from '@/assets/library.jpg';
 const Faculty = () => {
   const facultyMembers = [
     {
-      name: "Mrs. Sunita Sharma",
-      position: "Principal & Educational Director",
+      name: "Mrs. Malvika Bansal",
+      position: "Principal",
       qualification: "M.Ed, B.Ed from Panjab University",
       experience: "15+ years",
       specialization: "Educational Leadership, Curriculum Development",
@@ -31,8 +31,8 @@ const Faculty = () => {
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"]
     },
     {
-      name: "Ms. Priya Singh",
-      position: "Head of Early Childhood Education",
+      name: "Mr. Upesh Banshal",
+      position: "Chairman",
       qualification: "M.A. Child Psychology, B.Ed",
       experience: "12+ years", 
       specialization: "Early Childhood Development, Play-based Learning",
@@ -40,38 +40,83 @@ const Faculty = () => {
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
     {
-      name: "Mrs. Rajni Gupta",
+      name: "Mrs. Alka Chauhan",
       position: "Senior Primary Teacher",
       qualification: "M.A. English, B.Ed",
       experience: "10+ years",
-      specialization: "Language Arts, Creative Writing",
+      specialization: "Social Studies (SST)",
       image: library,
       achievements: ["Creative Teaching Award", "English Literature Expert"]
     },
     {
-      name: "Ms. Neha Patel",
+      name: "Ms. Richa Gulati",
       position: "Mathematics & Science Coordinator",
       qualification: "M.Sc. Mathematics, B.Ed",
       experience: "8+ years",
-      specialization: "STEM Education, Hands-on Learning",
+      specialization: "Science",
       image: teacherReading,
       achievements: ["STEM Excellence Award", "Math Olympiad Coach"]
     },
     {
-      name: "Mrs. Kavita Devi",
+      name: "Mrs. Jyoti Bhallah",
       position: "Art & Craft Specialist",
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
-      specialization: "Creative Arts, Fine Motor Development",
+      specialization: "Hindi",
       image: principal,
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"]
     },
     {
-      name: "Mr. Rohit Kumar",
+      name: "Mrs. Neelam Rana",
       position: "Physical Education Instructor",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
-      specialization: "Physical Development, Sports Training",
+      specialization: "Music",
+      image: library,
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Neelam Rani",
+      position: "Physical Education Instructor",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Punjabi",
+      image: library,
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Sheetal Sharma",
+      position: "Physical Education Instructor",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "English",
+      image: library,
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Shreya Thakur",
+      position: "Physical Education Instructor",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Computer",
+      image: library,
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Sheetal Sharma",
+      position: "Physical Education Instructor",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Maths",
+      image: library,
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Aashi Bahuguna",
+      position: "Physical Education Instructor",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Sports",
       image: library,
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     }
@@ -79,7 +124,7 @@ const Faculty = () => {
 
   const facultyStats = [
     {
-      number: "25+",
+      number: "10+",
       label: "Expert Teachers",
       icon: Users,
       description: "Highly qualified and experienced educators"
