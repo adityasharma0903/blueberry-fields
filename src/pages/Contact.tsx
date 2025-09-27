@@ -388,7 +388,7 @@ const Contact = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full"
+                  className="bg-primary-foreground text-primary border-primary-foreground rounded-full"
                   onClick={() => window.location.href = "tel:9646781248"}
                 >
                   <Phone size={20} className="mr-2" />

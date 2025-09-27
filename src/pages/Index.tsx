@@ -46,7 +46,12 @@ import school from '@/assets/school.jpg';
 const Home = () => {
 
   const videoRef = useRef<HTMLVideoElement>(null);
-const [isPlaying, setIsPlaying] = useState(false);
+  const videoSectionRef = useRef<HTMLDivElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const scrollToVideoSection = () => {
+    videoSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   const features = [
     {
       icon: BookOpen,
@@ -179,7 +184,8 @@ const [isPlaying, setIsPlaying] = useState(false);
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-medium px-8 py-4 text-lg rounded-full"
+                  className="bg-primary-foreground text-primary border-primary-foreground font-medium px-8 py-4 text-lg rounded-full"
+                  onClick={scrollToVideoSection}
                 >
                   <Play size={20} className="mr-2" />
                   Virtual Tour
@@ -361,7 +367,7 @@ const [isPlaying, setIsPlaying] = useState(false);
       </section>
 
       {/* Video Tour Section */}
-      <section className="py-20 bg-background">
+      <section ref={videoSectionRef} className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="bg-primary text-primary-foreground mb-4">Virtual Tour</Badge>
