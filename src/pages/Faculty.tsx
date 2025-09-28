@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
@@ -20,6 +21,8 @@ import principal from '@/assets/principal.jpg';
 import library from '@/assets/library.jpg';
 
 const Faculty = () => {
+  const navigate = useNavigate();
+  
   const facultyMembers = [
     {
       name: "Mrs. Malvika Bansal",
@@ -239,28 +242,15 @@ const Faculty = () => {
                     <span className="text-primary-foreground text-sm font-medium">{faculty.experience}</span>
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 text-center">
                   <h3 className="text-xl font-heading font-bold mb-2">{faculty.name}</h3>
-                  <p className="text-primary font-medium mb-3">{faculty.position}</p>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center space-x-2">
-                      <GraduationCap size={16} className="text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">{faculty.qualification}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <BookOpen size={16} className="text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">{faculty.specialization}</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm">Key Achievements:</h4>
-                    {faculty.achievements.map((achievement, i) => (
-                      <div key={i} className="flex items-center space-x-2">
-                        <Award size={14} className="text-secondary" />
-                        <span className="text-xs text-muted-foreground">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="text-primary font-medium mb-4">{faculty.specialization}</p>
+                  <Button 
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
+                    onClick={() => navigate(`/teacher/${faculty.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                  >
+                    Read More
+                  </Button>
                 </CardContent>
               </Card>
             ))}

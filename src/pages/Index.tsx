@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 
 import Layout from '../components/Layout';
 import WaveDivider from '../components/WaveDivider';
+import WelcomePopup from '../components/WelcomePopup';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -150,6 +151,7 @@ const Home = () => {
 
   return (
     <Layout>
+      <WelcomePopup />
       {/* Hero Section */}
       <section className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Decorative Elements */}
