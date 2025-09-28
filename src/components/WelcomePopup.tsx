@@ -24,23 +24,16 @@ const WelcomePopup = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user has seen the popup before
-    const hasSeenPopup = localStorage.getItem('hasSeenWelcomePopup');
+    // Show popup every time user visits/reloads the index page
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
     
-    if (!hasSeenPopup) {
-      // Show popup after a short delay for better UX
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 1000);
-      
-      return () => clearTimeout(timer);
-    }
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    // Mark that user has seen the popup
-    localStorage.setItem('hasSeenWelcomePopup', 'true');
   };
 
   const handleAdmissionClick = () => {
@@ -82,8 +75,8 @@ const WelcomePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500">
+      <div className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden">
+        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500 h-full">
           <CardContent className="p-0">
             {/* Close Button */}
             <button
@@ -93,9 +86,9 @@ const WelcomePopup = () => {
               <X size={20} className="text-gray-600" />
             </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
               {/* Left Side - Images */}
-              <div className="relative h-96 lg:h-auto">
+              <div className="relative h-80 lg:h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
                 <img 
                   src={heroClassroom} 
@@ -132,85 +125,85 @@ const WelcomePopup = () => {
               </div>
 
               {/* Right Side - Content */}
-              <div className="p-8 lg:p-12 bg-white">
-                <div className="space-y-8">
+              <div className="p-6 lg:p-8 bg-white h-full flex flex-col">
+                <div className="space-y-6 flex-1 overflow-hidden">
                   {/* Header */}
                   <div className="text-center">
                     <Badge className="bg-primary text-primary-foreground mb-4 text-sm">
                       Admissions Open 2024-25
                     </Badge>
-                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-4">
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-800 mb-3">
                       Join Our Prestigious School
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Give your child the best start in life with our comprehensive education program 
                       designed for Classes 1 to 5.
                     </p>
                   </div>
 
                   {/* Features Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     {features.map((feature, index) => (
-                      <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                          <feature.icon size={20} className="text-primary" />
+                      <div key={index} className="flex items-start space-x-2 p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <feature.icon size={16} className="text-primary" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-gray-800 text-sm">{feature.title}</h4>
-                          <p className="text-xs text-gray-600">{feature.description}</p>
+                          <h4 className="font-semibold text-gray-800 text-xs">{feature.title}</h4>
+                          <p className="text-xs text-gray-600 leading-tight">{feature.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Key Highlights */}
-                  <div className="bg-primary/5 rounded-xl p-6">
-                    <h4 className="font-heading font-bold text-lg mb-4 text-center">Why Choose Us?</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-3">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm text-gray-700">Small class sizes for individual attention</span>
+                  <div className="bg-primary/5 rounded-xl p-4">
+                    <h4 className="font-heading font-bold text-base mb-3 text-center">Why Choose Us?</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle size={14} className="text-primary" />
+                        <span className="text-xs text-gray-700">Small class sizes</span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm text-gray-700">Qualified and experienced teachers</span>
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle size={14} className="text-primary" />
+                        <span className="text-xs text-gray-700">Expert teachers</span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm text-gray-700">Modern facilities and safe environment</span>
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle size={14} className="text-primary" />
+                        <span className="text-xs text-gray-700">Safe environment</span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm text-gray-700">Affordable fees with no hidden charges</span>
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle size={14} className="text-primary" />
+                        <span className="text-xs text-gray-700">Affordable fees</span>
                       </div>
                     </div>
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <Button 
                       onClick={handleAdmissionClick}
                       size="lg"
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary-light font-medium py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary-light font-medium py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
                     >
-                      <GraduationCap size={20} className="mr-2" />
+                      <GraduationCap size={18} className="mr-2" />
                       Apply for Admission Now
-                      <ArrowRight size={20} className="ml-2" />
+                      <ArrowRight size={18} className="ml-2" />
                     </Button>
                     
                     <Button 
                       onClick={handleClose}
                       variant="outline"
                       size="lg"
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-3 rounded-full"
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-2 rounded-full"
                     >
                       Explore Our Website
                     </Button>
                   </div>
 
                   {/* Contact Info */}
-                  <div className="text-center pt-4 border-t border-gray-200">
-                    <p className="text-sm text-gray-600 mb-2">
+                  <div className="text-center pt-3 border-t border-gray-200">
+                    <p className="text-xs text-gray-600 mb-1">
                       <strong>Contact:</strong> +91 9646781248 | +91 9041041248
                     </p>
                     <p className="text-xs text-gray-500">
