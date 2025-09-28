@@ -130,23 +130,17 @@ const Faculty = () => {
       description: "Highly qualified and experienced educators"
     },
     {
-      number: "12+",
-      label: "Average Experience",
-      icon: Award,
-      description: "Years of teaching experience per faculty member"
-    },
-    {
       number: "100%",
       label: "Qualified Staff",
       icon: GraduationCap,
       description: "All teachers hold relevant degrees and certifications"
-    },
-    {
-      number: "15:1",
-      label: "Student-Teacher Ratio",
-      icon: Target,
-      description: "Ensuring individual attention for every child"
     }
+    // {
+    //   number: "15:1",
+    //   label: "Student-Teacher Ratio",
+    //   icon: Target,
+    //   description: "Ensuring individual attention for every child"
+    // }
   ];
 
   const qualifications = [
@@ -202,7 +196,7 @@ const Faculty = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
             {facultyStats.map((stat, index) => (
               <Card key={index} className="border-0 shadow-soft text-center card-hover">
                 <CardContent className="p-8">

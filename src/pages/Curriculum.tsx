@@ -64,35 +64,35 @@ const Curriculum = () => {
 
   const gradePrograms = [
     {
-      grade: "Nursery",
+      grade: "1st",
       age: "3-4 Years",
       focus: "Play-Based Learning",
       subjects: ["Basic Motor Skills", "Social Interaction", "Creative Play", "Story Time", "Music & Dance"],
       activities: ["Sensory Play", "Art & Craft", "Outdoor Games", "Circle Time"]
     },
     {
-      grade: "KG-I", 
+      grade: "2nd", 
       age: "4-5 Years",
       focus: "Foundation Skills",
       subjects: ["Pre-Reading Skills", "Number Recognition", "Creative Arts", "Physical Development", "Language Development"],
       activities: ["Phonics Introduction", "Shape Recognition", "Fine Motor Skills", "Group Activities"]
     },
     {
-      grade: "KG-II",
+      grade: "3rd",
       age: "5-6 Years", 
       focus: "School Readiness",
       subjects: ["Beginning Reading", "Basic Math", "Writing Skills", "Science Exploration", "Social Skills"],
       activities: ["Letter Formation", "Simple Addition", "Nature Walks", "Show & Tell"]
     },
     {
-      grade: "Class I",
+      grade: "4th",
       age: "6-7 Years",
       focus: "Formal Learning",
       subjects: ["English", "Mathematics", "EVS", "Computer Basics", "Art", "Physical Education"],
       activities: ["Reading Comprehension", "Problem Solving", "Project Work", "Sports Activities"]
     },
     {
-      grade: "Class II-V",
+      grade: "5th",
       age: "7-11 Years",
       focus: "Academic Excellence", 
       subjects: ["English", "Mathematics", "Science", "Social Studies", "Computer Science", "Arts", "PE"],
@@ -166,11 +166,11 @@ const Curriculum = () => {
 
           <Tabs defaultValue="nursery" className="w-full">
             <TabsList className="grid w-full grid-cols-5 mb-12">
-              <TabsTrigger value="nursery">Nursery</TabsTrigger>
-              <TabsTrigger value="kg1">KG-I</TabsTrigger>
-              <TabsTrigger value="kg2">KG-II</TabsTrigger>
-              <TabsTrigger value="class1">Class I</TabsTrigger>
-              <TabsTrigger value="class2-5">Class II-V</TabsTrigger>
+              <TabsTrigger value="nursery">Grade 1</TabsTrigger>
+              <TabsTrigger value="kg1">Grade 2</TabsTrigger>
+              <TabsTrigger value="kg2">Grade 3</TabsTrigger>
+              <TabsTrigger value="class1">Grade 4</TabsTrigger>
+              <TabsTrigger value="class2-5">Grade 5</TabsTrigger>
             </TabsList>
 
             {gradePrograms.map((program, index) => (

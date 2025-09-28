@@ -43,23 +43,15 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Blueberry Fields School was founded in 2009 with a vision to provide quality early childhood 
-                  education in Derabassi. Starting with just 25 students, we have grown into one of the most 
-                  trusted educational institutions in the region.
+                Blueberry Fields School was established in 2023 with the vision of creating a strong foundation for young learners. Guided by the belief that every child deserves an inspiring start to their educational journey, we focus on building not only academic excellence but also character, creativity, and confidence.
                 </p>
                 <p>
-                  Our journey began when a group of passionate educators came together with a shared belief that 
-                  every child deserves the best start in their educational journey. We established our school 
-                  on the principles of holistic development, individual attention, and creating a safe, 
-                  nurturing environment.
+                At our school, we emphasize holistic development by blending modern teaching practices with values that nurture curiosity, compassion, and resilience. Our classrooms are designed to provide individual attention, encourage active participation, and create a safe and joyful learning environment.
                 </p>
                 <p>
-                  Over the years, we have continuously evolved our teaching methodologies, upgraded our 
-                  infrastructure, and expanded our programs to serve children from Nursery to Class V. 
-                  Today, we are proud to have impacted over 1,500 young lives and continue to be a 
-                  beacon of excellence in early childhood education.
+                We are committed to preparing children for the future by fostering critical thinking, problem-solving skills, and a love for lifelong learning. Blueberry Fields School continues to grow as a trusted place where children thrive and families feel supported.
                 </p>
-              </div>
+              </div>  
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
@@ -87,12 +79,12 @@ const About = () => {
                 alt="Principal" 
                 className="w-full h-96 object-cover rounded-3xl shadow-strong"
               />
-              <div className="absolute -bottom-4 -right-4 bg-secondary p-6 rounded-2xl shadow-strong">
+              {/* <div className="absolute -bottom-4 -right-4 bg-secondary p-6 rounded-2xl shadow-strong">
                 <div className="text-center">
                   <div className="text-2xl font-heading font-bold text-secondary-foreground">15+</div>
                   <div className="text-sm text-secondary-foreground">Years Leading</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
             <div>

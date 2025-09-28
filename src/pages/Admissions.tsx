@@ -112,14 +112,11 @@ const Admissions = () => {
   ];
 
   const classStrength = [
-    { grade: "Nursery", strength: "15 students per class", available: "5 seats" },
-    { grade: "KG-I", strength: "18 students per class", available: "3 seats" },
-    { grade: "KG-II", strength: "20 students per class", available: "7 seats" },
-    { grade: "Class I", strength: "22 students per class", available: "4 seats" },
-    { grade: "Class II", strength: "25 students per class", available: "6 seats" },
-    { grade: "Class III", strength: "25 students per class", available: "8 seats" },
-    { grade: "Class IV", strength: "28 students per class", available: "2 seats" },
-    { grade: "Class V", strength: "30 students per class", available: "5 seats" }
+    { grade: "Class I"},
+    { grade: "Class II"},
+    { grade: "Class III"},
+    { grade: "Class IV"},
+    { grade: "Class V"},
   ];
 
   return (
@@ -158,32 +155,18 @@ const Admissions = () => {
           <div className="text-center mb-16">
             <Badge className="bg-primary text-primary-foreground mb-4">Class Information</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Current Student Strength & Availability
+            Grades Offered
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We maintain small class sizes to ensure individual attention and quality education for every child.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {classStrength.map((classInfo, index) => (
-              <Card key={index} className="border-0 shadow-soft card-hover">
+              <Card key={index} className="border border-primary/20 shadow-soft card-hover">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-heading font-bold mb-2">{classInfo.grade}</h3>
-                  <div className="space-y-2">
-                    <div className="text-sm text-muted-foreground">{classInfo.strength}</div>
-                    <div className="text-lg font-bold text-primary">{classInfo.available}</div>
-                    <div className="text-xs text-muted-foreground">Available</div>
-                  </div>
-                  <div className={`mt-4 px-3 py-1 rounded-full text-xs font-medium ${
-                    parseInt(classInfo.available) > 5 
-                      ? 'bg-green-100 text-green-800' 
-                      : parseInt(classInfo.available) > 2 
-                      ? 'bg-yellow-100 text-yellow-800'
-                      : 'bg-red-100 text-red-800'
-                  }`}>
-                    {parseInt(classInfo.available) > 5 ? 'Open' : parseInt(classInfo.available) > 2 ? 'Limited' : 'Few Seats'}
-                  </div>
+                  <h3 className="text-xl font-heading font-bold">{classInfo.grade}</h3>
                 </CardContent>
               </Card>
             ))}

@@ -19,65 +19,45 @@ import {
 } from 'lucide-react';
 
 const Fees = () => {
-  const [selectedGrade, setSelectedGrade] = useState('nursery');
+  const [selectedGrade, setSelectedGrade] = useState('class1');
 
   const feeStructure = [
     {
-      grade: 'Nursery',
-      key: 'nursery',
-      admission: 5000,
-      monthly: 3500,
-      annual: 38000,
-      includes: ['Tuition Fee', 'Activity Materials', 'Monthly Assessment', 'Progress Reports']
-    },
-    {
-      grade: 'KG-I',
-      key: 'kg1',
-      admission: 6000,
-      monthly: 4000,
-      annual: 42000,
-      includes: ['Tuition Fee', 'Learning Materials', 'Art Supplies', 'Monthly Assessment', 'Progress Reports']
-    },
-    {
-      grade: 'KG-II',
-      key: 'kg2',
-      admission: 6500,
-      monthly: 4500,
-      annual: 47000,
-      includes: ['Tuition Fee', 'Textbooks', 'Workbooks', 'Art Supplies', 'Monthly Tests', 'Progress Reports']
-    },
-    {
       grade: 'Class I',
       key: 'class1',
-      admission: 7000,
-      monthly: 5000,
-      annual: 52000,
+      monthly: 3200,
       includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Monthly Tests', 'Progress Reports']
     },
     {
-      grade: 'Class II-III',
-      key: 'class23',
-      admission: 7500,
-      monthly: 5500,
-      annual: 58000,
-      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Science Lab', 'Monthly Tests']
+      grade: 'Class II',
+      key: 'class2',
+      monthly: 3200,
+      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Monthly Tests', 'Progress Reports']
     },
     {
-      grade: 'Class IV-V',
-      key: 'class45',
-      admission: 8000,
-      monthly: 6000,
-      annual: 64000,
-      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Science Lab', 'Library Access', 'Monthly Tests']
+      grade: 'Class III',
+      key: 'class3',
+      monthly: 3200,
+      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Science Lab', 'Monthly Tests', 'Progress Reports']
+    },
+    {
+      grade: 'Class IV',
+      key: 'class4',
+      monthly: 3200,
+      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Science Lab', 'Library Access', 'Monthly Tests', 'Progress Reports']
+    },
+    {
+      grade: 'Class V',
+      key: 'class5',
+      monthly: 3200,
+      includes: ['Tuition Fee', 'All Textbooks', 'Notebooks', 'Computer Classes', 'Science Lab', 'Library Access', 'Monthly Tests', 'Progress Reports']
     }
   ];
 
   const transportFees = [
-    { distance: 'Up to 5 km', monthly: 1500, annual: 16000 },
-    { distance: '5-10 km', monthly: 2000, annual: 21000 },
-    { distance: '10-15 km', monthly: 2500, annual: 26000 },
-    { distance: '15-20 km', monthly: 3000, annual: 31000 },
-    { distance: 'Above 20 km', monthly: 3500, annual: 36000 }
+    { route: 'Adarsh Nagar', monthly: 1100, distance: 'Within 4km' },
+    { route: 'Shakti Nagar', monthly: 1100, distance: 'Within 4km' },
+    { route: 'Gulabgarh', monthly: 1100, distance: 'Within 4km' }
   ];
 
   const additionalFees = [
@@ -178,7 +158,7 @@ const Fees = () => {
           </div>
 
           <Tabs value={selectedGrade} onValueChange={setSelectedGrade} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-12">
+            <TabsList className="grid w-full grid-cols-5 mb-12">
               {feeStructure.map((grade) => (
                 <TabsTrigger key={grade.key} value={grade.key} className="text-xs lg:text-sm">
                   {grade.grade}
@@ -188,18 +168,7 @@ const Fees = () => {
 
             {feeStructure.map((grade) => (
               <TabsContent key={grade.key} value={grade.key} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <Card className="border-0 shadow-soft">
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <BookOpen size={32} className="text-primary-foreground" />
-                      </div>
-                      <h3 className="text-xl font-heading font-bold mb-2">Admission Fee</h3>
-                      <div className="text-3xl font-bold text-primary mb-4">₹{grade.admission.toLocaleString()}</div>
-                      <p className="text-sm text-muted-foreground">One-time payment</p>
-                    </CardContent>
-                  </Card>
-
+                <div className="max-w-md mx-auto">
                   <Card className="border-0 shadow-medium border-2 border-secondary">
                     <CardContent className="p-8 text-center">
                       <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
@@ -208,18 +177,7 @@ const Fees = () => {
                       <h3 className="text-xl font-heading font-bold mb-2">Monthly Fee</h3>
                       <div className="text-3xl font-bold text-secondary mb-4">₹{grade.monthly.toLocaleString()}</div>
                       <p className="text-sm text-muted-foreground">Per month</p>
-                      <Badge className="mt-3 bg-secondary text-secondary-foreground">Most Popular</Badge>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-0 shadow-soft">
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calculator size={32} className="text-primary-foreground" />
-                      </div>
-                      <h3 className="text-xl font-heading font-bold mb-2">Annual Fee</h3>
-                      <div className="text-3xl font-bold text-primary mb-4">₹{grade.annual.toLocaleString()}</div>
-                      <p className="text-sm text-muted-foreground">10% discount on annual payment</p>
+                      {/* <Badge className="mt-3 bg-secondary text-secondary-foreground">No Admission Fee</Badge> */}
                     </CardContent>
                   </Card>
                 </div>
@@ -275,8 +233,8 @@ const Fees = () => {
                             <Bus size={20} className="text-primary" />
                           </div>
                           <div>
-                            <h4 className="font-semibold">{transport.distance}</h4>
-                            <p className="text-sm text-muted-foreground">Distance from school</p>
+                            <h4 className="font-semibold">{transport.route}</h4>
+                            <p className="text-sm text-muted-foreground">{transport.distance}</p>
                           </div>
                         </div>
                         <div className="text-right">
@@ -287,7 +245,7 @@ const Fees = () => {
                     ))}
                   </div>
 
-                  <div className="mt-8 p-6 bg-primary/5 rounded-xl">
+                  {/* <div className="mt-8 p-6 bg-primary/5 rounded-xl">
                     <h4 className="font-heading font-bold text-lg mb-4">Transportation Features</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="flex items-center space-x-2">
@@ -315,7 +273,7 @@ const Fees = () => {
                         <span className="text-sm">Insurance coverage</span>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </CardContent>
             </Card>
@@ -400,7 +358,7 @@ const Fees = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          {/* <div className="mt-16 text-center">
             <Card className="max-w-2xl mx-auto border-0 shadow-soft">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-heading font-bold mb-4">Payment Schedule</h3>
@@ -424,7 +382,7 @@ const Fees = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
       </section>
     </Layout>
