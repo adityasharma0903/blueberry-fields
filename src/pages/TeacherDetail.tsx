@@ -21,8 +21,6 @@ import {
 } from 'lucide-react';
 
 import teacherReading from '@/assets/teacher-reading.jpg';
-import principal from '@/assets/principal.jpg';
-import library from '@/assets/library.jpg';
 
 const TeacherDetail = () => {
   const { teacherSlug } = useParams();
@@ -34,7 +32,7 @@ const TeacherDetail = () => {
       qualification: "M.Ed, B.Ed from Panjab University",
       experience: "15+ years",
       specialization: "Educational Leadership, Curriculum Development",
-      image: principal,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"],
       about: "Mrs. Malvika Bansal brings over 15 years of experience in educational leadership and curriculum development. She has a passion for creating innovative learning environments that foster creativity and critical thinking in young minds. Her expertise in early childhood education has helped shape the school's progressive curriculum.",
       contact: {
@@ -62,7 +60,7 @@ const TeacherDetail = () => {
       qualification: "M.A. English, B.Ed",
       experience: "10+ years",
       specialization: "Social Studies (SST)",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Creative Teaching Award", "English Literature Expert"],
       about: "Mrs. Alka Chauhan is an experienced English teacher with a Master's degree in English Literature. She has a unique ability to make complex concepts simple and engaging for young learners. Her creative teaching methods have earned her recognition and awards.",
       contact: {
@@ -90,7 +88,7 @@ const TeacherDetail = () => {
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
-      image: principal,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"],
       about: "Mrs. Jyoti Bhallah is our creative art specialist who brings color and imagination to our classrooms. With a Master's in Fine Arts, she has curated numerous children's art exhibitions and has a talent for bringing out the artistic potential in every child.",
       contact: {
@@ -104,7 +102,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Music",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Neelam Rana is our physical education instructor who promotes healthy living and physical fitness among students. She is a certified yoga instructor and has organized various sports events that encourage teamwork and healthy competition.",
       contact: {
@@ -118,7 +116,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Punjabi",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Neelam Rani specializes in Punjabi language instruction and cultural education. She brings the rich heritage of Punjab to our classrooms through traditional stories, songs, and cultural activities that help students connect with their roots.",
       contact: {
@@ -132,7 +130,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "English",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Sheetal Sharma is an enthusiastic English teacher who makes language learning enjoyable through interactive activities, storytelling, and creative writing exercises. Her innovative teaching methods help students develop strong communication skills.",
       contact: {
@@ -146,7 +144,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Computer",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Shreya Thakur is our computer science instructor who introduces students to the world of technology in a fun and engaging way. She teaches basic computer skills, coding fundamentals, and digital literacy that prepare students for the modern world.",
       contact: {
@@ -160,7 +158,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Sports",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Aashi Bahuguna is our sports coordinator who promotes physical fitness and healthy competition among students. She organizes various sports activities and events that help students develop teamwork, leadership, and sportsmanship qualities.",
       contact: {
