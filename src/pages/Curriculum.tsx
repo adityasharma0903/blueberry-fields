@@ -18,7 +18,6 @@ import {
   Users,
   Target
 } from 'lucide-react';
-import library from '@/assets/library.jpg';
 import artClass from '@/assets/art-class.jpg';
 import teacherReading from '@/assets/teacher-reading.jpg';
 
@@ -222,7 +221,7 @@ const Curriculum = () => {
 
                   <div className="space-y-4">
                     <img 
-                      src={index % 3 === 0 ? library : index % 3 === 1 ? artClass : teacherReading} 
+                      src={index % 3 === 0 ? "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg" : index % 3 === 1 ? artClass : teacherReading} 
                       alt={`${program.grade} classroom`}
                       className="w-full h-64 object-cover rounded-2xl shadow-medium"
                     />

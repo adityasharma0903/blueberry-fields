@@ -20,8 +20,6 @@ import {
   Heart
 } from 'lucide-react';
 import annualDay from '@/assets/annual-day.jpg';
-import sportsDay from '@/assets/sports-day.jpg';
-import library from '@/assets/library.jpg';
 import artClass from '@/assets/art-class.jpg';
 import playground from '@/assets/playground.jpg';
 import heroClassroom from '@/assets/hero-classroom.jpg';
@@ -36,7 +34,7 @@ const Events = () => {
       time: "9:00 AM - 3:00 PM",
       venue: "School Playground",
       description: "Join us for a day of athletic competitions, fun games, and team spirit as our students showcase their sporting talents.",
-      image: sportsDay,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120318/sports-day_hhezvb.jpg",
       category: "Sports",
       participants: "All Students",
       icon: Trophy,
@@ -48,7 +46,7 @@ const Events = () => {
       time: "10:00 AM - 2:00 PM",
       venue: "School Auditorium",
       description: "Young scientists will present their innovative projects and experiments, showcasing creativity and scientific thinking.",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       category: "Academic",
       participants: "Classes III-V",
       icon: BookOpen,
@@ -92,7 +90,7 @@ const Events = () => {
       participants: "All Students",
       icon: Music,
       highlights: ["Cultural Performances", "Prize Distribution", "Student Achievements", "Grand Finale"],
-      gallery: [annualDay, artClass, heroClassroom, library]
+      gallery: [annualDay, artClass, heroClassroom, "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg"]
     },
     {
       title: "Winter Sports Championship",
@@ -100,12 +98,12 @@ const Events = () => {
       time: "9:00 AM - 4:00 PM", 
       venue: "School Sports Ground",
       description: "Inter-class sports competition featuring various indoor and outdoor games with enthusiastic participation.",
-      image: sportsDay,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120318/sports-day_hhezvb.jpg",
       category: "Sports",
       participants: "Classes I-V",
       icon: Trophy,
       highlights: ["Multiple Sports", "Team Spirit", "Fair Play Awards", "Championship Trophy"],
-      gallery: [sportsDay, playground, heroClassroom, library]
+      gallery: ["https://res.cloudinary.com/dtbelwhff/image/upload/v1759120318/sports-day_hhezvb.jpg", playground, heroClassroom, "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg"]
     },
     {
       title: "Reading Week Festival",
@@ -113,12 +111,12 @@ const Events = () => {
       time: "10:00 AM - 3:00 PM",
       venue: "School Library",
       description: "Week-long celebration of reading with storytelling sessions, book fairs, and author interactions.",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       category: "Academic", 
       participants: "All Students",
       icon: BookOpen,
       highlights: ["Story Telling", "Book Fair", "Reading Competition", "Author Visit"],
-      gallery: [library, heroClassroom, artClass, annualDay]
+      gallery: ["https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg", heroClassroom, artClass, annualDay]
     }
   ];
 

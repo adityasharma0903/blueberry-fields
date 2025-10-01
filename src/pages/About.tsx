@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, Users, Award, Heart, BookOpen, Target, Eye } from 'lucide-react';
-import principal from '@/assets/principal.jpg';
 import heroClassroom from '@/assets/hero-classroom.jpg';
 import playground from '@/assets/playground.jpg';
 
@@ -75,7 +74,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src={principal} 
+                src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg"
                 alt="Principal" 
                 className="w-full h-96 object-cover rounded-3xl shadow-strong"
               />

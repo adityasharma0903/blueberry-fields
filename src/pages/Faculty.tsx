@@ -17,8 +17,6 @@ import {
 } from 'lucide-react';
 
 import teacherReading from '@/assets/teacher-reading.jpg';
-import principal from '@/assets/principal.jpg';
-import library from '@/assets/library.jpg';
 
 const Faculty = () => {
   const navigate = useNavigate();
@@ -30,7 +28,7 @@ const Faculty = () => {
       qualification: "M.Ed, B.Ed from Panjab University",
       experience: "15+ years",
       specialization: "Educational Leadership, Curriculum Development",
-      image: principal,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"]
     },
     {
@@ -48,7 +46,7 @@ const Faculty = () => {
       qualification: "M.A. English, B.Ed",
       experience: "10+ years",
       specialization: "Social Studies (SST)",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Creative Teaching Award", "English Literature Expert"]
     },
     {
@@ -66,7 +64,7 @@ const Faculty = () => {
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
-      image: principal,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"]
     },
     {
@@ -75,7 +73,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Music",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -84,7 +82,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Punjabi",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -93,7 +91,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "English",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -102,7 +100,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Computer",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -111,7 +109,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Maths",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -120,7 +118,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Sports",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     }
   ];

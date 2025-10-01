@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-
 import { 
   BookOpen, 
   Users, 
@@ -21,28 +20,16 @@ import {
   MapPin
 } from 'lucide-react';
 
-// Import images
+// Import images (Removed the ones replaced by URLs)
 import heroClassroom from '@/assets/hero-classroom.jpg';
 import playground from '@/assets/playground.jpg';
 import teacherReading from '@/assets/teacher-reading.jpg';
-import library from '@/assets/library.jpg';
-import students from '@/assets/students.jpg';
 import artClass from '@/assets/art-class.jpg';
-import principal from '@/assets/principal.jpg';
-import girlchild from '@/assets/girlchild.jpg';
 import main from '@/assets/main.mp4';
 import logo from '@/assets/logo.jpg';
-import independence from '@/assets/independence.jpg';
 import activity from '@/assets/activity.jpg';
-import skating from '@/assets/skating.jpg';
-import independence2 from '@/assets/independence2.jpg';
-import medical from '@/assets/medical.jpg';
-import dance from '@/assets/dance.jpg';
-import dandia from '@/assets/dandia.jpg';
 import celeberate from '@/assets/celeberate.jpg';
 import school from '@/assets/school.jpg';
-
-
 
 const Home = () => {
 
@@ -99,7 +86,7 @@ const Home = () => {
       title: "Elementary Program",
       age: "Age 6-11 years", 
       description: "Comprehensive curriculum covering all subjects with emphasis on critical thinking and academic excellence.",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       features: ["Academic Excellence", "Critical Thinking", "Leadership Skills"]
     }
   ];
@@ -136,7 +123,7 @@ const Home = () => {
     {
       title: "Science Exhibition Success",
       excerpt: "Young scientists presented innovative projects demonstrating creativity and scientific thinking.",
-      image: library,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       date: "March 10, 2024", 
       category: "Academics"
     },
@@ -261,7 +248,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src={girlchild} 
+                src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120312/girlchild_pfzy2y.jpg"
                 alt="School library" 
                 className="w-full h-96 object-cover rounded-3xl shadow-medium "
               />
@@ -453,8 +440,8 @@ const Home = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <img src={teacherReading} alt="Teacher 1" className="w-full h-48 object-cover organic-shape shadow-strong" />
-              <img src={principal} alt="Teacher 2" className="w-full h-48 object-cover organic-shape-2 shadow-strong" />
-              <img src={library} alt="Teacher 3" className="w-full h-48 object-cover organic-shape-3 shadow-strong" />
+              <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg" alt="Teacher 2" className="w-full h-48 object-cover organic-shape-2 shadow-strong" />
+              <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg" alt="Teacher 3" className="w-full h-48 object-cover organic-shape-3 shadow-strong" />
               <img src={artClass} alt="Teacher 4" className="w-full h-48 object-cover organic-shape shadow-strong" />
             </div>
           </div>
@@ -476,14 +463,14 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <img src={independence} alt="Gallery 1" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120311/independence_ehq9b1.jpg" alt="Gallery 1" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
             <img src={activity} alt="Gallery 2" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={skating} alt="Gallery 3" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120320/skating_iztfjz.jpg" alt="Gallery 3" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
             <img src={celeberate} alt="Gallery 4" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover " />
-            <img src={medical} alt="Gallery 5" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120315/medical_ltgajx.jpg" alt="Gallery 5" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
             <img src={school} alt="Gallery 6" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={independence2} alt="Gallery 7" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
-            <img src={dandia} alt="Gallery 8" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120315/independence2_zjrd4k.jpg" alt="Gallery 7" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
+            <img src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120314/dandia_yudb86.png" alt="Gallery 8" className="w-full h-48 object-cover rounded-xl shadow-soft card-hover" />
           </div>
 
           <div className="text-center mt-8">
