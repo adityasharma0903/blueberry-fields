@@ -316,12 +316,17 @@ await fetch(SCRIPT_URL_GALLERY, {
       <section className="py-16 lg:py-20 bg-accent/30">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="admission-inquiries" className="w-full">
-            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-4 mb-8 lg:mb-12">
-              <TabsTrigger value="photo-upload">Photo Upload</TabsTrigger>
-              <TabsTrigger value="feedbacks">Feedbacks</TabsTrigger>
-              <TabsTrigger value="admission-inquiries">Admission Inquiries</TabsTrigger>
-              <TabsTrigger value="gallery">Gallery Manager</TabsTrigger>
-            </TabsList>
+            {/* Scrollable tab bar for small screens */}
+            <div className="flex justify-center">
+              <div className="bg-muted/50 rounded-xl p-1 mb-8 lg:mb-12 shadow-sm overflow-x-auto w-full max-w-full lg:w-auto lg:max-w-none">
+                <TabsList className="flex flex-nowrap gap-1 p-0 h-auto w-max mx-auto">
+                  <TabsTrigger value="photo-upload" className="rounded-xl px-6 py-2.5 min-w-[160px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Photo Upload</TabsTrigger>
+                  <TabsTrigger value="feedbacks" className="rounded-xl px-6 py-2.5 min-w-[160px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Feedbacks</TabsTrigger>
+                  <TabsTrigger value="admission-inquiries" className="rounded-xl px-6 py-2.5 min-w-[200px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Admission Inquiries</TabsTrigger>
+                  <TabsTrigger value="gallery" className="rounded-xl px-6 py-2.5 min-w-[180px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Gallery Manager</TabsTrigger>
+                </TabsList>
+              </div>
+            </div>
 
             {/* Photo Upload Tab */}
             <TabsContent value="photo-upload" className="space-y-6 lg:space-y-8">
