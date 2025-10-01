@@ -75,8 +75,8 @@ const WelcomePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden">
-        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500 h-full">
+      <div className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden lg:overflow-hidden overflow-y-auto">
+        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500 h-full lg:h-full">
           <CardContent className="p-0">
             {/* Close Button */}
             <button
@@ -86,7 +86,7 @@ const WelcomePopup = () => {
               <X size={20} className="text-gray-600" />
             </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full lg:h-full">
               {/* Left Side - Images */}
               <div className="relative h-80 lg:h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
@@ -125,8 +125,8 @@ const WelcomePopup = () => {
               </div>
 
               {/* Right Side - Content */}
-              <div className="p-6 lg:p-8 bg-white h-full flex flex-col">
-                <div className="space-y-6 flex-1 overflow-hidden">
+              <div className="p-6 lg:p-8 bg-white h-full lg:h-full flex flex-col">
+                <div className="space-y-6 flex-1 overflow-hidden lg:overflow-hidden overflow-y-auto">
                   {/* Header */}
                   <div className="text-center">
                     <Badge className="bg-primary text-primary-foreground mb-4 text-sm">

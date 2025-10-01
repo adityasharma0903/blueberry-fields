@@ -25,7 +25,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-primary text-primary-foreground relative z-50">
+    <nav className="bg-primary text-primary-foreground fixed top-0 left-0 right-0 z-50">
       {/* Decorative Elements */}
       <div className="absolute top-2 left-10 text-secondary animate-float">
         <Star size={20} fill="currentColor" />
