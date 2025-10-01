@@ -208,8 +208,7 @@ const TeacherDetail = () => {
           <div className="flex items-center justify-between mb-8">
             <Button 
               onClick={() => window.history.back()}
-              variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full"
+              className="bg-transparent border border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full"
             >
               <ArrowLeft size={20} className="mr-2" />
               Back to Faculty
