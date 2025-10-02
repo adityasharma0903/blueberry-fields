@@ -234,9 +234,6 @@ const Events = () => {
                             </div>
                           ))}
                         </div>
-                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full mt-4">
-                          Learn More
-                        </Button>
                       </div>
                     </CardContent>
                   </Card>

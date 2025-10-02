@@ -300,13 +300,6 @@ const Facilities = () => {
           </div>
 
           <div className="text-center mt-12 lg:mt-16">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-6 lg:px-8"
-            >
-              <PlayCircle size={20} className="mr-2" />
-              Virtual Facility Tour
-            </Button>
           </div>
         </div>
       </section>
