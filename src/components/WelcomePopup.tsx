@@ -24,7 +24,6 @@ const WelcomePopup = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Show popup every time user visits/reloads the index page
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, 1000);
@@ -39,7 +38,6 @@ const WelcomePopup = () => {
   const handleAdmissionClick = () => {
     handleClose();
     navigate('/admissions');
-    // Scroll to admission form after navigation
     setTimeout(() => {
       const formElement = document.querySelector('form');
       if (formElement) {
@@ -75,8 +73,8 @@ const WelcomePopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden lg:overflow-hidden overflow-y-auto">
-        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500 h-full lg:h-full">
+      <div className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden">
+        <Card className="border-0 shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-500 h-full">
           <CardContent className="p-0">
             {/* Close Button */}
             <button
@@ -86,17 +84,19 @@ const WelcomePopup = () => {
               <X size={20} className="text-gray-600" />
             </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-full lg:h-full">
-              {/* Left Side - Images */}
-              <div className="relative h-80 lg:h-full">
+            {/*
+              === Desktop Layout ===
+              This grid is visible ONLY on large screens (lg)
+            */}
+            <div className="hidden lg:grid grid-cols-2 h-full">
+              {/* Left Side - Image and Overlay */}
+              <div className="relative h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
                 <img 
                   src={heroClassroom} 
                   alt="Welcome to Blueberry Fields"
                   className="w-full h-full object-cover"
                 />
-                
-                {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8 text-white">
                   <div className="mb-6">
                     <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
@@ -109,7 +109,6 @@ const WelcomePopup = () => {
                       Blueberry Fields School
                     </h2>
                   </div>
-                  
                   <div className="flex items-center space-x-2 mb-4">
                     <Star size={20} className="text-secondary fill-current" />
                     <Star size={20} className="text-secondary fill-current" />
@@ -117,7 +116,6 @@ const WelcomePopup = () => {
                     <Star size={20} className="text-secondary fill-current" />
                     <Star size={20} className="text-secondary fill-current" />
                   </div>
-                  
                   <p className="text-lg text-white/90 max-w-md">
                     Nurturing young minds with love, care, and quality education in Derabassi
                   </p>
@@ -125,23 +123,15 @@ const WelcomePopup = () => {
               </div>
 
               {/* Right Side - Content */}
-              <div className="p-6 lg:p-8 bg-white h-full lg:h-full flex flex-col">
-                <div className="space-y-6 flex-1 overflow-hidden lg:overflow-hidden overflow-y-auto">
-                  {/* Header */}
+              <div className="p-6 lg:p-8 bg-white h-full flex flex-col">
+                <div className="space-y-6 flex-1 overflow-y-auto">
                   <div className="text-center">
-                    <Badge className="bg-primary text-primary-foreground mb-4 text-sm">
-                      Admissions Open 2024-25
-                    </Badge>
-                    <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-800 mb-3">
-                      Join Our Prestigious School
-                    </h3>
+                    <Badge className="bg-primary text-primary-foreground mb-4 text-sm">Admissions Open 2024-25</Badge>
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-800 mb-3">Join Our Prestigious School</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Give your child the best start in life with our comprehensive education program 
-                      designed for Classes 1 to 5.
+                      Give your child the best start in life with our comprehensive education program designed for Classes 1 to 5.
                     </p>
                   </div>
-
-                  {/* Features Grid */}
                   <div className="grid grid-cols-2 gap-3">
                     {features.map((feature, index) => (
                       <div key={index} className="flex items-start space-x-2 p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
@@ -155,8 +145,6 @@ const WelcomePopup = () => {
                       </div>
                     ))}
                   </div>
-
-                  {/* Key Highlights */}
                   <div className="bg-primary/5 rounded-xl p-4">
                     <h4 className="font-heading font-bold text-base mb-3 text-center">Why Choose Us?</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -178,41 +166,74 @@ const WelcomePopup = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* CTA Buttons */}
                   <div className="space-y-3">
-                    <Button 
-                      onClick={handleAdmissionClick}
-                      size="lg"
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary-light font-medium py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
-                    >
-                      <GraduationCap size={18} className="mr-2" />
-                      Apply for Admission Now
+                    <Button onClick={handleAdmissionClick} size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary-light font-medium py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
+                      <GraduationCap size={18} className="mr-2" /> Apply for Admission Now
                       <ArrowRight size={18} className="ml-2" />
                     </Button>
-                    
-                    <Button 
-                      onClick={handleClose}
-                      variant="outline"
-                      size="lg"
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-2 rounded-full"
-                    >
+                    <Button onClick={handleClose} variant="outline" size="lg" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-2 rounded-full">
                       Explore Our Website
                     </Button>
                   </div>
-
-                  {/* Contact Info */}
                   <div className="text-center pt-3 border-t border-gray-200">
-                    <p className="text-xs text-gray-600 mb-1">
-                      <strong>Contact:</strong> +91 9646781248 | +91 9041041248
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      #885, Blueberry Fields School, Sec-16, Dera Bassi
-                    </p>
+                    <p className="text-xs text-gray-600 mb-1"><strong>Contact:</strong> +91 9646781248 | +91 9041041248</p>
+                    <p className="text-xs text-gray-500">#885, Blueberry Fields School, Sec-16, Dera Bassi</p>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/*
+              === Mobile Layout ===
+              This single-column layout is visible ONLY on screens smaller than lg
+            */}
+            <div className="lg:hidden">
+              <div className="relative h-[25rem]">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
+                <img 
+                  src={heroClassroom} 
+                  alt="Welcome to Blueberry Fields"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8 text-white">
+                  <div className="mb-6">
+                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                      <GraduationCap size={40} className="text-white" />
+                    </div>
+                    <h1 className="text-3xl md:text-4xl font-heading font-bold mb-2">Welcome to</h1>
+                    <h2 className="text-4xl md:text-5xl font-heading font-bold text-secondary">
+                      Blueberry Fields School
+                    </h2>
+                  </div>
+                  <div className="flex items-center space-x-2 mb-4">
+                    <Star size={20} className="text-secondary fill-current" />
+                    <Star size={20} className="text-secondary fill-current" />
+                    <Star size={20} className="text-secondary fill-current" />
+                    <Star size={20} className="text-secondary fill-current" />
+                    <Star size={20} className="text-secondary fill-current" />
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white p-6 -mt-10 rounded-t-3xl relative">
+                <p className="text-sm text-gray-600 mb-6 text-center">
+                  Nurturing young minds with love, care, and quality education in Derabassi
+                </p>
+                <div className="space-y-3">
+                  <Button onClick={handleAdmissionClick} size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary-light font-medium py-3 text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
+                    <GraduationCap size={18} className="mr-2" /> Apply for Admission Now
+                    <ArrowRight size={18} className="ml-2" />
+                  </Button>
+                  <Button onClick={handleClose} variant="outline" size="lg" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-2 rounded-full">
+                    Explore Our Website
+                  </Button>
+                </div>
+                <div className="text-center pt-3 mt-4 border-t border-gray-200">
+                  <p className="text-xs text-gray-600 mb-1"><strong>Contact:</strong> +91 9646781248 | +91 9041041248</p>
+                  <p className="text-xs text-gray-500">#885, Blueberry Fields School, Sec-16, Dera Bassi</p>
+                </div>
+              </div>
+            </div>
+
           </CardContent>
         </Card>
       </div>
