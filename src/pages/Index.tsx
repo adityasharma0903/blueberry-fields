@@ -7,7 +7,7 @@ import BackgroundCarousel from '../components/BackgroundCarousel';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, redirect, useLocation } from 'react-router-dom';
 
 import {
   BookOpen,
@@ -121,21 +121,24 @@ const Home = () => {
       excerpt: "Recognizing the hard work and dedication of our esteemed faculty and staff members.",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398544/WhatsApp_Image_2025-10-02_at_15.08.31_66b0aaa6_bopw6p.jpg",
       date: "March 15, 2024",
-      category: "Events"
+      category: "Events",
+      redirect:"https://www.facebook.com/share/14UGfHUtDdA/"
     },
     {
       title: "Martial Arts Success",
       excerpt: "Our students showcase discipline and skill, earning new belts in the recent Taekwondo ceremony.",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398572/WhatsApp_Image_2025-10-02_at_15.08.33_058b8ea3_fnmnmj.jpg",
       date: "March 10, 2024",
-      category: "Achievements"
+      category: "Achievements",
+      redirect: "https://www.facebook.com/share/v/1BWE9cE5e9/"
     },
     {
       title: "Academic Position Holders",
       excerpt: "Celebrating the brilliant performance of our students who secured top positions in recent competitions.",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398598/WhatsApp_Image_2025-10-02_at_15.08.32_0d783af9_yheyoq.jpg",
       date: "March 5, 2024",
-      category: "Academics"
+      category: "Academics",
+      redirect: "https://www.facebook.com/share/1F4CvEQDsi/"
     }
   ];
   // ================================= END OF CHANGE 1 ==================================
@@ -586,7 +589,7 @@ const Home = () => {
                   {/* ==================== CHANGE 2: Updated Button to a Link ==================== */}
                   {/* Remember to change "/gallery" to your desired link! */}
                   <Button asChild variant="ghost" className="p-0 h-auto rounded-none text-primary hover:text-primary/80">
-                    <Link to="/gallery">
+                    <Link to={article.redirect} target="_blank" rel="noopener noreferrer">
                       Read More
                       <ArrowRight size={16} className="ml-1" />
                     </Link>
