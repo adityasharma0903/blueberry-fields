@@ -390,7 +390,7 @@ const Admin = () => {
                                     <TabsTrigger value="photo-upload" className="rounded-xl px-6 py-2.5 min-w-[160px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Photo Upload</TabsTrigger>
                                     <TabsTrigger value="feedbacks" className="rounded-xl px-6 py-2.5 min-w-[160px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Feedbacks</TabsTrigger>
                                     <TabsTrigger value="admission-inquiries" className="rounded-xl px-6 py-2.5 min-w-[200px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Admission Inquiries</TabsTrigger>
-                                    <TabsTrigger value="gallery" className="rounded-xl px-6 py-2.5 min-w-[180px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Gallery Manager</TabsTrigger>
+                                    {/* <TabsTrigger value="gallery" className="rounded-xl px-6 py-2.5 min-w-[180px] whitespace-nowrap font-medium data-[state=active]:bg-background data-[state=active]:shadow data-[state=active]:text-foreground data-[state=active]:font-bold">Gallery Manager</TabsTrigger> */}
                                 </TabsList>
                             </div>
                         </div>
