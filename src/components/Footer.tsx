@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Star } from 'lucide-react';
+// Import the logo image from the assets folder
+import logoImage from '@/assets/logo-image.jpg'; // Ensure this path is correct
 
 const Footer = () => {
   return (
@@ -21,8 +23,9 @@ const Footer = () => {
           {/* About Section */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                <span className="text-2xl font-heading font-bold text-secondary-foreground">B</span>
+              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center overflow-hidden">
+                {/* Replace the span with an img tag for the logo */}
+                <img src={logoImage} alt="Blueberry Fields School Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="text-xl font-heading font-bold">Blueberry Fields</h3>

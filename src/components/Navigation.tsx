@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+// Import the logo image from the assets folder
+import logoImage from '@/assets/logo-image.jpg'; // Make sure the path is correct
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,8 +40,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo - This whole block links to the homepage "/" */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-2xl font-heading font-bold text-secondary-foreground">B</span>
+            {/* Replace the span with an img tag for the logo */}
+            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+              <img src={logoImage} alt="Blueberry Fields School Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <h1 className="text-xl font-heading font-bold">Blueberry Fields</h1>
