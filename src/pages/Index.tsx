@@ -302,8 +302,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      {/* Programs Section - Hidden on mobile */}
+      <section className="py-20 bg-primary relative overflow-hidden hidden md:block">
         {/* Decorative Stars */}
         <div className="absolute top-20 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />

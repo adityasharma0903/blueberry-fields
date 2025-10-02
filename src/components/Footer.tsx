@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Programs */}
-          <div className="space-y-6">
+          <div className="space-y-6 hidden md:block">
             <h4 className="text-lg font-heading font-bold">Our Programs</h4>
             <ul className="space-y-3">
               <li><span className="text-sm opacity-90">Nursery (Age 3-4)</span></li>
