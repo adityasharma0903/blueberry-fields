@@ -310,7 +310,7 @@ const Curriculum = () => {
           <div className="text-center mb-16">
             <Badge className="bg-primary text-primary-foreground mb-4">Academic Planning</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Syllabus & Academic Planner
+              Teachers Methodology
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Structured curriculum planning ensures comprehensive coverage of all learning objectives 
@@ -319,27 +319,6 @@ const Curriculum = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-soft p-8">
-              <h3 className="text-2xl font-heading font-bold mb-6">Academic Calendar</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg">
-                  <span className="font-medium">Session Start</span>
-                  <span className="text-primary font-bold">April 1st</span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-secondary/10 rounded-lg">
-                  <span className="font-medium">Mid-term Break</span>
-                  <span className="text-secondary font-bold">October</span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-primary/5 rounded-lg">
-                  <span className="font-medium">Winter Break</span>
-                  <span className="text-primary font-bold">December</span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-secondary/10 rounded-lg">
-                  <span className="font-medium">Session End</span>
-                  <span className="text-secondary font-bold">March 31st</span>
-                </div>
-              </div>
-            </Card>
 
             <Card className="border-0 shadow-soft p-8">
               <h3 className="text-2xl font-heading font-bold mb-6">Teaching Methodology</h3>
@@ -373,9 +352,6 @@ const Curriculum = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full">
-              Download Complete Syllabus
-            </Button>
           </div>
         </div>
       </section>

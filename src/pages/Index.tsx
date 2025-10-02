@@ -470,10 +470,12 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full">
-              View All Photos
-              <ArrowRight size={20} className="ml-2" />
-            </Button>
+                <Button 
+                  asChild 
+                  className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
+                >
+                  <Link to="/gallery">View All Photos</Link>
+                </Button>
           </div>
         </div>
       </section>
