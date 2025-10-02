@@ -343,9 +343,6 @@ const Home = () => {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full">
-                    Learn More
-                  </Button>
                 </div>
               </Card>
             ))}
@@ -429,13 +426,12 @@ const Home = () => {
                   <div className="text-sm text-secondary-foreground/80">Years Experience</div>
                 </div>
               </div>
-              <Button 
-                size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
-              >
-                Meet Our Team
-                <ArrowRight size={20} className="ml-2" />
-              </Button>
+            <Button 
+              asChild 
+              className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
+            >
+              <Link to="/faculty">Meet our team</Link>
+            </Button>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
