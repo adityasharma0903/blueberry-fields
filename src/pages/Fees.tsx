@@ -282,17 +282,17 @@ const Fees = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      {/* <section className="py-20 bg-primary relative overflow-hidden">
         <div className="absolute top-16 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-16 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={24} fill="currentColor" />
-        </div>
+        </div> */}
 
         {/* <WaveDivider position="top" /> */}
         
-        <div className="container mx-auto px-4 relative z-10">
+        {/* <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Optional Services</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
@@ -328,7 +328,7 @@ const Fees = () => {
         </div>
 
         <WaveDivider position="bottom" />
-      </section>
+      </section> */}
 
       {/* Payment Methods */}
       <section className="py-20 bg-background">

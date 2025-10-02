@@ -61,43 +61,43 @@ const Curriculum = () => {
     }
   ];
 
-  const gradePrograms = [
-    {
-      grade: "1st",
-      age: "3-4 Years",
-      focus: "Play-Based Learning",
-      subjects: ["Basic Motor Skills", "Social Interaction", "Creative Play", "Story Time", "Music & Dance"],
-      activities: ["Sensory Play", "Art & Craft", "Outdoor Games", "Circle Time"]
-    },
-    {
-      grade: "2nd", 
-      age: "4-5 Years",
-      focus: "Foundation Skills",
-      subjects: ["Pre-Reading Skills", "Number Recognition", "Creative Arts", "Physical Development", "Language Development"],
-      activities: ["Phonics Introduction", "Shape Recognition", "Fine Motor Skills", "Group Activities"]
-    },
-    {
-      grade: "3rd",
-      age: "5-6 Years", 
-      focus: "School Readiness",
-      subjects: ["Beginning Reading", "Basic Math", "Writing Skills", "Science Exploration", "Social Skills"],
-      activities: ["Letter Formation", "Simple Addition", "Nature Walks", "Show & Tell"]
-    },
-    {
-      grade: "4th",
-      age: "6-7 Years",
-      focus: "Formal Learning",
-      subjects: ["English", "Mathematics", "EVS", "Computer Basics", "Art", "Physical Education"],
-      activities: ["Reading Comprehension", "Problem Solving", "Project Work", "Sports Activities"]
-    },
-    {
-      grade: "5th",
-      age: "7-11 Years",
-      focus: "Academic Excellence", 
-      subjects: ["English", "Mathematics", "Science", "Social Studies", "Computer Science", "Arts", "PE"],
-      activities: ["Research Projects", "Science Experiments", "Cultural Programs", "Leadership Activities"]
-    }
-  ];
+  // const gradePrograms = [
+  //   {
+  //     grade: "1st",
+  //     age: "3-4 Years",
+  //     focus: "Play-Based Learning",
+  //     subjects: ["Basic Motor Skills", "Social Interaction", "Creative Play", "Story Time", "Music & Dance"],
+  //     activities: ["Sensory Play", "Art & Craft", "Outdoor Games", "Circle Time"]
+  //   },
+  //   {
+  //     grade: "2nd", 
+  //     age: "4-5 Years",
+  //     focus: "Foundation Skills",
+  //     subjects: ["Pre-Reading Skills", "Number Recognition", "Creative Arts", "Physical Development", "Language Development"],
+  //     activities: ["Phonics Introduction", "Shape Recognition", "Fine Motor Skills", "Group Activities"]
+  //   },
+  //   {
+  //     grade: "3rd",
+  //     age: "5-6 Years", 
+  //     focus: "School Readiness",
+  //     subjects: ["Beginning Reading", "Basic Math", "Writing Skills", "Science Exploration", "Social Skills"],
+  //     activities: ["Letter Formation", "Simple Addition", "Nature Walks", "Show & Tell"]
+  //   },
+  //   {
+  //     grade: "4th",
+  //     age: "6-7 Years",
+  //     focus: "Formal Learning",
+  //     subjects: ["English", "Mathematics", "EVS", "Computer Basics", "Art", "Physical Education"],
+  //     activities: ["Reading Comprehension", "Problem Solving", "Project Work", "Sports Activities"]
+  //   },
+  //   {
+  //     grade: "5th",
+  //     age: "7-11 Years",
+  //     focus: "Academic Excellence", 
+  //     subjects: ["English", "Mathematics", "Science", "Social Studies", "Computer Science", "Arts", "PE"],
+  //     activities: ["Research Projects", "Science Experiments", "Cultural Programs", "Leadership Activities"]
+  //   }
+  // ];
 
   return (
     <Layout>
@@ -154,7 +154,7 @@ const Curriculum = () => {
       </section>
 
       {/* Grade-wise Programs */}
-      <section className="py-20 bg-accent/30">
+      {/* <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Grade Programs</Badge>
@@ -238,7 +238,7 @@ const Curriculum = () => {
             ))}
           </Tabs>
         </div>
-      </section>
+      </section> */}
 
       {/* Assessment System */}
       <section className="py-20 bg-primary relative overflow-hidden">
@@ -301,7 +301,7 @@ const Curriculum = () => {
           </div>
         </div>
 
-        <WaveDivider position="bottom" />
+        {/* <WaveDivider position="bottom" /> */}
       </section>
 
       {/* Syllabus & Planner */}

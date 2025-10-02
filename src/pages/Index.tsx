@@ -9,12 +9,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link, useLocation } from 'react-router-dom';
 
-import { 
-  BookOpen, 
-  Users, 
-  Award, 
-  Heart, 
-  Star, 
+import {
+  BookOpen,
+  Users,
+  Award,
+  Heart,
+  Star,
   Play,
   ArrowRight,
   Quote,
@@ -78,7 +78,7 @@ const Home = () => {
       features: ["Play-based Learning", "Motor Skills", "Social Development"]
     },
     {
-      title: "Kindergarten Program", 
+      title: "Kindergarten Program",
       age: "Age 4-6 years",
       description: "Structured learning with focus on literacy, numeracy, and creative expression through art and music.",
       image: teacherReading,
@@ -86,7 +86,7 @@ const Home = () => {
     },
     {
       title: "Elementary Program",
-      age: "Age 6-11 years", 
+      age: "Age 6-11 years",
       description: "Comprehensive curriculum covering all subjects with emphasis on critical thinking and academic excellence.",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       features: ["Academic Excellence", "Critical Thinking", "Leadership Skills"]
@@ -101,21 +101,21 @@ const Home = () => {
       rating: 5
     },
     {
-      name: "Rajesh Kumar", 
+      name: "Rajesh Kumar",
       role: "Parent",
       content: "The holistic development approach at Blueberry Fields has made such a positive impact on my son's confidence.",
       rating: 5
     },
     {
       name: "Anjali Singh",
-      role: "Parent", 
+      role: "Parent",
       content: "Excellent infrastructure and qualified teachers. I'm very happy with my child's progress here.",
       rating: 5
     }
   ];
 
   // ==================== CHANGE 1: Updated image URLs here ====================
-const newsArticles = [
+  const newsArticles = [
     {
       title: "Felicitation Ceremony",
       excerpt: "Recognizing the hard work and dedication of our esteemed faculty and staff members.",
@@ -127,7 +127,7 @@ const newsArticles = [
       title: "Martial Arts Success",
       excerpt: "Our students showcase discipline and skill, earning new belts in the recent Taekwondo ceremony.",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398572/WhatsApp_Image_2025-10-02_at_15.08.33_058b8ea3_fnmnmj.jpg",
-      date: "March 10, 2024", 
+      date: "March 10, 2024",
       category: "Achievements"
     },
     {
@@ -147,7 +147,7 @@ const newsArticles = [
       <section className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Background Carousel */}
         <BackgroundCarousel />
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-20 left-20 text-secondary animate-float opacity-60 z-10">
           <Star size={32} fill="currentColor" />
@@ -167,19 +167,19 @@ const newsArticles = [
                 <span className="block text-secondary">Your Children</span>
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-                Nurturing young minds with love, care, and quality education in Derabassi. 
+                Nurturing young minds with love, care, and quality education in Derabassi.
                 Building strong foundations for lifelong learning and character development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  asChild 
+                <Button
+                  asChild
                   className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-6 py-2 rounded-full"
                 >
                   <Link to="/admissions">Enroll Today</Link>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="bg-primary-foreground text-primary border-primary-foreground font-medium px-8 py-4 text-lg rounded-full"
                   onClick={scrollToVideoSection}
                 >
@@ -188,7 +188,7 @@ const newsArticles = [
                 </Button>
               </div>
             </div>
-            
+
             {/* <div className="relative animate-scale-in">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
@@ -247,9 +247,9 @@ const newsArticles = [
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <img 
+              <img
                 src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120312/girlchild_pfzy2y.jpg"
-                alt="School library" 
+                alt="School library"
                 className="w-full h-96 object-cover rounded-3xl shadow-medium "
               />
               <div className="absolute -top-4 -right-4 bg-secondary p-4 rounded-2xl shadow-strong">
@@ -259,16 +259,16 @@ const newsArticles = [
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-6">
               <Badge className="bg-secondary text-secondary-foreground">About Our School</Badge>
               <h2 className="text-3xl md:text-4xl font-heading font-bold">
-                The best playschool 
+                The best playschool
                 <span className="text-primary"> for ideal your kids</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                At Blueberry Fields School, we believe every child is unique and deserves personalized attention. 
-                Our experienced educators create a nurturing environment where children develop confidence, 
+                At Blueberry Fields School, we believe every child is unique and deserves personalized attention.
+                Our experienced educators create a nurturing environment where children develop confidence,
                 creativity, and a lifelong love for learning.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -289,30 +289,30 @@ const newsArticles = [
                   <span className="text-sm">✓ Individual Attention</span>
                 </div>
               </div>
-                <Button 
-                  asChild 
-                  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-6 py-2 rounded-full"
-                >
-                  <Link to="/about">Learn more about us</Link>
-                </Button>
+              <Button
+                asChild
+                className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-6 py-2 rounded-full"
+              >
+                <Link to="/about">Learn more about us</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Programs Section - Hidden on mobile */}
-      <section className="py-20 bg-primary relative overflow-hidden hidden md:block">
+      {/* <section className="py-20 bg-primary relative overflow-hidden hidden md:block"> */}
         {/* Decorative Stars */}
-        <div className="absolute top-20 left-16 text-secondary animate-float opacity-40">
+        {/* <div className="absolute top-20 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-20 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={24} fill="currentColor" />
-        </div>
+        </div> */}
 
         {/* <WaveDivider position="top" /> */}
-        
-        <div className="container mx-auto px-4 relative z-10">
+
+        {/* <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Our Programs</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
@@ -320,7 +320,7 @@ const newsArticles = [
               <span className="block">instead of classes.</span>
             </h2>
             <p className="text-primary-foreground/90 max-w-2xl mx-auto">
-              Comprehensive programs designed for different age groups, ensuring every child receives 
+              Comprehensive programs designed for different age groups, ensuring every child receives
               appropriate learning experiences for their developmental stage.
             </p>
           </div>
@@ -329,8 +329,8 @@ const newsArticles = [
             {programs.map((program, index) => (
               <Card key={index} className="bg-background border-0 shadow-strong card-hover">
                 <div className="p-6">
-                  <img 
-                    src={program.image} 
+                  <img
+                    src={program.image}
                     alt={program.title}
                     className="w-full h-48 object-cover rounded-xl mb-4"
                   />
@@ -349,56 +349,69 @@ const newsArticles = [
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <WaveDivider position="bottom" />
-      </section>
+        {/* <WaveDivider position="bottom" />
+      </section> */}
 
       {/* Video Tour Section */}
-      <section ref={videoSectionRef} className="py-20 bg-background">
+      {/* <WaveDivider position="top" /> */}
+
+      <section ref={videoSectionRef} className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="bg-primary text-primary-foreground mb-4">Virtual Tour</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Take a Video Tour
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore our beautiful campus and facilities through our virtual tour. 
-              See where your child will learn, play, and grow.
-            </p>
+ <p className="text-white max-w-2xl mx-auto">
+  Explore our beautiful campus and facilities through our virtual tour.
+  See where your child will learn, play, and grow.
+</p>
+
           </div>
+          
 
           <div className="relative max-w-4xl mx-auto">
-<video
-  ref={videoRef}
-  src="/videos/main.mp4"
-  poster={logo}
-  className="w-full h-96 object-cover rounded-3xl shadow-strong"
-  controls={isPlaying}
-/>
+            <video
+              ref={videoRef}
+              src="/videos/main.mp4"
+              poster={logo}
+              className="w-full h-96 object-cover rounded-3xl shadow-strong"
+              controls={isPlaying}
+            />
+            
 
 
-    {/* Overlay Play Button */}
-    {!isPlaying && (
-      <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
-        <Button
-          size="lg"
-          className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
-          onClick={() => {
-            videoRef.current?.play();
-            setIsPlaying(true);
-          }}
-        >
-          <Play size={32} />
-        </Button>
-      </div>
-    )}
-  </div>
+            {/* Overlay Play Button */}
+            {!isPlaying && (
+              <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
+                <Button
+                  size="lg"
+                  className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
+                  onClick={() => {
+                    videoRef.current?.play();
+                    setIsPlaying(true);
+                  }}
+                >
+                  <Play size={32} />
+                </Button>
+              </div>
+            )}
+            
+          </div>
+          
+          
         </div>
+        
+                {/* <WaveDivider position="bottom" /> */}
+
       </section>
 
+
+
       {/* Teacher Section */}
-      <section className="py-20 bg-secondary relative overflow-hidden">
+      {/* <section className="py-20 bg-secondary relative overflow-hidden">
         <div className="absolute top-16 left-20 text-primary animate-float opacity-60">
           <Star size={32} fill="currentColor" />
         </div>
@@ -444,7 +457,7 @@ const newsArticles = [
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gallery Section */}
       <section className="py-20 bg-background">
@@ -455,7 +468,7 @@ const newsArticles = [
               Our Gallery
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Take a glimpse into daily life at Blueberry Fields School. 
+              Take a glimpse into daily life at Blueberry Fields School.
               See our students learning, playing, and creating memories.
             </p>
           </div>
@@ -472,28 +485,28 @@ const newsArticles = [
           </div>
 
           <div className="text-center mt-8">
-                <Button 
-                  asChild 
-                  className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
-                >
-                  <Link to="/gallery">View All Photos</Link>
-                </Button>
+            <Button
+              asChild
+              className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
+            >
+              <Link to="/gallery">View All Photos</Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute top-20 left-20 text-secondary animate-float opacity-40">
+      {/* <section className="py-20 bg-primary relative overflow-hidden"> */}
+        {/* <div className="absolute top-20 left-20 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-20 right-32 text-secondary animate-float opacity-60" style={{ animationDelay: '4s' }}>
           <Star size={24} fill="currentColor" />
-        </div>
+        </div> */}
 
         {/* <WaveDivider position="top" /> */}
 
-        <div className="container mx-auto px-4 relative z-10">
+        {/* <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
@@ -527,13 +540,13 @@ const newsArticles = [
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <WaveDivider position="bottom" />
-      </section>
+        {/* <WaveDivider position="bottom" />
+      </section> */}
 
       {/* News Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-secondary relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
             <div>
@@ -555,8 +568,8 @@ const newsArticles = [
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsArticles.map((article, index) => (
               <Card key={index} className="border-0 shadow-soft card-hover overflow-hidden">
-                <img 
-                  src={article.image} 
+                <img
+                  src={article.image}
                   alt={article.title}
                   className="w-full h-48 object-cover"
                 />

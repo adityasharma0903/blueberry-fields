@@ -15,7 +15,7 @@ const Navigation = () => {
     { name: 'Fee Structure', path: '/fees' },
     { name: 'Faculty', path: '/faculty' },
     { name: 'Facilities', path: '/facilities' },
-    { name: 'Events', path: '/events' },
+    // { name: 'Events', path: '/events' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];

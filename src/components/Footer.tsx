@@ -55,7 +55,7 @@ const Footer = () => {
               <li><Link to="/admissions" className="text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-all duration-300">Admissions</Link></li>
               <li><Link to="/faculty" className="text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-all duration-300">Faculty</Link></li>
               <li><Link to="/facilities" className="text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-all duration-300">Facilities</Link></li>
-              <li><Link to="/events" className="text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-all duration-300">Events</Link></li>
+              {/* <li><Link to="/events" className="text-sm opacity-90 hover:opacity-100 hover:text-secondary transition-all duration-300">Events</Link></li> */}
             </ul>
           </div>
 
@@ -63,11 +63,11 @@ const Footer = () => {
           <div className="space-y-6 hidden md:block">
             <h4 className="text-lg font-heading font-bold">Our Programs</h4>
             <ul className="space-y-3">
-              <li><span className="text-sm opacity-90">Nursery (Age 3-4)</span></li>
-              <li><span className="text-sm opacity-90">KG-I (Age 4-5)</span></li>
-              <li><span className="text-sm opacity-90">KG-II (Age 5-6)</span></li>
-              <li><span className="text-sm opacity-90">Class I (Age 6-7)</span></li>
-              <li><span className="text-sm opacity-90">Class II-V (Age 7-11)</span></li>
+              <li><span className="text-sm opacity-90">Class I</span></li>
+              <li><span className="text-sm opacity-90">Class II</span></li>
+              <li><span className="text-sm opacity-90">Class III</span></li>
+              <li><span className="text-sm opacity-90">Class IV </span></li>
+              <li><span className="text-sm opacity-90">Class V </span></li>
               <li><Link to="/curriculum" className="text-sm text-secondary hover:text-secondary-light transition-all duration-300">View Full Curriculum →</Link></li>
             </ul>
           </div>
@@ -111,8 +111,8 @@ const Footer = () => {
               © 2025 Blueberry Fields School. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Privacy Policy</Link>
-              <Link to="/terms" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Terms of Service</Link>
+              {/* <Link to="/privacy" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Privacy Policy</Link> */}
+              {/* <Link to="/terms" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Terms of Service</Link> */}
               <Link to="/admin" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Admin</Link>
             </div>
           </div>

@@ -138,12 +138,16 @@ const Admissions = () => {
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
               Join our nurturing community where every child's potential is recognized and developed
             </p>
-            <Button 
-              size="lg" 
-              className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-8 py-4 text-lg rounded-full"
-            >
-              Apply Now
-            </Button>
+<Button 
+  size="lg" 
+  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-8 py-4 text-lg rounded-full"
+  onClick={() => {
+    document.getElementById("admission-form")?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Apply Now
+</Button>
+
           </div>
         </div>
         <WaveDivider position="bottom" />
@@ -204,7 +208,7 @@ const Admissions = () => {
       </section>
 
       {/* Admission Form */}
-      <section className="py-20 bg-primary relative overflow-hidden">
+      <section id="admission-form"className="py-20 bg-primary relative overflow-hidden">
         <div className="absolute top-16 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
