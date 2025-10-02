@@ -580,7 +580,7 @@ const Home = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-secondary relative overflow-hidden">
+      {/* <section className="py-20 bg-secondary relative overflow-hidden">
         <div className="absolute top-16 left-24 text-primary animate-float opacity-50">
           <Star size={32} fill="currentColor" />
         </div>
@@ -612,7 +612,7 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };

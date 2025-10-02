@@ -321,40 +321,6 @@ const Events = () => {
           </Tabs>
         </div>
       </section>
-
-      {/* Event Calendar CTA */}
-      <section className="py-16 lg:py-20 bg-secondary relative overflow-hidden">
-        <div className="absolute top-8 lg:top-16 left-12 lg:left-24 text-primary animate-float opacity-50">
-          <Star size={24} className="lg:w-8 lg:h-8" fill="currentColor" />
-        </div>
-        <div className="absolute bottom-8 lg:bottom-16 right-12 lg:right-20 text-primary animate-float opacity-60" style={{ animationDelay: '3s' }}>
-          <Star size={20} className="lg:w-7 lg:h-7" fill="currentColor" />
-        </div>
-
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="bg-primary text-primary-foreground mb-6">Stay Updated</Badge>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-secondary-foreground mb-4 lg:mb-6">
-            Never Miss an Event
-          </h2>
-          <p className="text-secondary-foreground/80 mb-6 lg:mb-8 max-w-2xl mx-auto">
-            Subscribe to our event newsletter and get notified about upcoming activities, 
-            celebrations, and special programs at Blueberry Fields School.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              className="flex-1 px-4 lg:px-6 py-3 lg:py-4 rounded-full border-0 text-secondary-foreground placeholder-secondary-foreground/60"
-            />
-            <Button 
-              size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary-light px-6 lg:px-8 rounded-full"
-            >
-              Subscribe
-            </Button>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
