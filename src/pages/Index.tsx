@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Layout from '../components/Layout';
 import WaveDivider from '../components/WaveDivider';
 import WelcomePopup from '../components/WelcomePopup';
+import BackgroundCarousel from '../components/BackgroundCarousel';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -141,18 +142,21 @@ const Home = () => {
       <WelcomePopup />
       {/* Hero Section */}
       <section className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
+        {/* Background Carousel */}
+        <BackgroundCarousel />
+        
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-20 text-secondary animate-float opacity-60">
+        <div className="absolute top-20 left-20 text-secondary animate-float opacity-60 z-10">
           <Star size={32} fill="currentColor" />
         </div>
-        <div className="absolute top-40 right-32 text-secondary animate-float opacity-40" style={{ animationDelay: '2s' }}>
+        <div className="absolute top-40 right-32 text-secondary animate-float opacity-40 z-10" style={{ animationDelay: '2s' }}>
           <Star size={24} fill="currentColor" />
         </div>
-        <div className="absolute bottom-32 left-1/4 text-secondary animate-float opacity-50" style={{ animationDelay: '4s' }}>
+        <div className="absolute bottom-32 left-1/4 text-secondary animate-float opacity-50 z-10" style={{ animationDelay: '4s' }}>
           <Star size={28} fill="currentColor" />
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
@@ -182,7 +186,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="relative animate-scale-in">
+            {/* <div className="relative animate-scale-in">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img 
@@ -209,7 +213,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
