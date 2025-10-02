@@ -360,7 +360,7 @@ const Home = () => {
       <section ref={videoSectionRef} className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-primary text-primary-foreground mb-4">Virtual Tour</Badge>
+<Badge className="bg-yellow-400 text-green-800 mb-4">Virtual Tour</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Take a Video Tour
             </h2>
