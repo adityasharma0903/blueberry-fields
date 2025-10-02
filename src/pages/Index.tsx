@@ -7,6 +7,7 @@ import BackgroundCarousel from '../components/BackgroundCarousel';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Link, useLocation } from 'react-router-dom';
 
 import { 
   BookOpen, 
@@ -169,10 +170,10 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
-                  size="lg" 
-                  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-8 py-4 text-lg rounded-full"
+                  asChild 
+                  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-6 py-2 rounded-full"
                 >
-                  Enroll Today
+                  <Link to="/admissions">Enroll Today</Link>
                 </Button>
                 <Button 
                   size="lg" 
