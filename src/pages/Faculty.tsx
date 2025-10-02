@@ -307,81 +307,76 @@ const Faculty = () => {
 
       {/* Professional Development */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-primary text-primary-foreground mb-4">Continuous Learning</Badge>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Professional Development Programs
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We invest in our faculty's growth through regular training and development programs.
-            </p>
-          </div>
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-16">
+      <Badge className="bg-primary text-primary-foreground mb-4">Our Faculty</Badge>
+      <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+        Inspiring Minds, Shaping Futures
+      </h2>
+      <p className="text-muted-foreground max-w-2xl mx-auto">
+        Our teachers go beyond classrooms — guiding, mentoring, and nurturing every child’s potential with care and dedication.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Card className="border-0 shadow-soft p-6">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <BookOpen size={24} className="text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-lg">Monthly Training Sessions</h3>
-                    <p className="text-muted-foreground text-sm">Regular workshops on latest teaching methods</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="border-0 shadow-soft p-6">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                    <Users size={24} className="text-secondary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-lg">Peer Learning Programs</h3>
-                    <p className="text-muted-foreground text-sm">Collaborative learning and best practice sharing</p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="border-0 shadow-soft p-6">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                    <Heart size={24} className="text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-lg">Child Psychology Workshops</h3>
-                    <p className="text-muted-foreground text-sm">Understanding child behavior and development</p>
-                  </div>
-                </div>
-              </Card>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="space-y-8">
+        <Card className="border-0 shadow-soft p-6">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+              <BookOpen size={24} className="text-primary-foreground" />
             </div>
-
-            <div className="relative">
-              <img 
-                src={teacherReading} 
-                alt="Professional Development" 
-                className="w-full h-96 object-cover rounded-3xl shadow-strong"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-secondary p-6 rounded-2xl shadow-strong">
-                <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-secondary-foreground">40+</div>
-                  <div className="text-sm text-secondary-foreground">Hours Annual Training</div>
-                </div>
-              </div>
+            <div>
+              <h3 className="font-heading font-bold text-lg">Dedicated Educators</h3>
+              <p className="text-muted-foreground text-sm">Passionate teachers who bring learning to life every day.</p>
             </div>
           </div>
+        </Card>
 
-          <div className="text-center mt-16">
-            <Button 
-              size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full px-8"
-            >
-              Join Our Teaching Team
-            </Button>
+        <Card className="border-0 shadow-soft p-6">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+              <Users size={24} className="text-secondary-foreground" />
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-lg">Mentors & Guides</h3>
+              <p className="text-muted-foreground text-sm">Supporting students not just academically, but in life skills too.</p>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="border-0 shadow-soft p-6">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+              <Heart size={24} className="text-primary-foreground" />
+            </div>
+            <div>
+              <h3 className="font-heading font-bold text-lg">Caring Approach</h3>
+              <p className="text-muted-foreground text-sm">Building a safe, supportive, and positive environment for children.</p>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <div className="relative">
+        <img 
+          src={teacherReading} 
+          alt="Our Faculty" 
+          className="w-full h-96 object-cover rounded-3xl shadow-strong"
+        />
+        <div className="absolute -bottom-6 -left-6 bg-secondary p-6 rounded-2xl shadow-strong">
+          <div className="text-center">
+            <div className="text-2xl font-heading font-bold text-secondary-foreground"></div>
+            <div className="text-sm text-secondary-foreground">Experienced Teachers</div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <div className="text-center mt-16">
+    </div>
+  </div>
+</section>
+
     </Layout>
   );
 };
