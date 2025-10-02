@@ -232,13 +232,6 @@ const Home = () => {
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="mt-4 rounded-full"
-                  >
-                    Learn More
-                  </Button>
                 </CardContent>
               </Card>
             ))}
