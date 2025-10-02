@@ -287,10 +287,12 @@ const Home = () => {
                   <span className="text-sm">✓ Individual Attention</span>
                 </div>
               </div>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full">
-                Learn More About Us
-                <ArrowRight size={20} className="ml-2" />
-              </Button>
+                <Button 
+                  asChild 
+                  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-6 py-2 rounded-full"
+                >
+                  <Link to="/about">Learn more about us</Link>
+                </Button>
             </div>
           </div>
         </div>
