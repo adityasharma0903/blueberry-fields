@@ -36,7 +36,7 @@ const Navigation = () => {
 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - This whole block links to the homepage "/" */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-2xl font-heading font-bold text-secondary-foreground">B</span>
