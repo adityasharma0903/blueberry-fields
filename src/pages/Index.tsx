@@ -543,13 +543,13 @@ const newsArticles = [
                 <span className="block">Blog & Articles</span>
               </h2>
             </div>
-            <Button 
+            {/* <Button 
               variant="outline" 
               className="rounded-full"
             >
               View All
               <ArrowRight size={20} className="ml-2" />
-            </Button>
+            </Button> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
