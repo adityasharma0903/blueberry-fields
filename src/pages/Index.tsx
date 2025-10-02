@@ -166,8 +166,9 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 leading-tight">
-                Best Kindergarten For
-                <span className="block text-secondary">Your Children</span>
+                We Care and Share <br/>for the 
+                
+                <span className="block text-secondary">Future we Prepare</span>
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
                 Nurturing young minds with love, care, and quality education in Derabassi.
