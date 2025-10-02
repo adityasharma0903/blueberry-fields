@@ -302,17 +302,17 @@ const Home = () => {
 
       {/* Programs Section - Hidden on mobile */}
       {/* <section className="py-20 bg-primary relative overflow-hidden hidden md:block"> */}
-        {/* Decorative Stars */}
-        {/* <div className="absolute top-20 left-16 text-secondary animate-float opacity-40">
+      {/* Decorative Stars */}
+      {/* <div className="absolute top-20 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-20 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={24} fill="currentColor" />
         </div> */}
 
-        {/* <WaveDivider position="top" /> */}
+      {/* <WaveDivider position="top" /> */}
 
-        {/* <div className="container mx-auto px-4 relative z-10">
+      {/* <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Our Programs</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
@@ -351,7 +351,7 @@ const Home = () => {
           </div>
         </div> */}
 
-        {/* <WaveDivider position="bottom" />
+      {/* <WaveDivider position="bottom" />
       </section> */}
 
       {/* Video Tour Section */}
@@ -360,17 +360,17 @@ const Home = () => {
       <section ref={videoSectionRef} className="bg-primary relative overflow-hidden min-h-[85vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-<Badge className="bg-yellow-400 text-green-800 mb-4">Virtual Tour</Badge>
+            <Badge className="bg-yellow-400 text-green-800 mb-4">Virtual Tour</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Take a Video Tour
             </h2>
- <p className="text-white max-w-2xl mx-auto">
-  Explore our beautiful campus and facilities through our virtual tour.
-  See where your child will learn, play, and grow.
-</p>
+            <p className="text-white max-w-2xl mx-auto">
+              Explore our beautiful campus and facilities through our virtual tour.
+              See where your child will learn, play, and grow.
+            </p>
 
           </div>
-          
+
 
           <div className="relative max-w-4xl mx-auto">
             <video
@@ -380,7 +380,7 @@ const Home = () => {
               className="w-full h-96 object-cover rounded-3xl shadow-strong"
               controls={isPlaying}
             />
-            
+
 
 
             {/* Overlay Play Button */}
@@ -398,13 +398,13 @@ const Home = () => {
                 </Button>
               </div>
             )}
-            
+
           </div>
-          
-          
+
+
         </div>
-        
-                {/* <WaveDivider position="bottom" /> */}
+
+        {/* <WaveDivider position="bottom" /> */}
 
       </section>
 
@@ -497,16 +497,16 @@ const Home = () => {
 
       {/* Testimonials Section */}
       {/* <section className="py-20 bg-primary relative overflow-hidden"> */}
-        {/* <div className="absolute top-20 left-20 text-secondary animate-float opacity-40">
+      {/* <div className="absolute top-20 left-20 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-20 right-32 text-secondary animate-float opacity-60" style={{ animationDelay: '4s' }}>
           <Star size={24} fill="currentColor" />
         </div> */}
 
-        {/* <WaveDivider position="top" /> */}
+      {/* <WaveDivider position="top" /> */}
 
-        {/* <div className="container mx-auto px-4 relative z-10">
+      {/* <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
@@ -542,7 +542,7 @@ const Home = () => {
           </div>
         </div> */}
 
-        {/* <WaveDivider position="bottom" />
+      {/* <WaveDivider position="bottom" />
       </section> */}
 
       {/* News Section */}
