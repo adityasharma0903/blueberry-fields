@@ -357,7 +357,7 @@ const Home = () => {
       {/* Video Tour Section */}
       {/* <WaveDivider position="top" /> */}
 
-      <section ref={videoSectionRef} className="bg-primary relative overflow-hidden min-h-[80vh] flex items-center">
+      <section ref={videoSectionRef} className="bg-primary relative overflow-hidden min-h-[85vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
 <Badge className="bg-yellow-400 text-green-800 mb-4">Virtual Tour</Badge>
