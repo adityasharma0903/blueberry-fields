@@ -37,15 +37,15 @@ const Footer = () => {
               We provide a safe and inspiring environment for children from Nursery to 5th Grade.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
+              <a href="https://www.facebook.com/profile.php?id=100090585805215&rdid=uEAAcPIH8v7xlQcZ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18cTp5cFNj%2F#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300" target="_blank" rel="noopener noreferrer">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
+              <a href="https://www.instagram.com/blueberryfieldsschool" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300" target="_blank" rel="noopener noreferrer">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
+              {/* <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
                 <Twitter size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 
