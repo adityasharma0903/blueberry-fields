@@ -314,11 +314,8 @@ const Admin = () => {
     // --- DASHBOARD CONTENT (ONLY RENDERED IF LOGGED IN) ---
 
     const stats = [
-        // ... (your existing stats data)
-        { title: 'Total Students', value: '245', icon: Users, color: 'bg-primary' },
         { title: 'Total Feedbacks', value: feedbacks.length, icon: MessageCircle, color: 'bg-secondary' },
-        { title: 'Campus Visits', value: '12', icon: Calendar, color: 'bg-primary' },
-        { title: 'Gallery Photos', value: '156', icon: Camera, color: 'bg-secondary' }
+        { title: 'Total Inquiries', value: inquiries.length, icon: Calendar, color: 'bg-primary' },
     ];
 
     const filteredFeedbacks = feedbacks.filter(feedback => 
@@ -363,7 +360,7 @@ const Admin = () => {
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
                         {stats.map((stat, index) => (
                             <Card key={index} className="border-0 shadow-soft text-center card-hover">
                                 <CardContent className="p-6 lg:p-8">
