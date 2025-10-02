@@ -24,7 +24,7 @@ import {
 
 // Import images (Removed the ones replaced by URLs)
 import heroClassroom from '@/assets/hero-classroom.jpg';
-import playground from '@/assets/playground.jpg';
+// import playground from '@/assets/playground.jpg'; // This image is no longer used in this section
 import teacherReading from '@/assets/teacher-reading.jpg';
 import artClass from '@/assets/art-class.jpg';
 import main from '@/assets/main.mp4';
@@ -114,29 +114,31 @@ const Home = () => {
     }
   ];
 
-  const newsArticles = [
+  // ==================== CHANGE 1: Updated image URLs here ====================
+const newsArticles = [
     {
-      title: "Annual Sports Day Celebration",
-      excerpt: "Students showcased their athletic talents in a day filled with fun activities and healthy competition.",
-      image: playground,
+      title: "Felicitation Ceremony",
+      excerpt: "Recognizing the hard work and dedication of our esteemed faculty and staff members.",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398544/WhatsApp_Image_2025-10-02_at_15.08.31_66b0aaa6_bopw6p.jpg",
       date: "March 15, 2024",
       category: "Events"
     },
     {
-      title: "Science Exhibition Success",
-      excerpt: "Young scientists presented innovative projects demonstrating creativity and scientific thinking.",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      title: "Martial Arts Success",
+      excerpt: "Our students showcase discipline and skill, earning new belts in the recent Taekwondo ceremony.",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398572/WhatsApp_Image_2025-10-02_at_15.08.33_058b8ea3_fnmnmj.jpg",
       date: "March 10, 2024", 
-      category: "Academics"
+      category: "Achievements"
     },
     {
-      title: "New Art Wing Inauguration",
-      excerpt: "State-of-the-art art studio opened to foster creativity and artistic expression among students.",
-      image: artClass,
+      title: "Academic Position Holders",
+      excerpt: "Celebrating the brilliant performance of our students who secured top positions in recent competitions.",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759398598/WhatsApp_Image_2025-10-02_at_15.08.32_0d783af9_yheyoq.jpg",
       date: "March 5, 2024",
-      category: "Infrastructure"
+      category: "Academics"
     }
   ];
+  // ================================= END OF CHANGE 1 ==================================
 
   return (
     <Layout>
@@ -376,22 +378,22 @@ const Home = () => {
 />
 
 
-      {/* Overlay Play Button */}
-      {!isPlaying && (
-        <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
-          <Button
-            size="lg"
-            className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
-            onClick={() => {
-              videoRef.current?.play();
-              setIsPlaying(true);
-            }}
-          >
-            <Play size={32} />
-          </Button>
-        </div>
-      )}
-    </div>
+    {/* Overlay Play Button */}
+    {!isPlaying && (
+      <div className="absolute inset-0 bg-black/20 rounded-3xl flex items-center justify-center">
+        <Button
+          size="lg"
+          className="bg-secondary text-secondary-foreground hover:bg-secondary-light w-20 h-20 rounded-full p-0"
+          onClick={() => {
+            videoRef.current?.play();
+            setIsPlaying(true);
+          }}
+        >
+          <Play size={32} />
+        </Button>
+      </div>
+    )}
+  </div>
         </div>
       </section>
 
@@ -568,10 +570,15 @@ const Home = () => {
                   </div>
                   <h3 className="font-heading font-bold text-lg mb-3">{article.title}</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">{article.excerpt}</p>
-                  <Button variant="ghost" className="p-0 h-auto rounded-none">
-                    Read More
-                    <ArrowRight size={16} className="ml-1" />
+                  {/* ==================== CHANGE 2: Updated Button to a Link ==================== */}
+                  {/* Remember to change "/gallery" to your desired link! */}
+                  <Button asChild variant="ghost" className="p-0 h-auto rounded-none text-primary hover:text-primary/80">
+                    <Link to="/gallery">
+                      Read More
+                      <ArrowRight size={16} className="ml-1" />
+                    </Link>
                   </Button>
+                  {/* ================================= END OF CHANGE 2 ================================== */}
                 </CardContent>
               </Card>
             ))}
