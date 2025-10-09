@@ -66,11 +66,11 @@ const Footer = () => {
           <div className="space-y-6 hidden md:block">
             <h4 className="text-lg font-heading font-bold">Our Programs</h4>
             <ul className="space-y-3">
-              <li><span className="text-sm opacity-90">Class I</span></li>
-              <li><span className="text-sm opacity-90">Class II</span></li>
-              <li><span className="text-sm opacity-90">Class III</span></li>
-              <li><span className="text-sm opacity-90">Class IV </span></li>
-              <li><span className="text-sm opacity-90">Class V </span></li>
+              <li><span className="text-sm opacity-90">Play Group</span></li>
+              <li><span className="text-sm opacity-90">Nursery</span></li>
+              <li><span className="text-sm opacity-90">LKG</span></li>
+              <li><span className="text-sm opacity-90">UKG </span></li>
+              <li><span className="text-sm opacity-90">Class I-V </span></li>
               <li><Link to="/curriculum" className="text-sm text-secondary hover:text-secondary-light transition-all duration-300">View Full Curriculum →</Link></li>
             </ul>
           </div>
