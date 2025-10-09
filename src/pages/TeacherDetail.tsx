@@ -32,7 +32,7 @@ const TeacherDetail = () => {
       qualification: "M.Tech, B.Ed",
       experience: "10+ years",
       specialization: "Educational Leadership, Curriculum Development",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979122/Malvika_Bansal_Principal_Qualification-M.tech_B_jkfvev.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"],
       about: "Mrs. Malvika Bansal brings over 10 years of experience in educational leadership and curriculum development. She has a passion for creating innovative learning environments that foster creativity and critical thinking in young minds. Her expertise in early childhood education has helped shape the school's progressive curriculum.",
       contact: {
@@ -74,7 +74,7 @@ const TeacherDetail = () => {
       qualification: "M.Sc. Mathematics, B.Ed",
       experience: "8+ years",
       specialization: "Science",
-      image: teacherReading,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979184/Richa_Gulati_Science_Teacher_k5vpzq.jpg",
       achievements: ["STEM Excellence Award", "Math Olympiad Coach"],
       about: "Ms. Richa Gulati is our Mathematics and Science coordinator with a strong background in STEM education. She has successfully coached students for various math competitions and has developed hands-on science experiments that make learning interactive and fun.",
       contact: {
@@ -88,7 +88,7 @@ const TeacherDetail = () => {
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979120/Jyoti_Bhalla_Hindi_Teacher_udd6w5.jpg",
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"],
       about: "Mrs. Jyoti Bhalla is our creative art specialist who brings color and imagination to our classrooms. With a Master's in Fine Arts, she has curated numerous children's art exhibitions and has a talent for bringing out the artistic potential in every child.",
       contact: {
@@ -102,7 +102,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Music",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Neelam_Rani_Music_Teacher_zi2pov.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Neelam Rana is our physical education instructor who promotes healthy living and physical fitness among students. She is a certified yoga instructor and has organized various sports events that encourage teamwork and healthy competition.",
       contact: {
@@ -116,7 +116,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Punjabi",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979121/Neelam_Rani_Punajbi_Teacher_mnqgwx.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Neelam Rani specializes in Punjabi language instruction and cultural education. She brings the rich heritage of Punjab to our classrooms through traditional stories, songs, and cultural activities that help students connect with their roots.",
       contact: {
@@ -158,7 +158,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Sports",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979488/Ashi_Sports_Teacher_hv0tuu.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Aashi Bahuguna is our sports coordinator who promotes physical fitness and healthy competition among students. She organizes various sports activities and events that help students develop teamwork, leadership, and sportsmanship qualities.",
       contact: {
@@ -172,7 +172,7 @@ const TeacherDetail = () => {
       qualification: "M.A. (Education), B.Ed",
       experience: "8+ years",
       specialization: "Academic Planning and Student Development",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Monika_Sharma_Coordinator_eesbll.jpg",
       achievements: ["Excellence in Academic Leadership Award", "Certified Educational Mentor"],
       about: "Mrs. Monika Sharma is our Academic Coordinator who ensures smooth academic operations and effective learning experiences for students. She works closely with teachers and parents to maintain high educational standards and foster an environment of growth and discipline.",
       contact: {
@@ -186,7 +186,7 @@ const TeacherDetail = () => {
       qualification: "B.A., N.T.T (Nursery Teacher Training)",
       experience: "5+ years",
       specialization: "Early Childhood Education",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979440/Arzoo_Parmar_Kindergarden_Teacher_yuqprz.jpg",
       achievements: ["Creative Teaching Excellence Award", "Certified Early Childhood Educator"],
       about: "Mrs. Arzoo Parmar is a dedicated Kindergarten Teacher who focuses on nurturing young minds through fun learning activities and creativity. She creates a warm, caring environment where children feel happy, confident, and excited to learn every day.",
       contact: {
@@ -200,7 +200,7 @@ const TeacherDetail = () => {
       qualification: "B.A., N.T.T (Nursery Teacher Training)",
       experience: "6+ years",
       specialization: "Early Childhood Education",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979130/Madhu_Kindergarden_Teacher_iey1jt.jpg",
       achievements: ["Innovative Teaching Award", "Certified Child Development Educator"],
       about: "Mrs. Madhu is a passionate Kindergarten Teacher who believes in making learning joyful and engaging for young children. She focuses on developing their creativity, curiosity, and confidence through playful and interactive teaching methods.",
       contact: {
@@ -214,7 +214,7 @@ const TeacherDetail = () => {
       qualification: "B.A., N.T.T (Nursery Teacher Training)",
       experience: "7+ years",
       specialization: "Early Childhood Learning and Development",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979183/Pooja_Tomar_Kindergarden_Teacher_fp1ill.jpg",
       achievements: ["Excellence in Early Education Award", "Certified Montessori Educator"],
       about: "Mrs. Pooja Tomar is a caring and creative Kindergarten Teacher who focuses on building a strong foundation for young learners. She encourages curiosity, imagination, and social skills through interactive lessons and playful activities.",
       contact: {

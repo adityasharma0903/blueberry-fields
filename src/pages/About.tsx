@@ -74,7 +74,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img 
-                src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg"
+                src="https://res.cloudinary.com/dtbelwhff/image/upload/v1759979122/Malvika_Bansal_Principal_Qualification-M.tech_B_jkfvev.jpg"
                 alt="Principal" 
                 className="w-full h-96 object-cover rounded-3xl shadow-strong"
               />
@@ -104,8 +104,8 @@ const About = () => {
                 <div className="bg-secondary/10 p-4 rounded-lg">
                   <h4 className="font-heading font-bold text-lg mb-2">Mrs. Malvika Bansal</h4>
                   <p className="text-sm text-muted-foreground">
-                    M.Ed, B.Ed | Principal<br/>
-                    15+ Years in Educational Leadership
+                    M.Tech, B.Ed | Principal<br/>
+                    10+ Years in Educational Leadership
                   </p>
                 </div>
               </div>

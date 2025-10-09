@@ -28,7 +28,7 @@ const Faculty = () => {
       qualification: "M.Tech and a B.Ed",
       experience: "15+ years",
       specialization: "Educational Leadership, Curriculum Development",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979122/Malvika_Bansal_Principal_Qualification-M.tech_B_jkfvev.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"]
     },
     {
@@ -46,7 +46,7 @@ const Faculty = () => {
       qualification: "M.A. Child Psychology, B.Ed",
       experience: "12+ years", 
       specialization: "Coordinator",
-      image: teacherReading,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Monika_Sharma_Coordinator_eesbll.jpg",
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
     {
@@ -64,7 +64,7 @@ const Faculty = () => {
       qualification: "M.Sc. Mathematics, B.Ed",
       experience: "8+ years",
       specialization: "Science",
-      image: teacherReading,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979184/Richa_Gulati_Science_Teacher_k5vpzq.jpg",
       achievements: ["STEM Excellence Award", "Math Olympiad Coach"]
     },
     {
@@ -73,7 +73,7 @@ const Faculty = () => {
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979120/Jyoti_Bhalla_Hindi_Teacher_udd6w5.jpg",
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"]
     },
     {
@@ -82,7 +82,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Music",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Neelam_Rani_Music_Teacher_zi2pov.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -91,7 +91,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Punjabi",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979121/Neelam_Rani_Punajbi_Teacher_mnqgwx.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -127,7 +127,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Sports",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979488/Ashi_Sports_Teacher_hv0tuu.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -136,7 +136,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Kindergarden Teacher",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979440/Arzoo_Parmar_Kindergarden_Teacher_yuqprz.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -145,7 +145,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Kindergarden Teacher",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979130/Madhu_Kindergarden_Teacher_iey1jt.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
@@ -154,7 +154,7 @@ const Faculty = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Kindergarden Teacher",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979183/Pooja_Tomar_Kindergarden_Teacher_fp1ill.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
   ];
