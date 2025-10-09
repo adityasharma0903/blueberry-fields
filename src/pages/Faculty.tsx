@@ -25,7 +25,7 @@ const Faculty = () => {
     {
       name: "Mrs. Malvika Bansal",
       position: "Principal",
-      qualification: "M.Ed, B.Ed from Panjab University",
+      qualification: "M.Tech and a B.Ed",
       experience: "15+ years",
       specialization: "Educational Leadership, Curriculum Development",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
@@ -41,6 +41,15 @@ const Faculty = () => {
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
     {
+      name: "Mrs. Monika Sharma",
+      position: "Coordinator",
+      qualification: "M.A. Child Psychology, B.Ed",
+      experience: "12+ years", 
+      specialization: "Coordinator",
+      image: teacherReading,
+      achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
+    },
+    {
       name: "Mrs. Alka Chauhan",
       position: "Senior Primary Teacher",
       qualification: "M.A. English, B.Ed",
@@ -51,7 +60,7 @@ const Faculty = () => {
     },
     {
       name: "Ms. Richa Gulati",
-      position: "Mathematics & Science Coordinator",
+      position: "Science Teacher",
       qualification: "M.Sc. Mathematics, B.Ed",
       experience: "8+ years",
       specialization: "Science",
@@ -59,8 +68,8 @@ const Faculty = () => {
       achievements: ["STEM Excellence Award", "Math Olympiad Coach"]
     },
     {
-      name: "Mrs. Jyoti Bhallah",
-      position: "Art & Craft Specialist",
+      name: "Mrs. Jyoti Bhalla",
+      position: "Hindi Teacher",
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
@@ -69,7 +78,7 @@ const Faculty = () => {
     },
     {
       name: "Mrs. Neelam Rana",
-      position: "Physical Education Instructor",
+      position: "Music Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Music",
@@ -78,7 +87,7 @@ const Faculty = () => {
     },
     {
       name: "Mrs. Neelam Rani",
-      position: "Physical Education Instructor",
+      position: "Punjabi Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Punjabi",
@@ -114,13 +123,40 @@ const Faculty = () => {
     },
     {
       name: "Mrs. Aashi Bahuguna",
-      position: "Physical Education Instructor",
+      position: "Sports Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Sports",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
-    }
+    },
+    {
+      name: "Mrs. Arzoo Parmar",
+      position: "Kindergarden Teacher",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Kindergarden Teacher",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Madhu",
+      position: "Kindergarden Teacher",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Kindergarden Teacher",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
+    {
+      name: "Mrs. Pooja Tomar",
+      position: "Kindergarden Teacher",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Kindergarden Teacher",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
+    },
   ];
 
   const facultyStats = [

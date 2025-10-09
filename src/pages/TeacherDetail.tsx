@@ -5,11 +5,11 @@ import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  Star, 
-  Award, 
-  BookOpen, 
-  Users, 
+import {
+  Star,
+  Award,
+  BookOpen,
+  Users,
   GraduationCap,
   Heart,
   Target,
@@ -24,17 +24,17 @@ import teacherReading from '@/assets/teacher-reading.jpg';
 
 const TeacherDetail = () => {
   const { teacherSlug } = useParams();
-  
+
   const facultyMembers = [
     {
       name: "Mrs. Malvika Bansal",
       position: "Principal",
-      qualification: "M.Ed, B.Ed from Panjab University",
-      experience: "15+ years",
+      qualification: "M.Tech, B.Ed",
+      experience: "10+ years",
       specialization: "Educational Leadership, Curriculum Development",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"],
-      about: "Mrs. Malvika Bansal brings over 15 years of experience in educational leadership and curriculum development. She has a passion for creating innovative learning environments that foster creativity and critical thinking in young minds. Her expertise in early childhood education has helped shape the school's progressive curriculum.",
+      about: "Mrs. Malvika Bansal brings over 10 years of experience in educational leadership and curriculum development. She has a passion for creating innovative learning environments that foster creativity and critical thinking in young minds. Her expertise in early childhood education has helped shape the school's progressive curriculum.",
       contact: {
         email: "malvika.bansal@blueberryfields.edu",
         phone: "+91 9876543210"
@@ -44,7 +44,7 @@ const TeacherDetail = () => {
       name: "Mr. Upesh Banshal",
       position: "Chairman",
       qualification: "M.A. Child Psychology, B.Ed",
-      experience: "12+ years", 
+      experience: "12+ years",
       specialization: "Early Childhood Development, Play-based Learning",
       image: teacherReading,
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"],
@@ -83,16 +83,16 @@ const TeacherDetail = () => {
       }
     },
     {
-      name: "Mrs. Jyoti Bhallah",
+      name: "Mrs. Jyoti Bhalla",
       position: "Art & Craft Specialist",
       qualification: "M.F.A, Diploma in Art Education",
       experience: "7+ years",
       specialization: "Hindi",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120316/principal_wf9pxu.jpg",
       achievements: ["Best Art Teacher 2022", "Children's Art Exhibition Curator"],
-      about: "Mrs. Jyoti Bhallah is our creative art specialist who brings color and imagination to our classrooms. With a Master's in Fine Arts, she has curated numerous children's art exhibitions and has a talent for bringing out the artistic potential in every child.",
+      about: "Mrs. Jyoti Bhalla is our creative art specialist who brings color and imagination to our classrooms. With a Master's in Fine Arts, she has curated numerous children's art exhibitions and has a talent for bringing out the artistic potential in every child.",
       contact: {
-        email: "jyoti.bhallah@blueberryfields.edu",
+        email: "jyoti.bhalla@blueberryfields.edu",
         phone: "+91 9876543214"
       }
     },
@@ -165,11 +165,71 @@ const TeacherDetail = () => {
         email: "aashi.bahuguna@blueberryfields.edu",
         phone: "+91 9876543219"
       }
+    },
+    {
+      name: "Mrs. Monika Sharma",
+      position: "Academic Coordinator",
+      qualification: "M.A. (Education), B.Ed",
+      experience: "8+ years",
+      specialization: "Academic Planning and Student Development",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Excellence in Academic Leadership Award", "Certified Educational Mentor"],
+      about: "Mrs. Monika Sharma is our Academic Coordinator who ensures smooth academic operations and effective learning experiences for students. She works closely with teachers and parents to maintain high educational standards and foster an environment of growth and discipline.",
+      contact: {
+        email: "monika.sharma@blueberryfields.edu",
+        phone: "+91 9876543225"
+      }
+    },
+    {
+      name: "Mrs. Arzoo Parmar",
+      position: "Kindergarten Teacher",
+      qualification: "B.A., N.T.T (Nursery Teacher Training)",
+      experience: "5+ years",
+      specialization: "Early Childhood Education",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Creative Teaching Excellence Award", "Certified Early Childhood Educator"],
+      about: "Mrs. Arzoo Parmar is a dedicated Kindergarten Teacher who focuses on nurturing young minds through fun learning activities and creativity. She creates a warm, caring environment where children feel happy, confident, and excited to learn every day.",
+      contact: {
+        email: "arzoo.parmar@blueberryfields.edu",
+        phone: "+91 9876543234"
+      }
+    },
+    {
+      name: "Mrs. Madhu",
+      position: "Kindergarten Teacher",
+      qualification: "B.A., N.T.T (Nursery Teacher Training)",
+      experience: "6+ years",
+      specialization: "Early Childhood Education",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Innovative Teaching Award", "Certified Child Development Educator"],
+      about: "Mrs. Madhu is a passionate Kindergarten Teacher who believes in making learning joyful and engaging for young children. She focuses on developing their creativity, curiosity, and confidence through playful and interactive teaching methods.",
+      contact: {
+        email: "madhu@blueberryfields.edu",
+        phone: "+91 9876543242"
+      }
+    },
+    {
+      name: "Mrs. Pooja Tomar",
+      position: "Kindergarten Teacher",
+      qualification: "B.A., N.T.T (Nursery Teacher Training)",
+      experience: "7+ years",
+      specialization: "Early Childhood Learning and Development",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      achievements: ["Excellence in Early Education Award", "Certified Montessori Educator"],
+      about: "Mrs. Pooja Tomar is a caring and creative Kindergarten Teacher who focuses on building a strong foundation for young learners. She encourages curiosity, imagination, and social skills through interactive lessons and playful activities.",
+      contact: {
+        email: "pooja.tomar@blueberryfields.edu",
+        phone: "+91 9876543251"
+      }
     }
+
+
+
+
   ];
 
   // Find the teacher by slug
-  const teacher = facultyMembers.find(t => 
+  const teacher = facultyMembers.find(t =>
     t.name.toLowerCase().replace(/\s+/g, '-') === teacherSlug
   );
 
@@ -180,7 +240,7 @@ const TeacherDetail = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-primary mb-4">Teacher Not Found</h1>
             <p className="text-muted-foreground mb-8">The teacher you're looking for doesn't exist.</p>
-            <Button 
+            <Button
               onClick={() => window.history.back()}
               className="bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
             >
@@ -206,7 +266,7 @@ const TeacherDetail = () => {
 
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
-            <Button 
+            <Button
               onClick={() => window.history.back()}
               className="bg-transparent border border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary rounded-full"
             >
@@ -214,7 +274,7 @@ const TeacherDetail = () => {
               Back to Faculty
             </Button>
           </div>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-foreground mb-6">
               {teacher.name}
@@ -235,8 +295,8 @@ const TeacherDetail = () => {
             <div className="lg:col-span-1">
               <Card className="border-0 shadow-soft overflow-hidden">
                 <div className="relative">
-                  <img 
-                    src={teacher.image} 
+                  <img
+                    src={teacher.image}
                     alt={teacher.name}
                     className="w-full h-80 object-cover"
                   />
@@ -248,7 +308,7 @@ const TeacherDetail = () => {
                   <h3 className="text-2xl font-heading font-bold mb-2">{teacher.name}</h3>
                   <p className="text-primary font-medium mb-4">{teacher.position}</p>
                   <p className="text-muted-foreground mb-4">{teacher.specialization}</p>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <GraduationCap size={20} className="text-primary" />

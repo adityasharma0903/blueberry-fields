@@ -19,7 +19,24 @@ import {
 } from 'lucide-react';
 
 const Fees = () => {
-  const [selectedGrade, setSelectedGrade] = useState('class1');
+  const [selectedGrade, setSelectedGrade] = useState('playgroup');
+
+  const feeTabs = [
+    { label: 'Play Group', key: 'playgroup' },
+    { label: 'Nursery', key: 'nursery' },
+    { label: 'LKG', key: 'lkg' },
+    { label: 'UKG', key: 'ukg' },
+    { label: '1st to 5th', key: 'primary' }
+  ];
+
+  const commonIncludes = [
+    'Tuition Fee',
+    'All Textbooks',
+    'Notebooks',
+    'Computer Classes',
+    'Monthly Tests',
+    'Progress Reports'
+  ];
 
   const feeStructure = [
     {
@@ -153,40 +170,41 @@ const Fees = () => {
               Academic Fee Structure 2024-25
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive fee structure covering all academic activities, materials, and assessments.
+              Transparent and affordable fee structure with no hidden charges.
             </p>
           </div>
 
           <Tabs value={selectedGrade} onValueChange={setSelectedGrade} className="w-full">
             <TabsList className="grid w-full grid-cols-5 mb-12">
-              {feeStructure.map((grade) => (
-                <TabsTrigger key={grade.key} value={grade.key} className="text-xs lg:text-sm">
-                  {grade.grade}
+              {feeTabs.map((tab) => (
+                <TabsTrigger key={tab.key} value={tab.key} className="text-xs lg:text-sm">
+                  {tab.label}
                 </TabsTrigger>
               ))}
             </TabsList>
 
-            {feeStructure.map((grade) => (
-              <TabsContent key={grade.key} value={grade.key} className="space-y-8">
+            {feeTabs.map((tab) => (
+              <TabsContent key={tab.key} value={tab.key} className="space-y-8">
                 <div className="max-w-md mx-auto">
                   <Card className="border-0 shadow-medium border-2 border-secondary">
                     <CardContent className="p-8 text-center">
                       <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
                         <Calendar size={32} className="text-secondary-foreground" />
                       </div>
-                      <h3 className="text-xl font-heading font-bold mb-2">Monthly Fee</h3>
-                      <div className="text-3xl font-bold text-secondary mb-4">₹{grade.monthly.toLocaleString()}</div>
+                      <h3 className="text-xl font-heading font-bold mb-2">Admission Fee</h3>
+                      <div className="text-2xl font-bold text-secondary mb-2">₹10,000</div>
+                      <h3 className="text-xl font-heading font-bold mb-2 mt-4">Monthly Fee</h3>
+                      <div className="text-3xl font-bold text-secondary mb-4">₹3,500</div>
                       <p className="text-sm text-muted-foreground">Per month</p>
-                      {/* <Badge className="mt-3 bg-secondary text-secondary-foreground">No Admission Fee</Badge> */}
                     </CardContent>
                   </Card>
                 </div>
 
                 <Card className="border-0 shadow-soft">
                   <CardContent className="p-8">
-                    <h4 className="text-2xl font-heading font-bold mb-6">What's Included in {grade.grade} Fee</h4>
+                    <h4 className="text-2xl font-heading font-bold mb-6">What's Included in Fee</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {grade.includes.map((item, index) => (
+                      {commonIncludes.map((item, index) => (
                         <div key={index} className="flex items-center space-x-3">
                           <CheckCircle size={20} className="text-primary" />
                           <span>{item}</span>
@@ -281,54 +299,32 @@ const Fees = () => {
         </div>
       </section>
 
-      {/* Additional Services */}
-      {/* <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute top-16 left-16 text-secondary animate-float opacity-40">
-          <Star size={28} fill="currentColor" />
-        </div>
-        <div className="absolute bottom-16 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
-          <Star size={24} fill="currentColor" />
-        </div> */}
-
-        {/* <WaveDivider position="top" /> */}
-        
-        {/* <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <Badge className="bg-secondary text-secondary-foreground mb-4">Optional Services</Badge>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
-              Additional Services & Programs
+      {/* Extracurricular Section */}
+      <section className="py-20 bg-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="bg-secondary text-secondary-foreground mb-4">Extracurricular</Badge>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Extracurricular Activities Fee
             </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Participation in a wide range of extracurricular activities to foster holistic development.
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {additionalFees.map((service, index) => (
-              <Card key={index} className="bg-background border-0 shadow-strong">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-heading font-bold text-lg">{service.service}</h3>
-                    <Utensils size={24} className="text-primary" />
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-                  <div className="space-y-2">
-                    {service.monthly > 0 && (
-                      <div className="flex justify-between">
-                        <span className="text-sm">Monthly Fee:</span>
-                        <span className="font-bold text-primary">₹{service.monthly.toLocaleString()}</span>
-                      </div>
-                    )}
-                    <div className="flex justify-between">
-                      <span className="text-sm">Annual Fee:</span>
-                      <span className="font-bold text-primary">₹{service.annual.toLocaleString()}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-md mx-auto">
+            <Card className="border-0 shadow-medium border-2 border-primary">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Star size={32} className="text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-heading font-bold mb-2">Extracurricular Fee</h3>
+                <div className="text-3xl font-bold text-primary mb-4">₹7,500</div>
+                <p className="text-sm text-muted-foreground">Fee for all extracurricular programs</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
-
-        <WaveDivider position="bottom" />
-      </section> */}
+      </section>
 
       {/* Payment Methods */}
       <section className="py-20 bg-background">
