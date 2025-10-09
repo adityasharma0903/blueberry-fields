@@ -16,8 +16,14 @@ import {
   PlayCircle,
   Gamepad2,
   Palette,
+  HelpCircle,
+  BadgePercent,
+  Sun, 
+  Moon,
+  MapPin,
+  BriefcaseMedical,
   Shield,
-  HelpCircle
+  Cctv
 } from 'lucide-react';
 import library from '@/assets/library.jpg';
 import scienceLab from '@/assets/science-lab.jpg';
@@ -103,13 +109,92 @@ const Facilities = () => {
       highlight: "Glide with Confidence"
     },
     {
-      name: "Tabla & Harmonium",
-      description: "Specialized music classes focusing on Tabla and Harmonium, helping students develop rhythm, melody, and musical expression.",
+      name: "Sibling Waiver",
+      description: "A special fee concession offered to families with more than one child enrolled in our school, promoting and supporting sibling education together.",
       image: heroClassroom,
-      icon: Music,
-      features: ["Vocal & Instrumental Training", "Rhythm & Melody Skills", "Individual & Group Lessons", "Experienced Instructors"],
-      highlight: "Master the Beat & Tune"
+      icon: BadgePercent,
+      features: ["Fee Concession for Siblings", "Applicable for All Grades", "Encourages Family Enrollment", "Simple Application Process"],
+      highlight: "Together in Learning and Growth"
+    },
+    {
+      name: "Summer Camp",
+      description: "An exciting summer program filled with fun activities, learning opportunities, and team-building experiences that keep students engaged and active.",
+      image: heroClassroom,
+      icon: Sun,
+      features: [
+        "Fun & Educational Activities",
+        "Outdoor Games & Sports",
+        "Creative Workshops",
+        "Experienced Camp Instructors"
+      ],
+      highlight: "Fun, Learning and Adventure All Summer Long"
+    },
+    {
+      name: "CCTV Cameras",
+      description: "State-of-the-art CCTV surveillance ensures the safety and security of students and staff across the campus, providing a secure learning environment.",
+      image: heroClassroom,
+      icon: Cctv,
+      features: [
+        "24/7 Surveillance",
+        "Covers All Key Areas",
+        "Monitored by Security Personnel",
+        "Ensures Student & Staff Safety"
+      ],
+      highlight: "Safety and Security, Always"
+    },
+    {
+      name: "Medical Camp",
+      description: "Regular health check-ups and medical guidance to ensure the well-being of students and staff.",
+      image: heroClassroom,
+      icon: BriefcaseMedical,
+      features: [
+        "Regular Health Check-ups",
+        "Medical Guidance and Awareness",
+        "On-campus Medical Support",
+        "Health Education Sessions"
+      ],
+      highlight: "Caring for Health and Wellness"
+    },
+    {
+      name: "Educational & Fun Trips",
+      description: "Exciting trips that combine learning with fun experiences, helping students explore and understand the world beyond the classroom.",
+      image: heroClassroom,
+      icon: MapPin,
+      features: [
+        "Educational Excursions",
+        "Interactive Learning Experiences",
+        "Outdoor Adventures",
+        "Team-building Activities"
+      ],
+      highlight: "Learning Through Exploration"
+    },
+    {
+      name: "Evening Classes in Summer",
+      description: "Special summer evening sessions to help students revise, learn new skills, and stay engaged during the vacation.",
+      image: heroClassroom,
+      icon: Moon,
+      features: [
+        "Revision & Skill Building",
+        "Interactive Sessions",
+        "Flexible Timings",
+        "Engaging Summer Activities"
+      ],
+      highlight: "Stay Sharp, Learn More"
+    },
+    {
+      name: "Hygienic & Safe Environment",
+      description: "A clean, safe, and well-maintained environment that ensures the health and security of all students and staff.",
+      image: heroClassroom,
+      icon: Shield,
+      features: [
+        "Clean Classrooms & Facilities",
+        "Regular Sanitization",
+        "Safe Drinking Water",
+        "Secure Campus Premises"
+      ],
+      highlight: "Safety and Hygiene First"
     }
+
   ];
 
   const safetyFeatures = [
