@@ -298,7 +298,7 @@ const TeacherDetail = () => {
                   <img
                     src={teacher.image}
                     alt={teacher.name}
-                    className="w-full h-80 object-cover"
+                    className="w-full h-[600px] object-cover object-top"
                   />
                   <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full">
                     <span className="text-primary-foreground text-sm font-medium">{teacher.experience}</span>
@@ -309,7 +309,7 @@ const TeacherDetail = () => {
                   <p className="text-primary font-medium mb-4">{teacher.position}</p>
                   <p className="text-muted-foreground mb-4">{teacher.specialization}</p>
 
-                  <div className="space-y-3">
+                  {/* <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <GraduationCap size={20} className="text-primary" />
                       <span className="text-sm">{teacher.qualification}</span>
@@ -322,7 +322,7 @@ const TeacherDetail = () => {
                       <Phone size={20} className="text-primary" />
                       <span className="text-sm">{teacher.contact.phone}</span>
                     </div>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             </div>
@@ -340,15 +340,19 @@ const TeacherDetail = () => {
               {/* Achievements Section */}
               <Card className="border-0 shadow-soft">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-heading font-bold mb-6">Achievements & Recognition</h3>
-                  <div className="space-y-4">
-                    {teacher.achievements.map((achievement, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <Award size={20} className="text-secondary" />
-                        <span className="text-muted-foreground">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-2xl font-heading font-bold mb-6">Informatiion</h3>
+                    <div className="flex items-center space-x-3">
+                      <GraduationCap size={20} className="text-primary" />
+                      <span className="text-sm">{teacher.qualification}</span>
+                    </div>
+                                        <div className="flex items-center space-x-3">
+                      <Mail size={20} className="text-primary" />
+                      <span className="text-sm">{teacher.contact.email}</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone size={20} className="text-primary" />
+                      <span className="text-sm">{teacher.contact.phone}</span>
+                    </div>
                 </CardContent>
               </Card>
 
