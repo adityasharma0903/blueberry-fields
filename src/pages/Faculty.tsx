@@ -96,29 +96,29 @@ const Faculty = () => {
     },
     {
       name: "Mrs. Sheetal Sharma",
-      position: "Physical Education Instructor",
+      position: "English Teacherr",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       // experience: "6+ years",
       specialization: "English",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Sheetal_Sharma_English_Teacher_ziottd.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
       name: "Mrs. Shreya Thakur",
-      position: "Physical Education Instructor",
+      position: "Computer Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       // experience: "6+ years",
       specialization: "Computer",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Shreya_Thakur_Computer_Teacher_nornqh.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
       name: "Mrs. Sheetal Sharma",
-      position: "Physical Education Instructor",
+      position: "Mathematics Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       // experience: "6+ years",
       specialization: "Maths",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Sheetal_Sharma_Math_Teacher_sj2v30.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
