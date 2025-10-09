@@ -112,11 +112,11 @@ const Admissions = () => {
   ];
 
   const classStrength = [
-    { grade: "Class I"},
-    { grade: "Class II"},
-    { grade: "Class III"},
-    { grade: "Class IV"},
-    { grade: "Class V"},
+    { grade: "Play Group"},
+    { grade: "Nursery"},
+    { grade: "LKG"},
+    { grade: "UKG"},
+    { grade: "Class I-V"},
   ];
 
   return (
