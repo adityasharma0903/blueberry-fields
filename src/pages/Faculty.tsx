@@ -37,7 +37,7 @@ const Faculty = () => {
       qualification: "M.A. Child Psychology, B.Ed",
       experience: "12+ years", 
       specialization: "Chairman",
-      image: teacherReading,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759981833/WhatsApp_Image_2025-10-09_at_08.54.56_1755172c_qtj8gd.jpg",
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
     {

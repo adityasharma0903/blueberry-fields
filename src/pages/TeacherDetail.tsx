@@ -46,7 +46,7 @@ const TeacherDetail = () => {
       qualification: "M.A. Child Psychology, B.Ed",
       experience: "12+ years",
       specialization: "Early Childhood Development, Play-based Learning",
-      image: teacherReading,
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759981833/WhatsApp_Image_2025-10-09_at_08.54.56_1755172c_qtj8gd.jpg",
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"],
       about: "Mr. Upesh Banshal is a certified Montessori teacher with extensive experience in child psychology. He specializes in play-based learning methodologies and has developed innovative approaches to early childhood education that make learning fun and engaging for young children.",
       contact: {
