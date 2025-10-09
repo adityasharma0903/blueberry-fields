@@ -200,33 +200,38 @@ const About = () => {
 
       {/* Achievements */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="bg-primary text-primary-foreground mb-4">Our Achievements</Badge>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Awards & Recognition
-            </h2>
-          </div>
+<div className="container mx-auto px-4">
+  {/* Section Heading */}
+  <div className="text-center container mb-12">
+    <Badge className="bg-primary text-primary-foreground mb-4">Our Achievements</Badge>
+    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+      Awards & Recognition
+    </h2>
+  </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-primary mb-2">1500+</div>
-              <p className="text-muted-foreground">Happy Students</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-primary mb-2">25+</div>
-              <p className="text-muted-foreground">Expert Teachers</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-primary mb-2">15+</div>
-              <p className="text-muted-foreground">Years Experience</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-heading font-bold text-primary mb-2">5</div>
-              <p className="text-muted-foreground">Award Winning</p>
-            </div>
-          </div>
-        </div>
+  {/* Achievements Grid */}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-end">
+    <div className="text-right">
+      <div className="text-4xl font-heading font-bold text-primary mb-2">200+</div>
+      <p className="text-muted-foreground">Happy Students</p>
+    </div>
+    <div className="text-right">
+      <div className="text-4xl font-heading font-bold text-primary mb-2">12+</div>
+      <p className="text-muted-foreground">Expert Teachers</p>
+    </div>
+    <div className="text-right">
+      <div className="text-4xl font-heading font-bold text-primary mb-2">15+</div>
+      <p className="text-muted-foreground">Years Experience</p>
+    </div>
+    {/* Uncomment if needed
+    <div className="text-right">
+      <div className="text-4xl font-heading font-bold text-primary mb-2">5</div>
+      <p className="text-muted-foreground">Award Winning</p>
+    </div> 
+    */}
+  </div>
+</div>
+
       </section>
     </Layout>
   );

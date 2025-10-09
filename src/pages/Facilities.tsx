@@ -25,21 +25,21 @@ import {
   Shield,
   Cctv
 } from 'lucide-react';
-import library from '@/assets/library.jpg';
-import scienceLab from '@/assets/science-lab.jpg';
-import computerLab from '@/assets/computer-lab.jpg';
-import musicRoom from '@/assets/music-room.jpg';
-import playground from '@/assets/playground.jpg';
-import cafeteria from '@/assets/cafeteria.jpg';
-import artClass from '@/assets/art-class.jpg';
-import heroClassroom from '@/assets/hero-classroom.jpg';
+// import library from '@/assets/library.jpg';
+// import scienceLab from '@/assets/science-lab.jpg';
+// import computerLab from '@/assets/computer-lab.jpg';
+// import musicRoom from '@/assets/music-room.jpg';
+// import playground from '@/assets/playground.jpg';
+// import cafeteria from '@/assets/cafeteria.jpg';
+// import artClass from '@/assets/art-class.jpg';
+// import heroClassroom from '@/assets/hero-classroom.jpg';
 
 const Facilities = () => {
   const facilities = [
     {
       name: "Modern Library",
       description: "Extensive collection of age-appropriate books, digital resources, and quiet reading spaces to foster love for learning.",
-      image: library,
+      // image: library,
       icon: BookOpen,
       features: ["5000+ Books Collection", "Digital Learning Resources", "Reading Corners", "Story Time Area"],
       highlight: "Interactive Learning Zone"
@@ -47,7 +47,7 @@ const Facilities = () => {
     {
       name: "Transport",
       description: "Safe and reliable school transport service ensuring comfortable travel for students across the city.",
-      image: library,
+      // image: library,
       icon: BookOpen,
       features: ["GPS-Enabled Buses", "Trained Drivers & Attendants", "Safe Pick-up & Drop-off", "Comfortable Seating"],
       highlight: "Secure Student Travel"
@@ -55,7 +55,7 @@ const Facilities = () => {
     {
       name: "Dance Academy",
       description: "A vibrant space where students explore classical and modern dance forms, building confidence, rhythm, and creativity.",
-      image: computerLab,
+      // image: computerLab,
       icon: Monitor,
       features: ["Trained Instructors", "Classical & Modern Dance", "Annual Performances", "Confidence & Teamwork"],
       highlight: "Express Through Dance"
@@ -63,7 +63,7 @@ const Facilities = () => {
     {
       name: "Music & Singing",
       description: "A creative hub where students learn vocal and instrumental music, fostering talent, expression, and passion for the arts.",
-      image: musicRoom,
+      // image: musicRoom,
       icon: Music,
       features: ["Vocal & Instrumental Training", "Individual & Group Sessions", "Stage Performances", "Creativity & Expression"],
       highlight: "Melody in Learning"
@@ -71,7 +71,7 @@ const Facilities = () => {
     {
       name: "Art & Craft Studio",
       description: "Creative workspace with all necessary materials for painting, drawing, and craft activities to nurture artistic skills.",
-      image: artClass,
+      // image: artClass,
       icon: Palette,
       features: ["Art Supplies", "Craft Materials", "Display Boards", "Creative Projects"],
       highlight: "Art Exhibitions"
@@ -79,7 +79,7 @@ const Facilities = () => {
     {
       name: "Playground & Sports Room",
       description: "Large outdoor play area with age-appropriate equipment and sports facilities for physical development and recreation.",
-      image: playground,
+      // image: playground,
       icon: Gamepad2,
       features: ["Swings & Slides", "Sports Equipment", "Safe Play Area", "Physical Activities"],
       highlight: "Daily Outdoor Play"
@@ -87,7 +87,7 @@ const Facilities = () => {
     {
       name: "Taekwondo",
       description: "A dedicated martial arts program that teaches self-discipline, focus, and physical fitness through Taekwondo training.",
-      image: playground,
+      // image: playground,
       icon: Gamepad2,
       features: ["Self-Defense Techniques", "Discipline & Focus", "Physical Fitness", "Trained Instructors"],
       highlight: "Strength & Confidence"
@@ -95,7 +95,7 @@ const Facilities = () => {
     {
       name: "Smart Classrooms",
       description: "Technology-enabled classrooms with interactive boards, projectors, and multimedia resources for enhanced learning.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Users,
       features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Aids", "Climate Control"],
       highlight: "Interactive Learning"
@@ -103,7 +103,7 @@ const Facilities = () => {
     {
       name: "Skating Classes",
       description: "Fun and safe skating sessions designed to improve balance, coordination, and confidence in young learners.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Users,
       features: ["Safe Skating Gear", "Beginner to Advanced Levels", "Balance & Coordination Training", "Experienced Coaches"],
       highlight: "Glide with Confidence"
@@ -111,7 +111,7 @@ const Facilities = () => {
     {
       name: "Sibling Waiver",
       description: "A special fee concession offered to families with more than one child enrolled in our school, promoting and supporting sibling education together.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: BadgePercent,
       features: ["Fee Concession for Siblings", "Applicable for All Grades", "Encourages Family Enrollment", "Simple Application Process"],
       highlight: "Together in Learning and Growth"
@@ -119,7 +119,7 @@ const Facilities = () => {
     {
       name: "Summer Camp",
       description: "An exciting summer program filled with fun activities, learning opportunities, and team-building experiences that keep students engaged and active.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Sun,
       features: [
         "Fun & Educational Activities",
@@ -132,7 +132,7 @@ const Facilities = () => {
     {
       name: "CCTV Cameras",
       description: "State-of-the-art CCTV surveillance ensures the safety and security of students and staff across the campus, providing a secure learning environment.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Cctv,
       features: [
         "24/7 Surveillance",
@@ -145,7 +145,7 @@ const Facilities = () => {
     {
       name: "Medical Camp",
       description: "Regular health check-ups and medical guidance to ensure the well-being of students and staff.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: BriefcaseMedical,
       features: [
         "Regular Health Check-ups",
@@ -158,7 +158,7 @@ const Facilities = () => {
     {
       name: "Educational & Fun Trips",
       description: "Exciting trips that combine learning with fun experiences, helping students explore and understand the world beyond the classroom.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: MapPin,
       features: [
         "Educational Excursions",
@@ -171,7 +171,7 @@ const Facilities = () => {
     {
       name: "Evening Classes in Summer",
       description: "Special summer evening sessions to help students revise, learn new skills, and stay engaged during the vacation.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Moon,
       features: [
         "Revision & Skill Building",
@@ -184,7 +184,7 @@ const Facilities = () => {
     {
       name: "Hygienic & Safe Environment",
       description: "A clean, safe, and well-maintained environment that ensures the health and security of all students and staff.",
-      image: heroClassroom,
+      // image: heroClassroom,
       icon: Shield,
       features: [
         "Clean Classrooms & Facilities",
@@ -271,8 +271,8 @@ const Facilities = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {facilities.map((facility, index) => (
               <Card key={index} className="border-0 shadow-soft card-hover overflow-hidden">
-                <div className="grid grid-cols-1 md:grid-cols-5 h-full">
-                  <div className="md:col-span-2 relative">
+                <div className="grid grid-cols-1 md:grid-cols-3 h-full">
+                  {/* <div className="md:col-span-2 relative">
                     <img
                       src={facility.image}
                       alt={facility.name}
@@ -283,7 +283,7 @@ const Facilities = () => {
                         {facility.highlight}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="md:col-span-3">
                     <CardContent className="p-4 lg:p-6 h-full flex flex-col">
                       <div className="flex items-center space-x-3 mb-3 lg:mb-4">

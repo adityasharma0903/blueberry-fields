@@ -49,15 +49,15 @@ const Faculty = () => {
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Monika_Sharma_Coordinator_eesbll.jpg",
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
-    {
-      name: "Mrs. Alka Chauhan",
-      position: "Senior Primary Teacher",
-      qualification: "M.A. English, B.Ed",
-      // experience: "10+ years",
-      specialization: "Social Studies (SST)",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
-      achievements: ["Creative Teaching Award", "English Literature Expert"]
-    },
+    // {
+    //   name: "Mrs. Alka Chauhan",
+    //   position: "Senior Primary Teacher",
+    //   qualification: "M.A. English, B.Ed",
+    //   // experience: "10+ years",
+    //   specialization: "Social Studies (SST)",
+    //   image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+    //   achievements: ["Creative Teaching Award", "English Literature Expert"]
+    // },
     {
       name: "Ms. Richa Gulati",
       position: "Science Teacher",
