@@ -50,7 +50,7 @@ const WelcomePopup = () => {
     {
       icon: BookOpen,
       title: "Quality Education",
-      description: "Comprehensive curriculum for Classes 1-5"
+      description: "Comprehensive curriculum for Classes upto 5th"
     },
     {
       icon: Users,
@@ -65,7 +65,7 @@ const WelcomePopup = () => {
     {
       icon: Award,
       title: "Affordable Fees",
-      description: "Only ₹3,200 per month, no admission fee"
+      description: "Only ₹3,500 per month"
     }
   ];
 
@@ -126,7 +126,7 @@ const WelcomePopup = () => {
               <div className="p-6 lg:p-8 bg-white h-full flex flex-col">
                 <div className="space-y-6 flex-1 overflow-y-auto">
                   <div className="text-center">
-                    <Badge className="bg-primary text-primary-foreground mb-4 text-sm">Admissions Open 2024-25</Badge>
+                    {/* <Badge className="bg-primary text-primary-foreground mb-4 text-sm">Admissions Open 2024-25</Badge> */}
                     <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-800 mb-3">Join Our Prestigious School</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Give your child the best start in life with our comprehensive education program designed for Classes 1 to 5.

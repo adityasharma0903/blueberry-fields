@@ -9,11 +9,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { 
-  Users, 
-  Calendar, 
-  FileText, 
-  CheckCircle, 
+import {
+  Users,
+  Calendar,
+  FileText,
+  CheckCircle,
   Star,
   Phone,
   Mail,
@@ -35,7 +35,7 @@ const Admissions = () => {
   });
 
   // IMPORTANT: Paste your Google Apps Script Web App URL here
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRwOcb5CtC5msZ3H60ImIZK_qiMtFnGeLQI6pYuLTzqPd2OXhURPivDAO13scOAPYT/exec'; 
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRwOcb5CtC5msZ3H60ImIZK_qiMtFnGeLQI6pYuLTzqPd2OXhURPivDAO13scOAPYT/exec';
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
@@ -46,7 +46,7 @@ const Admissions = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch(SCRIPT_URL, {
         method: 'POST',
@@ -93,7 +93,7 @@ const Admissions = () => {
     },
     {
       step: 2,
-      title: "School Visit", 
+      title: "School Visit",
       description: "Schedule a campus tour to meet our faculty and see our facilities",
       icon: MapPin
     },
@@ -112,11 +112,11 @@ const Admissions = () => {
   ];
 
   const classStrength = [
-    { grade: "Play Group"},
-    { grade: "Nursery"},
-    { grade: "LKG"},
-    { grade: "UKG"},
-    { grade: "Class I-V"},
+    { grade: "Play Group" },
+    { grade: "Nursery" },
+    { grade: "LKG" },
+    { grade: "UKG" },
+    { grade: "Class I-V" },
   ];
 
   return (
@@ -138,15 +138,15 @@ const Admissions = () => {
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto mb-8">
               Join our nurturing community where every child's potential is recognized and developed
             </p>
-<Button 
-  size="lg" 
-  className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-8 py-4 text-lg rounded-full"
-  onClick={() => {
-    document.getElementById("admission-form")?.scrollIntoView({ behavior: "smooth" });
-  }}
->
-  Apply Now
-</Button>
+            <Button
+              size="lg"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary-light font-medium px-8 py-4 text-lg rounded-full"
+              onClick={() => {
+                document.getElementById("admission-form")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Apply Now
+            </Button>
 
           </div>
         </div>
@@ -159,7 +159,7 @@ const Admissions = () => {
           <div className="text-center mb-16">
             <Badge className="bg-primary text-primary-foreground mb-4">Class Information</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Grades Offered
+              Grades Offered
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We maintain small class sizes to ensure individual attention and quality education for every child.
@@ -208,14 +208,14 @@ const Admissions = () => {
       </section>
 
       {/* Admission Form */}
-      <section id="admission-form"className="py-20 bg-primary relative overflow-hidden">
+      <section id="admission-form" className="py-20 bg-primary relative overflow-hidden">
         <div className="absolute top-16 left-16 text-secondary animate-float opacity-40">
           <Star size={28} fill="currentColor" />
         </div>
         <div className="absolute bottom-16 right-20 text-secondary animate-float opacity-60" style={{ animationDelay: '3s' }}>
           <Star size={24} fill="currentColor" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Get Started</Badge>
@@ -277,7 +277,7 @@ const Admissions = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="preferredGrade">Preferred Grade</Label>
                     <Select value={formData.preferredGrade} onValueChange={(value) => handleInputChange('preferredGrade', value)}>
@@ -307,9 +307,9 @@ const Admissions = () => {
                   </div>
 
                   <div className="text-center pt-6">
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="bg-primary text-primary-foreground hover:bg-primary-light px-12 py-4 rounded-full"
                     >
                       Submit Inquiry

@@ -164,58 +164,49 @@ const Fees = () => {
       {/* Academic Fee Structure */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <Badge className="bg-primary text-primary-foreground mb-4">Academic Fees</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Academic Fee Structure 2024-25
+              Academic Fee Structure
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Transparent and affordable fee structure with no hidden charges.
             </p>
           </div>
-
-          <Tabs value={selectedGrade} onValueChange={setSelectedGrade} className="w-full">
-            <TabsList className="grid w-full grid-cols-5 mb-12">
-              {feeTabs.map((tab) => (
-                <TabsTrigger key={tab.key} value={tab.key} className="text-xs lg:text-sm">
-                  {tab.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            {feeTabs.map((tab) => (
-              <TabsContent key={tab.key} value={tab.key} className="space-y-8">
-                <div className="max-w-md mx-auto">
-                  <Card className="border-0 shadow-medium border-2 border-secondary">
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calendar size={32} className="text-secondary-foreground" />
-                      </div>
-                      <h3 className="text-xl font-heading font-bold mb-2">Admission Fee</h3>
-                      <div className="text-2xl font-bold text-secondary mb-2">₹10,000</div>
-                      <h3 className="text-xl font-heading font-bold mb-2 mt-4">Monthly Fee</h3>
-                      <div className="text-3xl font-bold text-secondary mb-4">₹3,500</div>
-                      <p className="text-sm text-muted-foreground">Per month</p>
-                    </CardContent>
-                  </Card>
+          <div className="text-center mb-8">
+            <span className="inline-block bg-secondary text-secondary-foreground px-4 py-2 rounded font-semibold">
+              Applicable for all Grades upto 5th
+            </span>
+          </div>
+          <div className="max-w-md mx-auto">
+            <Card className="border-0 shadow-medium border-2 border-secondary">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Calendar size={32} className="text-secondary-foreground" />
                 </div>
-
-                <Card className="border-0 shadow-soft">
-                  <CardContent className="p-8">
-                    <h4 className="text-2xl font-heading font-bold mb-6">What's Included in Fee</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {commonIncludes.map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle size={20} className="text-primary" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
+                <h3 className="text-xl font-heading font-bold mb-2">Admission Fee</h3>
+                <div className="text-2xl font-bold text-secondary mb-2">₹10,000</div>
+                <h3 className="text-xl font-heading font-bold mb-2 mt-4">Monthly Fee</h3>
+                <div className="text-3xl font-bold text-secondary mb-4">₹3,500</div>
+                <p className="text-sm text-muted-foreground">Per month</p>
+              </CardContent>
+            </Card>
+          </div>
+          {/* <div className="max-w-2xl mx-auto mt-8">
+            <Card className="border-0 shadow-soft">
+              <CardContent className="p-8">
+                <h4 className="text-2xl font-heading font-bold mb-6">What's Included in Fee</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {commonIncludes.map((item, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle size={20} className="text-primary" />
+                      <span>{item}</span>
                     </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            ))}
-          </Tabs>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div> */}
         </div>
       </section>
 

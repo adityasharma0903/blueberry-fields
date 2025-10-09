@@ -27,7 +27,7 @@ const Faculty = () => {
       position: "Principal",
       qualification: "M.Tech and a B.Ed",
       experience: "15+ years",
-      specialization: "Educational Leadership, Curriculum Development",
+      specialization: "Principal",
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979122/Malvika_Bansal_Principal_Qualification-M.tech_B_jkfvev.jpg",
       achievements: ["Best Principal Award 2023", "Educational Excellence Certificate"]
     },
@@ -36,7 +36,7 @@ const Faculty = () => {
       position: "Chairman",
       qualification: "M.A. Child Psychology, B.Ed",
       experience: "12+ years", 
-      specialization: "Early Childhood Development, Play-based Learning",
+      specialization: "Chairman",
       image: teacherReading,
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
