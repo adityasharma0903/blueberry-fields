@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import FloatingContactButtons from "./FloatingContactButtons";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-grow pt-20">
         {children}
       </main>
+      <FloatingContactButtons />
       <Footer />
     </div>
   );
