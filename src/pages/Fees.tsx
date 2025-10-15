@@ -213,7 +213,7 @@ const Fees = () => {
       {/* Transport Fee */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Transportation</Badge>
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
               Bus Fee Structure
@@ -222,68 +222,15 @@ const Fees = () => {
               Safe and reliable transportation service with GPS tracking and trained drivers.
             </p>
           </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-0 shadow-soft overflow-hidden">
-              <CardContent className="p-0">
-                <div className="bg-primary text-primary-foreground p-6">
-                  <div className="flex items-center justify-center space-x-4">
-                    <Bus size={32} />
-                    <h3 className="text-2xl font-heading font-bold">Transportation Service</h3>
-                  </div>
+          <div className="max-w-md mx-auto">
+            <Card className="border-0 shadow-medium border-2 border-secondary">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Bus size={32} className="text-secondary-foreground" />
                 </div>
-                
-                <div className="p-6">
-                  <div className="space-y-4">
-                    {transportFees.map((transport, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 bg-accent/30 rounded-lg">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                            <Bus size={20} className="text-primary" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold">{transport.route}</h4>
-                            <p className="text-sm text-muted-foreground">{transport.distance}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-xl font-bold text-primary">₹{transport.monthly.toLocaleString()}</div>
-                          <div className="text-sm text-muted-foreground">per month</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* <div className="mt-8 p-6 bg-primary/5 rounded-xl">
-                    <h4 className="font-heading font-bold text-lg mb-4">Transportation Features</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">GPS tracking system</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">Trained and verified drivers</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">CCTV surveillance</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">Female attendant for safety</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">Real-time parent notifications</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <CheckCircle size={16} className="text-primary" />
-                        <span className="text-sm">Insurance coverage</span>
-                      </div>
-                    </div>
-                  </div> */}
-                </div>
+                <h3 className="text-xl font-heading font-bold mb-2">Transport Fee</h3>
+                <div className="text-3xl font-bold text-secondary mb-4">₹1,100</div>
+                <p className="text-sm text-muted-foreground">Per month (within 4km)</p>
               </CardContent>
             </Card>
           </div>
