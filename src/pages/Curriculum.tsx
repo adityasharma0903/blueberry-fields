@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import artClass from '@/assets/art-class.jpg';
 import teacherReading from '@/assets/teacher-reading.jpg';
+import activity from '@/assets/activity.jpg';
 
 const Curriculum = () => {
   const subjects = [
@@ -318,9 +319,8 @@ const Curriculum = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <Card className="border-0 shadow-soft p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+            <Card className="border-0 shadow-soft p-8 ml-7">
               <h3 className="text-2xl font-heading font-bold mb-6">Teaching Methodology</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -349,6 +349,13 @@ const Curriculum = () => {
                 </div>
               </div>
             </Card>
+            <div className="flex justify-center">
+              <img 
+                src={activity} 
+                alt="Teaching Methodology" 
+                className="w-full max-w-md h-72 object-cover rounded-2xl shadow-medium"
+              />
+            </div>
           </div>
 
           <div className="text-center mt-12">
