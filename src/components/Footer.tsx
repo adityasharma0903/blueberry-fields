@@ -116,7 +116,7 @@ const Footer = () => {
             <div className="flex space-x-6">
               {/* <Link to="/privacy" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Privacy Policy</Link> */}
               {/* <Link to="/terms" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Terms of Service</Link> */}
-              <Link to="/admin" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Admin</Link>
+              {/* <Link to="/admin" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Admin</Link> */}
             </div>
           </div>
         </div>
