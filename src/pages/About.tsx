@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Star, Users, Award, Heart, BookOpen, Target, Eye } from 'lucide-react';
 import heroClassroom from '@/assets/hero-classroom.jpg';
 import playground from '@/assets/playground.jpg';
+import school from '@/assets/school.png';
+import board from '@/assets/annual-day.jpg';
 
 const About = () => {
   return (
@@ -54,12 +56,12 @@ const About = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src={heroClassroom} 
+                src={school} 
                 alt="School history" 
-                className="w-full h-48 object-cover organic-shape shadow-medium"
+                className="w-full h-40 object-cover organic-shape shadow-medium"
               />
               <img 
-                src={playground} 
+                src={board} 
                 alt="School development" 
                 className="w-full h-48 object-cover organic-shape-2 shadow-medium mt-8"
               />
