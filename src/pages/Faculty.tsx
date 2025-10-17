@@ -5,11 +5,11 @@ import WaveDivider from '../components/WaveDivider';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  Star, 
-  Award, 
-  BookOpen, 
-  Users, 
+import {
+  Star,
+  Award,
+  BookOpen,
+  Users,
   GraduationCap,
   Heart,
   Target,
@@ -20,7 +20,7 @@ import teacherReading from '@/assets/teacher-reading.jpg';
 
 const Faculty = () => {
   const navigate = useNavigate();
-  
+
   const facultyMembers = [
     {
       name: "Mrs. Malvika Bansal",
@@ -49,6 +49,15 @@ const Faculty = () => {
       image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759979123/Monika_Sharma_Coordinator_eesbll.jpg",
       achievements: ["Certified Montessori Teacher", "Child Psychology Specialist"]
     },
+    {
+      name: "Mrs. Anita Kaur",
+      position: "Receptionist",
+      qualification: "B.A. English",
+      specialization: "Front Desk Management",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1760715253/Anita_Kaur_Receptionist_s6gyuo.jpg",
+      achievements: ["Excellent Communication Skills", "Customer Service Expert"]
+    },
+
     // {
     //   name: "Mrs. Alka Chauhan",
     //   position: "Senior Primary Teacher",
@@ -267,8 +276,8 @@ const Faculty = () => {
             {facultyMembers.map((faculty, index) => (
               <Card key={index} className="border-0 shadow-soft card-hover overflow-hidden">
                 <div className="relative">
-                  <img 
-                    src={faculty.image} 
+                  <img
+                    src={faculty.image}
                     alt={faculty.name}
                     className="w-full h-[340px] object-cover object-top"
                   />
@@ -279,7 +288,7 @@ const Faculty = () => {
                 <CardContent className="p-6 text-center">
                   <h3 className="text-xl font-heading font-bold mb-2">{faculty.name}</h3>
                   <p className="text-primary font-medium mb-4">{faculty.specialization}</p>
-                  <Button 
+                  <Button
                     className="w-full bg-primary text-primary-foreground hover:bg-primary-light rounded-full"
                     onClick={() => navigate(`/teacher/${faculty.name.toLowerCase().replace(/\s+/g, '-')}`)}
                   >
@@ -302,7 +311,7 @@ const Faculty = () => {
         </div>
 
         {/* <WaveDivider position="top" /> */}
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="bg-secondary text-secondary-foreground mb-4">Standards</Badge>
@@ -343,75 +352,75 @@ const Faculty = () => {
 
       {/* Professional Development */}
       <section className="py-20 bg-background">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <Badge className="bg-primary text-primary-foreground mb-4">Our Faculty</Badge>
-      <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-        Inspiring Minds, Shaping Futures
-      </h2>
-      <p className="text-muted-foreground max-w-2xl mx-auto">
-        Our teachers go beyond classrooms — guiding, mentoring, and nurturing every child’s potential with care and dedication.
-      </p>
-    </div>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="bg-primary text-primary-foreground mb-4">Our Faculty</Badge>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Inspiring Minds, Shaping Futures
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our teachers go beyond classrooms — guiding, mentoring, and nurturing every child’s potential with care and dedication.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div className="space-y-8">
-        <Card className="border-0 shadow-soft p-6">
-          <div className="flex items-center space-x-4 mb-4">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-              <BookOpen size={24} className="text-primary-foreground" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <Card className="border-0 shadow-soft p-6">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <BookOpen size={24} className="text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg">Dedicated Educators</h3>
+                    <p className="text-muted-foreground text-sm">Passionate teachers who bring learning to life every day.</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="border-0 shadow-soft p-6">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+                    <Users size={24} className="text-secondary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg">Mentors & Guides</h3>
+                    <p className="text-muted-foreground text-sm">Supporting students not just academically, but in life skills too.</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="border-0 shadow-soft p-6">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <Heart size={24} className="text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg">Caring Approach</h3>
+                    <p className="text-muted-foreground text-sm">Building a safe, supportive, and positive environment for children.</p>
+                  </div>
+                </div>
+              </Card>
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-lg">Dedicated Educators</h3>
-              <p className="text-muted-foreground text-sm">Passionate teachers who bring learning to life every day.</p>
+
+            <div className="relative">
+              <img
+                src={teacherReading}
+                alt="Our Faculty"
+                className="w-full h-96 object-cover rounded-3xl shadow-strong"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-secondary p-6 rounded-2xl shadow-strong">
+                <div className="text-center">
+                  <div className="text-2xl font-heading font-bold text-secondary-foreground"></div>
+                  <div className="text-sm text-secondary-foreground">Experienced Teachers</div>
+                </div>
+              </div>
             </div>
           </div>
-        </Card>
 
-        <Card className="border-0 shadow-soft p-6">
-          <div className="flex items-center space-x-4 mb-4">
-            <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-              <Users size={24} className="text-secondary-foreground" />
-            </div>
-            <div>
-              <h3 className="font-heading font-bold text-lg">Mentors & Guides</h3>
-              <p className="text-muted-foreground text-sm">Supporting students not just academically, but in life skills too.</p>
-            </div>
-          </div>
-        </Card>
-
-        <Card className="border-0 shadow-soft p-6">
-          <div className="flex items-center space-x-4 mb-4">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-              <Heart size={24} className="text-primary-foreground" />
-            </div>
-            <div>
-              <h3 className="font-heading font-bold text-lg">Caring Approach</h3>
-              <p className="text-muted-foreground text-sm">Building a safe, supportive, and positive environment for children.</p>
-            </div>
-          </div>
-        </Card>
-      </div>
-
-      <div className="relative">
-        <img 
-          src={teacherReading} 
-          alt="Our Faculty" 
-          className="w-full h-96 object-cover rounded-3xl shadow-strong"
-        />
-        <div className="absolute -bottom-6 -left-6 bg-secondary p-6 rounded-2xl shadow-strong">
-          <div className="text-center">
-            <div className="text-2xl font-heading font-bold text-secondary-foreground"></div>
-            <div className="text-sm text-secondary-foreground">Experienced Teachers</div>
+          <div className="text-center mt-16">
           </div>
         </div>
-      </div>
-    </div>
-
-    <div className="text-center mt-16">
-    </div>
-  </div>
-</section>
+      </section>
 
     </Layout>
   );

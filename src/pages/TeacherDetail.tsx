@@ -69,6 +69,21 @@ const TeacherDetail = () => {
       }
     },
     {
+      name: "Mrs. Anita Kaur",
+      position: "Receptionist",
+      qualification: "B.A. (Arts)",
+      experience: "5+ years",
+      specialization: "Front Office & Communication",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1760715253/Anita_Kaur_Receptionist_s6gyuo.jpg",
+      achievements: ["Best Administrative Support Award", "Outstanding Customer Service Recognition"],
+      about: "Mrs. Anita Kaur is a friendly and efficient receptionist known for her excellent communication skills and professional attitude. With over five years of experience, she ensures smooth coordination between parents, teachers, and visitors, creating a welcoming environment at the school.",
+      contact: {
+        email: "anita.kaur@blueberryfields.edu",
+        phone: "+91 9876543213"
+      }
+    },
+
+    {
       name: "Ms. Richa Gulati",
       position: "Mathematics & Science Coordinator",
       qualification: "M.Sc. Mathematics, B.Ed",
@@ -300,13 +315,13 @@ const TeacherDetail = () => {
                     alt={teacher.name}
                     className="w-full h-[600px] object-cover object-top"
                   />
-                  <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full">
+                  {/* <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full">
                     <span className="text-primary-foreground text-sm font-medium">{teacher.experience}</span>
-                  </div>
+                  </div> */}
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-heading font-bold mb-2">{teacher.name}</h3>
-                  <p className="text-primary font-medium mb-4">{teacher.position}</p>
+                  {/* <p className="text-primary font-medium mb-4">{teacher.position}</p> */}
                   <p className="text-muted-foreground mb-4">{teacher.specialization}</p>
 
                   {/* <div className="space-y-3">
@@ -338,7 +353,7 @@ const TeacherDetail = () => {
               </Card>
 
               {/* Achievements Section */}
-              <Card className="border-0 shadow-soft">
+              {/* <Card className="border-0 shadow-soft">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-heading font-bold mb-6">Informatiion</h3>
                     <div className="flex items-center space-x-3">
@@ -354,7 +369,7 @@ const TeacherDetail = () => {
                       <span className="text-sm">{teacher.contact.phone}</span>
                     </div>
                 </CardContent>
-              </Card>
+              </Card> */}
 
               {/* Teaching Philosophy */}
               <Card className="border-0 shadow-soft">
