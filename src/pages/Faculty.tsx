@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 
 import teacherReading from '@/assets/teacher-reading.jpg';
+import teacher from '@/assets/school.jpg';
 
 const Faculty = () => {
   const navigate = useNavigate();
@@ -404,7 +405,7 @@ const Faculty = () => {
 
             <div className="relative">
               <img
-                src={teacherReading}
+                src={teacher}
                 alt="Our Faculty"
                 className="w-full h-96 object-cover rounded-3xl shadow-strong"
               />
