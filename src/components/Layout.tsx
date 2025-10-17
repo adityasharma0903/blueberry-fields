@@ -23,8 +23,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       },
       {
         root: null,
-        rootMargin: '0px 0px -10% 0px',
-        threshold: 0.1,
+        // Be more permissive on mobile to ensure early reveal
+        rootMargin: '10% 0px -5% 0px',
+        threshold: 0.05,
       }
     );
 
@@ -70,7 +71,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     const animatables = document.querySelectorAll<HTMLElement>('[data-animate]');
     animatables.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // Safety pass: immediately reveal anything already in viewport on mount
+    const revealInViewportNow = () => {
+      animatables.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight * 0.95 && rect.bottom > 0;
+        if (inView) {
+          el.classList.add('is-visible');
+        }
+      });
+    };
+    revealInViewportNow();
+
+    // Watchdog for mobile browsers where IO may pause (e.g., background tabs)
+    const watchdog = window.setInterval(revealInViewportNow, 800);
+
+    return () => {
+      window.clearInterval(watchdog);
+      observer.disconnect();
+    };
   }, []);
 
   return (

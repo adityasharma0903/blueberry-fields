@@ -279,4 +279,14 @@
   [data-animate][data-stagger-index] {
     transition-delay: calc(var(--stagger, 60ms) * attr(data-stagger-index number));
   }
+
+  /* Respect user reduced-motion preference and provide mobile safety fallback */
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
+    }
+  }
 }
