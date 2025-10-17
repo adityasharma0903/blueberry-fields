@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Camera } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
-const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyId-jJeZryjL4YD0PNmCDHUtTscBCgL-M-_p7odbt5oCIWHYsWa9i5k44Xm-69uhK08A/exec';
+const SCRIPT_URL_GALLERY = import.meta.env.VITE_GALLERY_URL;
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');

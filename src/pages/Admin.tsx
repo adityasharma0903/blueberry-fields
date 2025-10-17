@@ -31,18 +31,18 @@ import {
 
 // --- CONSTANTS FOR GOOGLE APPS SCRIPT & CLOUDINARY ---
 // Paste your Google Apps Script Web App URL here. This is the same URL used for form submission.
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec';
-const SCRIPT_URL_INQUIRIES = 'https://script.google.com/macros/s/AKfycbzA0DqrOCZPfyjyYw_mwMEW2XkVDb8tPorwnXJAHXPHjQ7zevwkAZypydBPey6qixfK/exec';
-const SCRIPT_URL_GALLERY = 'https://script.google.com/macros/s/AKfycbyId-jJeZryjL4YD0PNmCDHUtTscBCgL-M-_p7odbt5oCIWHYsWa9i5k44Xm-69uhK08A/exec';
+const SCRIPT_URL = import.meta.env.VITE_CONTACT_URL;
+const SCRIPT_URL_INQUIRIES = import.meta.env.VITE_INQUIRIES_URL;
+const SCRIPT_URL_GALLERY = import.meta.env.VITE_GALLERY_URL;
 
-const CLOUD_NAME = "dtbelwhff";   // e.g. blueberryfields
-const UPLOAD_PRESET = "blueberry_unsigned"; // the unsigned preset you created
-
-// --- HARDCODED AUTHENTICATION CREDENTIALS ---
-// !! IMPORTANT: CHANGE THESE TO SECURE VALUES AND CONSIDER SERVER-SIDE AUTH FOR PRODUCTION !!
+const CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME;   // e.g. blueberryfields
+const UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET; // the unsigned preset you created
+    
+// --- AUTHENTICATION CREDENTIALS (read from environment) ---
+// Provide these in your .env file as VITE_ADMIN_EMAIL and VITE_ADMIN_PASSWORD
 const AUTH_CREDENTIALS = {
-    EMAIL: 'blueberry@gmail.com',
-    PASSWORD: 'blueberryfields'
+    EMAIL: (import.meta.env.VITE_ADMIN_EMAIL as string) ?? '',
+    PASSWORD: (import.meta.env.VITE_ADMIN_PASSWORD as string) ?? '',
 };
 // ----------------------------------------------
 

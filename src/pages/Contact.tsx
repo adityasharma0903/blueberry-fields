@@ -25,8 +25,7 @@ import {
 } from 'lucide-react';
 
 // Paste your Google Apps Script Web App URL here
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec';
-
+const SCRIPT_URL = import.meta.env.VITE_CONTACT_URL;
 // Self-contained Layout component
 // const Layout = ({ children }) => {
 //   return (
@@ -66,16 +65,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbwBlBxUscyb7Fu8Vqfkq8-quReGu-a_HC5xHkRL1avbdb9usNkUReCAGVPM1WTtPbWCCw/exec') {
-    //   console.error('Please update SCRIPT_URL with your Google Apps Script URL.');
-    //   toast({
-    //     title: "Error",
-    //     description: "Please configure your Google Apps Script URL.",
-    //     variant: "destructive"
-    //   });
-    //   return;
-    // }
 
     setLoading(true);
     try {

@@ -35,7 +35,7 @@ const Admissions = () => {
   });
 
   // IMPORTANT: Paste your Google Apps Script Web App URL here
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRwOcb5CtC5msZ3H60ImIZK_qiMtFnGeLQI6pYuLTzqPd2OXhURPivDAO13scOAPYT/exec';
+  const SCRIPT_URL = import.meta.env.VITE_INQUIRIES_URL;
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
