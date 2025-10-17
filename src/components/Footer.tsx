@@ -114,9 +114,17 @@ const Footer = () => {
               © 2025 Blueberry Fields School. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              {/* <Link to="/privacy" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Privacy Policy</Link> */}
-              {/* <Link to="/terms" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Terms of Service</Link> */}
-              {/* <Link to="/admin" className="text-sm opacity-90 hover:opacity-100 transition-all duration-300">Admin</Link> */}
+              <p className="text-sm opacity-90">
+                Developed by{' '}
+                <a
+                  href="https://mokshdigital.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="opacity-90 hover:opacity-100 transition-all duration-300 underline underline-offset-2"
+                >
+                  Moksh Digital
+                </a>
+              </p>
             </div>
           </div>
         </div>
