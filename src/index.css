@@ -230,4 +230,53 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* ================= Scroll Reveal Utilities ================ */
+  /* Base hidden state applied to any element with [data-animate] */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition-property: opacity, transform, filter;
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.2, 0.65, 0.3, 1);
+    will-change: opacity, transform, filter;
+  }
+
+  /* Visible state toggled by JS when element intersects */
+  [data-animate].is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  /* Variants via data attributes */
+  [data-animate="fade-in"] {
+    transform: none;
+  }
+
+  [data-animate="fade-up"] {
+    transform: translateY(16px);
+  }
+
+  [data-animate="fade-down"] {
+    transform: translateY(-16px);
+  }
+
+  [data-animate="fade-left"] {
+    transform: translateX(-24px);
+  }
+
+  [data-animate="fade-right"] {
+    transform: translateX(24px);
+  }
+
+  [data-animate="zoom-in"] {
+    transform: scale(0.95);
+    filter: blur(2px);
+  }
+
+  /* Optional stagger helper: set --stagger on parents to cascade delay */
+  [data-animate][data-stagger-index] {
+    transition-delay: calc(var(--stagger, 60ms) * attr(data-stagger-index number));
+  }
 }
