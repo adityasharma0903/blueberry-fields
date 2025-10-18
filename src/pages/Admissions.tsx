@@ -285,6 +285,10 @@ const Admissions = () => {
                         <SelectValue placeholder="Select grade" />
                       </SelectTrigger>
                       <SelectContent>
+                        <SelectItem value="class1">Play Group</SelectItem>
+                        <SelectItem value="class1">Nursery</SelectItem>
+                        <SelectItem value="class1">LKG</SelectItem>
+                        <SelectItem value="class1">UKG</SelectItem>
                         <SelectItem value="class1">Class I</SelectItem>
                         <SelectItem value="class2">Class II</SelectItem>
                         <SelectItem value="class3">Class III</SelectItem>
