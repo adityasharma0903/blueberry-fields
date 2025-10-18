@@ -123,7 +123,7 @@ const Faculty = () => {
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"]
     },
     {
-      name: "Mrs. Sheetal Sharma",
+      name: "Mrs. Sheetal",
       position: "Mathematics Teacher",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       // experience: "6+ years",

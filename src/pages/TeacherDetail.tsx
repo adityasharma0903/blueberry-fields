@@ -141,13 +141,27 @@ const TeacherDetail = () => {
     },
     {
       name: "Mrs. Sheetal Sharma",
-      position: "Physical Education Instructor",
+      position: "English",
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "English",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Sheetal_Sharma_English_Teacher_ziottd.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Sheetal Sharma is an enthusiastic English teacher who makes language learning enjoyable through interactive activities, storytelling, and creative writing exercises. Her innovative teaching methods help students develop strong communication skills.",
+      contact: {
+        email: "sheetal.sharma@blueberryfields.edu",
+        phone: "+91 9876543217"
+      }
+    },
+    {
+      name: "Mrs. Sheetal",
+      position: "Maths",
+      qualification: "M.P.Ed, Sports Coaching Certificate",
+      experience: "6+ years",
+      specialization: "Maths",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Sheetal_Sharma_Math_Teacher_sj2v30.jpg",
+      achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
+      about: "Mrs. Sheetal Sharma is an enthusiastic Maths teacher who makes language learning enjoyable through interactive activities, storytelling, and creative writing exercises. Her innovative teaching methods help students develop strong communication skills.",
       contact: {
         email: "sheetal.sharma@blueberryfields.edu",
         phone: "+91 9876543217"
@@ -159,7 +173,7 @@ const TeacherDetail = () => {
       qualification: "M.P.Ed, Sports Coaching Certificate",
       experience: "6+ years",
       specialization: "Computer",
-      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759120313/library_epo9cc.jpg",
+      image: "https://res.cloudinary.com/dtbelwhff/image/upload/v1759991328/Shreya_Thakur_Computer_Teacher_nornqh.jpg",
       achievements: ["Sports Excellence Award", "Yoga Instructor Certified"],
       about: "Mrs. Shreya Thakur is our computer science instructor who introduces students to the world of technology in a fun and engaging way. She teaches basic computer skills, coding fundamentals, and digital literacy that prepare students for the modern world.",
       contact: {
@@ -295,7 +309,7 @@ const TeacherDetail = () => {
               {teacher.name}
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              {teacher.position} • {teacher.specialization}
+              {teacher.specialization}
             </p>
           </div>
         </div>
