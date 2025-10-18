@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Camera } from 'lucide-react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { createPortal } from 'react-dom'; // <--- added
 
 const SCRIPT_URL_GALLERY = import.meta.env.VITE_GALLERY_URL;
 
@@ -13,6 +14,16 @@ const Gallery = () => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
+
+  // Add Escape key handler to close modal
+  useEffect(() => {
+    if (!selectedImage) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedImage]);
 
   const galleryCategories = [
     { id: 'all', name: 'All Photos' },
@@ -142,19 +153,32 @@ const Gallery = () => {
             </TabsContent>
           </Tabs>
 
-          {selectedImage && (
-            <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
-              <div className="bg-background rounded-lg overflow-hidden w-full max-w-5xl" onClick={e => e.stopPropagation()}>
-                <AspectRatio ratio={16 / 9}>
-                  <img src={selectedImage.imageUrl} alt={selectedImage.title} className="w-full h-full object-cover" />
-                </AspectRatio>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg">{selectedImage.title}</h3>
-                  <p className="text-muted-foreground">{selectedImage.description}</p>
+          {/* Replace in-place modal with a portal so it's centered relative to the viewport */}
+          {selectedImage &&
+            createPortal(
+              <div
+                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-auto"
+                onClick={() => setSelectedImage(null)}
+              >
+                <div
+                  className="bg-background rounded-lg overflow-hidden w-full max-w-5xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={selectedImage.imageUrl}
+                      alt={selectedImage.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
+                  <div className="p-4">
+                    <h3 className="font-bold text-lg">{selectedImage.title}</h3>
+                    <p className="text-muted-foreground">{selectedImage.description}</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          )}
+              </div>,
+              document.body
+            )}
         </div>
       </section>
     </Layout>
